@@ -8472,28 +8472,41 @@ font-size:14px;
 /* Free Job Portal Notice */
 .job-portal-notice {
     width: 100%;
+    overflow: hidden;
     background: #FFF7ED;
-    border: 1px solid #FDBA74;
+    border-top: 1px solid #FDBA74;
+    border-bottom: 1px solid #FDBA74;
     color: #7C2D12;
-    padding: 10px 16px;
+    padding: 8px 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.job-portal-notice-inner {
+    display: inline-block;
+    padding-left: 100%;
+    animation: jobNoticeScroll 18s linear infinite;
     font-size: 14px;
     line-height: 1.5;
-    box-sizing: border-box;
 }
 
 .job-portal-notice strong {
     font-weight: 700;
 }
 
-.job-portal-notice-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+@keyframes jobNoticeScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 @media (max-width: 576px) {
-    .job-portal-notice {
-        padding: 9px 12px;
+    .job-portal-notice-inner {
         font-size: 13px;
-        line-height: 1.45;
+        animation-duration: 22s;
     }
 }
