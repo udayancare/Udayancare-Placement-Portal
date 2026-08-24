@@ -100,7 +100,7 @@ alt="Logo">
 
 </a>
 
-<nav class="nav-menu">
+ <nav class="nav-menu">
 
 <a href="candidate-dashboard.html"
 class="active">
@@ -133,13 +133,17 @@ Logout
 
 </a>
 
-<button class="menu-toggle">
+</nav>
+
+<button class="menu-toggle"
+type="button"
+aria-label="Open menu">
 
 <i class="fa-solid fa-bars"></i>
 
 </button>
 
-</div>
+</div> 
 
 </header>
 
@@ -604,25 +608,22 @@ Post Job
 <script src="js/app.js"></script>
 <script src="js/candidate.js"></script>
 
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const logoutBtn = document.getElementById("logoutBtn");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
 
-    if (!logoutBtn) return;
+    if (!menuToggle || !navMenu) return;
 
-    logoutBtn.addEventListener("click", function (event) {
+    menuToggle.addEventListener("click", function () {
 
-        event.preventDefault();
-        event.stopPropagation();
-
-        Storage.removeCandidate();
-
-        window.location.replace("candidate-login.html");
+        navMenu.classList.toggle("active");
 
     });
 
 });
 </script>
+  
 </body>
 </html>
