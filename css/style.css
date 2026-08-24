@@ -8469,3 +8469,31 @@ font-size:14px;
 
 /* Global pagination color fix - add this in your main/global stylesheet (after other CSS) */
 
+/* Free Job Portal Notice */
+.job-portal-notice {
+    width: 100%;
+    background: #FFF7ED;
+    border: 1px solid #FDBA74;
+    color: #7C2D12;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.job-portal-notice strong {
+    font-weight: 700;
+}
+
+.job-portal-notice-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .job-portal-notice {
+        padding: 9px 12px;
+        font-size: 13px;
+        line-height: 1.45;
+    }
+}
