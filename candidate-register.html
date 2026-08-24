@@ -791,27 +791,7 @@ Manage Jobs
 <script src="js/app.js"></script>
 <script src="js/candidate.js"></script>
 
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const toggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".nav-menu");
-
-    if (toggle && menu) {
-        toggle.addEventListener("click", function () {
-            menu.classList.toggle("active");
-        });
-
-        document.addEventListener("click", function (e) {
-            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-                menu.classList.remove("active");
-            }
-        });
-    }
-
-});
-</script>
-    
+       
 </body>
 
 </html>
