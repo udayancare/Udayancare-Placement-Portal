@@ -131,13 +131,6 @@ Employer Login
 
 <div class="container auth-wrapper">
 
-<div class="auth-image">
-
-<img src="images/login.png"
-alt="Candidate Login">
-
-</div>
-
 <div>
 
 <div class="auth-title">
@@ -840,6 +833,19 @@ Manage Jobs
 <script src="js/auth.js"></script>
 <script src="js/app.js"></script>
 <script src="js/candidate.js"></script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+
+    if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+    }
+});
+</script>
 
 </body>
 
