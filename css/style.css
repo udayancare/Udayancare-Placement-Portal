@@ -8485,9 +8485,13 @@ font-size:14px;
 .job-portal-notice-inner {
     display: inline-block;
     padding-left: 100%;
-    animation: jobNoticeScroll 18s linear infinite;
+    animation: jobNoticeScroll 35s linear infinite;
     font-size: 14px;
     line-height: 1.5;
+}
+
+.job-portal-notice-inner:hover {
+    animation-play-state: paused;
 }
 
 .job-portal-notice strong {
@@ -8507,6 +8511,6 @@ font-size:14px;
 @media (max-width: 576px) {
     .job-portal-notice-inner {
         font-size: 13px;
-        animation-duration: 22s;
+        animation-duration: 40s;
     }
 }
