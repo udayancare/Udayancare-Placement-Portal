@@ -128,21 +128,15 @@ My Applications
 </a>
 
 <a href="#" id="logoutBtn">
-
-Logout
-
+    Logout
 </a>
 
 </nav>
 
-<button class="menu-toggle"
-type="button"
-aria-label="Open menu">
-
+<button class="menu-toggle">
 <i class="fa-solid fa-bars"></i>
-
 </button>
-
+  
 </div> 
 
 </header>
@@ -611,16 +605,19 @@ Post Job
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+    const logoutBtn = document.getElementById("logoutBtn");
 
-    if (!menuToggle || !navMenu) return;
+    if (logoutBtn) {
 
-    menuToggle.addEventListener("click", function () {
+        logoutBtn.addEventListener("click", function (e) {
 
-        navMenu.classList.toggle("active");
+            e.preventDefault();
 
-    });
+            Auth.logoutCandidate("candidate-login.html");
+
+        });
+
+    }
 
 });
 </script>
