@@ -8468,3 +8468,99 @@ font-size:14px;
 #pagination .page-btn{ background: #fff; color: var(--dark); } #pagination .page-btn:hover, #pagination .page-btn:focus, #pagination .page-btn.active{ background: var(--primary); color: #fff; }
 
 /* Global pagination color fix - add this in your main/global stylesheet (after other CSS) */
+
+/* ==========================================
+   AUTH PAGES FIX (Login / Register)
+   ========================================== */
+
+.auth-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:50px;
+}
+
+.auth-image img{
+    width:100%;
+    max-width:460px;
+    display:block;
+    margin:auto;
+}
+
+.form-container{
+    max-width:520px;
+    margin:0 auto;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .auth-wrapper{
+        grid-template-columns:1fr;
+        justify-items:center;
+    }
+
+    .auth-image{
+        display:none;
+    }
+
+    .auth-title,
+    .form-container{
+        width:100%;
+        max-width:480px;
+    }
+
+    .auth-section{
+        padding:40px 18px;
+    }
+}
+
+/* ==========================================
+   Dashboard Mobile Menu Fix
+   ========================================== */
+
+@media (max-width:768px){
+
+    .navbar{
+        position:relative;
+    }
+
+    .menu-toggle{
+        display:flex !important;
+        align-items:center;
+        justify-content:center;
+        font-size:22px;
+        background:none;
+        border:none;
+        color:#0F4C81;
+        cursor:pointer;
+        margin-left:auto;
+    }
+
+    .nav-menu{
+        display:none;
+        position:absolute;
+        top:72px;
+        right:0;
+        width:240px;
+        background:#fff;
+        border-radius:12px;
+        box-shadow:0 10px 30px rgba(0,0,0,.12);
+        padding:15px;
+        flex-direction:column;
+        z-index:999;
+    }
+
+    .nav-menu.active{
+        display:flex;
+    }
+
+    .nav-menu a{
+        padding:12px 8px;
+        border-bottom:1px solid #eee;
+    }
+
+    .nav-menu a:last-child{
+        border-bottom:none;
+    }
+}
