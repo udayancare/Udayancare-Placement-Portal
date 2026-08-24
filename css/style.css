@@ -8470,52 +8470,6 @@ font-size:14px;
 /* Global pagination color fix - add this in your main/global stylesheet (after other CSS) */
 
 /* ==========================================
-   AUTH PAGES FIX (Login / Register)
-   ========================================== */
-
-.auth-wrapper{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:50px;
-}
-
-.auth-image img{
-    width:100%;
-    max-width:460px;
-    display:block;
-    margin:auto;
-}
-
-.form-container{
-    max-width:520px;
-    margin:0 auto;
-}
-
-/* Mobile */
-@media (max-width:768px){
-
-    .auth-wrapper{
-        grid-template-columns:1fr;
-        justify-items:center;
-    }
-
-    .auth-image{
-        display:none;
-    }
-
-    .auth-title,
-    .form-container{
-        width:100%;
-        max-width:480px;
-    }
-
-    .auth-section{
-        padding:40px 18px;
-    }
-}
-
-/* ==========================================
    Dashboard Mobile Menu Fix
    ========================================== */
 
