@@ -8564,3 +8564,9 @@ font-size:14px;
         border-bottom:none;
     }
 }
+
+.auth-form-wrapper{
+    width:100%;
+    max-width:520px;
+    margin:auto;
+}
