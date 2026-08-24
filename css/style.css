@@ -8470,51 +8470,53 @@ font-size:14px;
 /* Global pagination color fix - add this in your main/global stylesheet (after other CSS) */
 
 /* ==========================================
-   Dashboard Mobile Menu Fix
+   CANDIDATE DASHBOARD MOBILE MENU
    ========================================== */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .navbar{
-        position:relative;
+    .header .navbar {
+        position: relative;
     }
 
-    .menu-toggle{
-        display:flex !important;
-        align-items:center;
-        justify-content:center;
-        font-size:22px;
-        background:none;
-        border:none;
-        color:#0F4C81;
-        cursor:pointer;
-        margin-left:auto;
+    .header .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-left: auto;
+        padding: 0;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #0F4C81;
+        font-size: 20px;
+        cursor: pointer;
     }
 
-    .nav-menu{
-        display:none;
-        position:absolute;
-        top:72px;
-        right:0;
-        width:240px;
-        background:#fff;
-        border-radius:12px;
-        box-shadow:0 10px 30px rgba(0,0,0,.12);
-        padding:15px;
-        flex-direction:column;
-        z-index:999;
+    .header .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 15px;
+        width: 240px;
+        padding: 10px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        z-index: 9999;
     }
 
-    .nav-menu.active{
-        display:flex;
+    .header .nav-menu.active {
+        display: flex;
+        flex-direction: column;
     }
 
-    .nav-menu a{
-        padding:12px 8px;
-        border-bottom:1px solid #eee;
+    .header .nav-menu a {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 7px;
     }
 
-    .nav-menu a:last-child{
-        border-bottom:none;
-    }
 }
