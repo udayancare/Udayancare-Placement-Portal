@@ -11,59 +11,101 @@ const CONFIG = {
 
     API_URL: "https://script.google.com/macros/s/AKfycbzZok-P42uLsnpwr2ENRACeUVL7_xRZWu-meomwR64zyYuytLHunLsDaLSx2CVvd5dI/exec",
 
-    STORAGE:{
 
-CANDIDATE:"ucpp_candidate",
+    // =================================
+    // STORAGE KEYS
+    // =================================
 
-EMPLOYER:"ucpp_employer",
+    STORAGE: {
 
-ADMIN:"ucpp_admin",
+        CANDIDATE: "ucpp_candidate",
 
-JOB:"ucpp_job"
+        EMPLOYER: "ucpp_employer",
 
-},
+        ADMIN: "ucpp_admin",
 
-CONTACT: {
+        JOB: "ucpp_job"
 
-    PHONE: "+91-11-27821333",
-
-    EMAIL: "placement@udayancare.org",
-
-    ADDRESS: "A-43, Chittaranjan Park, New Delhi - 110019"
-
-},
+    },
 
 
-SOCIAL: {
+    // =================================
+    // GOOGLE SHEET NAMES
+    // =================================
 
-    FACEBOOK: "https://www.facebook.com/UdayanCare/",
+    SHEETS: {
 
-    LINKEDIN: "https://in.linkedin.com/company/udayan-care-ngo",
+        ADMINS: "ADMINS"
 
-    INSTAGRAM: "https://www.instagram.com/udayancare/",
+    },
 
-    WHATSAPP: "https://wa.me/918126757595"
 
-},
+    // =================================
+    // CONTACT DETAILS
+    // =================================
+
+    CONTACT: {
+
+        PHONE: "+91-11-27821333",
+
+        EMAIL: "placement@udayancare.org",
+
+        ADDRESS: "A-43, Chittaranjan Park, New Delhi - 110019"
+
+    },
+
+
+    // =================================
+    // SOCIAL LINKS
+    // =================================
+
+    SOCIAL: {
+
+        FACEBOOK: "https://www.facebook.com/UdayanCare/",
+
+        LINKEDIN: "https://in.linkedin.com/company/udayan-care-ngo",
+
+        INSTAGRAM: "https://www.instagram.com/udayancare/",
+
+        WHATSAPP: "https://wa.me/918126757595"
+
+    },
+
+
+    // =================================
+    // LOGO
+    // =================================
 
     LOGO: {
-    MAIN: "images/logo.png",
-    FAVICON: "assets/icons/favicon.ico"
-},
 
-SITE: {
+        MAIN: "images/logo.png",
 
-    NAME: "Udayan Care Placement Portal",
+        FAVICON: "assets/icons/favicon.ico"
 
-    SHORT_NAME: "UCPP",
+    },
 
-    TAGLINE: "Making Young Lives Shine Through Employment",
 
-    DESCRIPTION: "Udayan Care Placement Portal connects Shalini Fellows with verified employers and supports career growth."
+    // =================================
+    // SITE INFORMATION
+    // =================================
 
-}    
+    SITE: {
+
+        NAME: "Udayan Care Placement Portal",
+
+        SHORT_NAME: "UCPP",
+
+        TAGLINE: "Making Young Lives Shine Through Employment",
+
+        DESCRIPTION: "Udayan Care Placement Portal connects Shalini Fellows with verified employers and supports career growth."
+
+    }
+
 };
 
-// Freeze Configuration
-Object.freeze(CONFIG);
 
+// =================================
+// FREEZE CONFIGURATION
+// =================================
+
+Object.freeze(CONFIG);
