@@ -3,844 +3,492 @@
 
 <head>
 
-
 <meta charset="UTF-8">
-
 
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-
-
 <title>
-
 Admin Login | Udayan Care Placement Portal
-
 </title>
 
+<meta
+name="description"
+content="Secure Admin Login - Udayan Care Placement Portal">
 
-
-
-<meta name="description"
-content="Admin login portal for Udayan Care Placement Portal.">
-
-
-
-
-
-
-<link rel="stylesheet"
-href="css/style.css">
-
-
-
-
+<link rel="stylesheet" href="css/style.css">
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
-
 
 <link rel="preconnect"
 href="https://fonts.gstatic.com"
 crossorigin>
 
-
-
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
 rel="stylesheet">
 
-
-
-
-
-<link rel="stylesheet"
+<link
+rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+<style>
+
+/* =========================================
+   ADMIN LOGIN PAGE
+========================================= */
+
+.admin-login-page{
+    min-height:100vh;
+    background:#f5f7fb;
+}
+
+.admin-login-wrapper{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+}
+
+.admin-login-card{
+    width:100%;
+    max-width:460px;
+    background:#ffffff;
+    border-radius:18px;
+    box-shadow:0 15px 45px rgba(15,23,42,.12);
+    overflow:hidden;
+}
+
+.admin-login-header{
+    background:#172033;
+    color:#ffffff;
+    text-align:center;
+    padding:32px 25px;
+}
+
+.admin-login-logo{
+    max-height:65px;
+    max-width:200px;
+    margin-bottom:18px;
+}
+
+.admin-login-icon{
+    width:62px;
+    height:62px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.12);
+    font-size:25px;
+}
+
+.admin-login-header h1{
+    margin:0;
+    font-size:25px;
+    color:#ffffff;
+}
+
+.admin-login-header p{
+    margin:8px 0 0;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.admin-login-body{
+    padding:32px;
+}
+
+.admin-security-notice{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    background:#fff7ed;
+    border:1px solid #fed7aa;
+    border-radius:10px;
+    padding:12px 14px;
+    margin-bottom:25px;
+    font-size:13px;
+    color:#9a3412;
+    line-height:1.5;
+}
+
+.admin-security-notice i{
+    margin-top:3px;
+}
+
+.admin-login-body label{
+    font-weight:600;
+}
+
+.admin-password-box{
+    position:relative;
+}
+
+.admin-password-box input{
+    padding-right:48px;
+}
+
+.admin-password-toggle{
+    position:absolute;
+    right:16px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    color:#64748b;
+}
+
+.admin-login-btn{
+    width:100%;
+    margin-top:10px;
+}
+
+.admin-login-message{
+    margin-top:15px;
+}
+
+.admin-login-footer{
+    text-align:center;
+    padding:18px 25px;
+    border-top:1px solid #e5e7eb;
+    color:#64748b;
+    font-size:12px;
+}
+
+.admin-login-footer i{
+    margin-right:5px;
+}
+
+@media(max-width:600px){
+
+    .admin-login-wrapper{
+        padding:20px 15px;
+    }
+
+    .admin-login-body{
+        padding:25px 20px;
+    }
+
+    .admin-login-header{
+        padding:27px 20px;
+    }
+
+}
+
+</style>
 
 </head>
 
 
+<body class="admin-login-page">
 
 
+<div class="admin-login-wrapper">
 
 
-
-<body>
-
+<div class="admin-login-card">
 
 
+<!-- =========================
+ADMIN HEADER
+========================= -->
 
+<div class="admin-login-header">
 
+<img
+class="siteLogo admin-login-logo"
+alt="Udayan Care Placement Portal">
 
+<div class="admin-login-icon">
 
+<i class="fa-solid fa-shield-halved"></i>
 
-<!-- ================= ADMIN LOGIN ================= -->
-
-
-
-<section class="login-section">
-
-
-
-
-
-
-<div class="login-container">
-
-
-
-
-
-
-
-<!-- LEFT BRAND AREA -->
-
-
-<div class="login-info">
-
-
-
-
-
-<img src="images/logo.png"
-alt="Udayan Care Logo">
-
-
-
-
+</div>
 
 <h1>
-
-Udayan Care Placement Portal
-
+Admin Portal
 </h1>
 
-
-
-
-
-<h2>
-
-Admin Control Center
-
-</h2>
-
-
-
-
-
 <p>
-
-Manage candidates, employers, jobs and placement operations from one centralized dashboard.
-
+Udayan Care Placement Portal
 </p>
 
+</div>
 
 
+<!-- =========================
+LOGIN BODY
+========================= -->
+
+<div class="admin-login-body">
 
 
+<div class="admin-security-notice">
 
-
-<div class="login-points">
-
-
-
-
+<i class="fa-solid fa-lock"></i>
 
 <div>
 
+<strong>Restricted Access</strong>
 
-<i class="fa-solid fa-user-shield"></i>
+<br>
 
-
-Secure Admin Access
-
-
-</div>
-
-
-
-
-
-
-
-<div>
-
-
-<i class="fa-solid fa-database"></i>
-
-
-Placement Data Management
-
+This portal is only for authorized Udayan Care administrators.
 
 </div>
 
-
-
-
-
-
-
-<div>
-
-
-<i class="fa-solid fa-chart-line"></i>
-
-
-Reports & Analytics
-
-
 </div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- RIGHT LOGIN FORM -->
-
-
-<div class="login-card">
-
-
-
-
-
-
-<div class="login-header">
-
-
-
-<i class="fa-solid fa-user-lock"></i>
-
-
-
-<h2>
-
-Admin Login
-
-</h2>
-
-
-
-<p>
-
-Enter your credentials to continue.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
 
 
 <form id="adminLoginForm">
 
 
-
-
-
-
+<!-- =========================
+EMAIL
+========================= -->
 
 <div class="form-group">
 
+<label for="adminEmail">
 
-<label>
-
-Email Address
+Admin Email *
 
 </label>
 
-
-
-
-<div class="input-icon">
-
-
-
-<i class="fa-solid fa-envelope"></i>
-
-
-
-
 <input
-
 type="email"
-
 id="adminEmail"
-
-placeholder="Enter admin email"
-
+class="form-control"
+placeholder="Enter Admin Email"
+autocomplete="username"
 required>
 
-
 </div>
 
 
-
-</div>
-
-  <!-- PASSWORD FIELD -->
-
+<!-- =========================
+PASSWORD
+========================= -->
 
 <div class="form-group">
 
+<label for="adminPassword">
 
-<label>
-
-Password
+Password *
 
 </label>
 
-
-
-
-<div class="input-icon">
-
-
-
-<i class="fa-solid fa-lock"></i>
-
-
-
+<div class="admin-password-box">
 
 <input
-
 type="password"
-
 id="adminPassword"
-
-placeholder="Enter password"
-
+class="form-control"
+placeholder="Enter Password"
+autocomplete="current-password"
 required>
 
+<i
+id="adminPasswordToggle"
+class="fa-solid fa-eye admin-password-toggle">
+</i>
 
-
-
-<span
-class="password-toggle"
-onclick="togglePassword()">
-
-
-
-<i class="fa-solid fa-eye"></i>
-
-
-
-</span>
-
-
-
+</div>
 
 </div>
 
 
+<!-- =========================
+MESSAGE
+========================= -->
 
+<div
+id="adminLoginMessage"
+class="admin-login-message">
 </div>
 
 
-
-
-
-
-
-
-
-<!-- REMEMBER ME -->
-
-
-<div class="login-options">
-
-
-
-
-
-<label>
-
-
-<input
-
-type="checkbox"
-
-id="rememberAdmin">
-
-
-Remember Me
-
-
-</label>
-
-
-
-
-
-
-
-<a href="#">
-
-Forgot Password?
-
-</a>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- LOGIN BUTTON -->
-
-
+<!-- =========================
+LOGIN BUTTON
+========================= -->
 
 <button
-
 type="submit"
+id="adminLoginBtn"
+class="btn btn-primary admin-login-btn">
 
-class="btn btn-primary login-btn">
-
-
+<span id="adminLoginText">
 
 <i class="fa-solid fa-right-to-bracket"></i>
 
+Secure Login
 
+</span>
 
-Login To Dashboard
+<span
+id="adminLoginLoader"
+style="display:none;">
 
+<i class="fa-solid fa-spinner fa-spin"></i>
 
+Authenticating...
+
+</span>
 
 </button>
-
-
-
-
-
-
-
-
-
-<!-- ERROR MESSAGE -->
-
-
-<div
-
-id="loginMessage"
-
-class="login-message">
-
-</div>
-
-
-
-
-
-
-
 
 
 </form>
 
 
+</div>
 
 
+<!-- =========================
+FOOTER
+========================= -->
 
+<div class="admin-login-footer">
 
+<i class="fa-solid fa-shield"></i>
 
+Secure Administrative Access
 
+<br>
 
-<!-- SECURITY NOTICE -->
+© 2026 Udayan Care Placement Portal
 
-
-<div class="security-box">
-
-
-
-<i class="fa-solid fa-shield-halved"></i>
-
-
-
-
-<div>
-
-
-
-<h4>
-
-Secure Access
-
-</h4>
-
-
-
-
-<p>
-
-This area is restricted to authorized UCPP administrators only.
-
-</p>
-
-
+</div>
 
 
 </div>
 
 
-
 </div>
 
 
+<!-- =========================
+JS
+========================= -->
 
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-</section>
-
-  <!-- ================= FOOTER ================= -->
-
-
-<footer class="footer">
-
-
-<div class="container">
-
-
-
-<div class="footer-bottom">
-
-
-<p>
-
-© 2026 Udayan Care Placement Portal | Admin Panel | An Initiative of Udayan Care
-
-</p>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</footer>
-
-
-
-
-
-
-
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
 <script src="js/app.js"></script>
-
-
-
-
-
-
 
 
 <script>
 
-
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+document.addEventListener("DOMContentLoaded", function(){
 
 
+// =====================================
+// PASSWORD SHOW / HIDE
+// =====================================
 
-console.log(
-"Admin Login Page Loaded"
-);
+const password =
+document.getElementById("adminPassword");
+
+const passwordToggle =
+document.getElementById("adminPasswordToggle");
 
 
+passwordToggle.addEventListener("click", function(){
+
+if(password.type === "password"){
+
+password.type = "text";
+
+passwordToggle.classList.remove("fa-eye");
+
+passwordToggle.classList.add("fa-eye-slash");
+
+}
+else{
+
+password.type = "password";
+
+passwordToggle.classList.remove("fa-eye-slash");
+
+passwordToggle.classList.add("fa-eye");
+
+}
+
+});
 
 
+// =====================================
+// LOGIN FORM
+// =====================================
 
 const form =
-document.getElementById(
-"adminLoginForm"
-);
+document.getElementById("adminLoginForm");
 
 
+form.addEventListener("submit", function(event){
 
-
-
-
-if(form){
-
-
-
-form.addEventListener(
-"submit",
-function(e){
-
-
-
-e.preventDefault();
-
-
-
-
+event.preventDefault();
 
 
 const email =
-document.getElementById(
-"adminEmail"
-).value;
+document.getElementById("adminEmail")
+.value
+.trim();
 
 
-
-
-
-
-const password =
-document.getElementById(
-"adminPassword"
-).value;
-
-
-
-
-
+const adminPassword =
+document.getElementById("adminPassword")
+.value;
 
 
 const message =
-document.getElementById(
-"loginMessage"
-);
+document.getElementById("adminLoginMessage");
 
 
+if(email === ""){
 
-
-
-
-
-
-if(
-email === "" ||
-password === ""
-){
-
-
-
-message.innerHTML = `
-
-<div class="status status-rejected">
-
-Please enter email and password.
-
-</div>
-
-`;
-
-
+message.innerHTML =
+'<div class="alert alert-danger">Please enter Admin Email.</div>';
 
 return;
 
-
-
 }
 
 
+if(adminPassword === ""){
 
+message.innerHTML =
+'<div class="alert alert-danger">Please enter Password.</div>';
 
+return;
 
-
-
+}
 
 
 /*
+================================================
+IMPORTANT
 
-Future Google Apps Script Authentication:
+Backend Admin Login API will be connected
+in the NEXT STEP.
 
-
-
-1. Send Email + Password
-
-2. Verify Admin_Master Sheet
-
-3. Create Session
-
-4. Redirect Admin Dashboard
-
-
-
+Do NOT use Employer Login API here.
+================================================
 */
 
-
-
-
-
-
-
-message.innerHTML = `
-
-<div class="status status-approved">
-
-Login successful. Redirecting...
-
-</div>
-
-`;
-
-
-
-
-
-
-
-setTimeout(
-function(){
-
-
-
-window.location.href =
-"admin-dashboard.html";
-
-
-
-},
-1500
-);
-
-
-
-
-
-
+message.innerHTML =
+'<div class="alert alert-success">Admin Login UI is working. Backend authentication will be connected next.</div>';
 
 });
 
 
-
-}
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-// Show / Hide Password
-
-
-function togglePassword(){
-
-
-
-const password =
-document.getElementById(
-"adminPassword"
-);
-
-
-
-
-
-
-if(
-password.type === "password"
-){
-
-
-
-password.type="text";
-
-
-
-}
-
-else{
-
-
-password.type="password";
-
-
-}
-
-
-
-}
-
-
-
-
 
 </script>
 
 
-
-
-
-
-
-
-
 </body>
-
 
 </html>
