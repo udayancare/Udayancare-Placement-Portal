@@ -1,0 +1,265 @@
+
+/*
+ * =========================================================
+ * UCPP V2 — Employer Post Job
+ * Page-specific responsive styling
+ * =========================================================
+ */
+
+@import url("../candidate/profile.css");
+
+/* PAGE */
+
+.employer-post-job-page {
+  min-height: 100vh;
+  background: #f6f8fc;
+  color: #172033;
+}
+
+/* HERO */
+
+.employer-post-job-page .profile-hero {
+  padding-top: 30px;
+}
+
+.post-job-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 30px;
+  background: linear-gradient(135deg, #ffffff, #f1f6ff);
+  border: 1px solid #e2e9f3;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(28, 47, 82, 0.05);
+}
+
+.post-job-hero > div {
+  min-width: 0;
+}
+
+.post-job-hero h1 {
+  margin: 7px 0 9px;
+  color: #15233a;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.post-job-hero p {
+  max-width: 680px;
+  margin: 0;
+  color: #66758b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.post-job-hero .btn-secondary {
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+/* FORM SECTIONS */
+
+.employer-post-job-page .profile-content {
+  padding-top: 22px;
+  padding-bottom: 60px;
+}
+
+.employer-post-job-page .post-job-section {
+  margin-bottom: 20px;
+}
+
+.employer-post-job-page .section-heading {
+  margin-bottom: 22px;
+}
+
+.employer-post-job-page .section-heading h2 {
+  font-size: 21px;
+}
+
+.employer-post-job-page .section-eyebrow {
+  letter-spacing: 0.07em;
+}
+
+/* FORM INPUTS */
+
+.employer-post-job-page .form-group input,
+.employer-post-job-page .form-group select,
+.employer-post-job-page .form-group textarea {
+  font-family: inherit;
+  max-width: 100%;
+}
+
+.employer-post-job-page .form-group input[readonly] {
+  background: #f1f5fa;
+  color: #475569;
+  border-color: #dce5ef;
+  cursor: default;
+}
+
+.employer-post-job-page .form-group input[type="date"] {
+  color-scheme: light;
+}
+
+.employer-post-job-page .form-group textarea {
+  line-height: 1.65;
+}
+
+.employer-post-job-page .form-group select {
+  appearance: auto;
+  cursor: pointer;
+  color: #253249;
+  background-color: #ffffff;
+}
+
+.employer-post-job-page .form-group select option {
+  color: #253249;
+  background: #ffffff;
+}
+
+/* VALIDATION */
+
+.employer-post-job-page .form-group.has-error input,
+.employer-post-job-page .form-group.has-error select,
+.employer-post-job-page .form-group.has-error textarea {
+  border-color: #dc6262;
+  background-color: #fffafa;
+}
+
+.employer-post-job-page .field-error {
+  display: block;
+  color: #bd3434;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.employer-post-job-page .field-error:empty {
+  display: none;
+}
+
+/* INFORMATION AND ALERTS */
+
+.employer-post-job-page .profile-alert {
+  line-height: 1.65;
+}
+
+.employer-post-job-page .profile-alert[hidden] {
+  display: none !important;
+}
+
+/* FORM ACTIONS */
+
+.post-job-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 22px 0 0;
+}
+
+.post-job-actions .btn-primary,
+.post-job-actions .btn-light {
+  min-height: 46px;
+  padding: 11px 22px;
+  font-size: 14px;
+}
+
+.post-job-actions .btn-primary {
+  min-width: 160px;
+}
+
+.post-job-actions .btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* LOADING STATE */
+
+.employer-post-job-page .is-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .post-job-hero {
+    padding: 24px;
+  }
+
+  .employer-post-job-page .post-job-section {
+    margin-bottom: 16px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .employer-post-job-page .profile-hero {
+    padding-top: 18px;
+  }
+
+  .post-job-hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding: 22px 18px;
+    border-radius: 14px;
+    text-align: left;
+  }
+
+  .post-job-hero h1 {
+    font-size: 25px;
+  }
+
+  .post-job-hero p {
+    font-size: 13px;
+  }
+
+  .post-job-hero .btn-secondary {
+    width: 100%;
+  }
+
+  .employer-post-job-page .section-heading h2 {
+    font-size: 19px;
+  }
+
+  .post-job-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .post-job-actions .btn-primary,
+  .post-job-actions .btn-light {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .post-job-hero {
+    padding: 19px 15px;
+  }
+
+  .post-job-hero h1 {
+    font-size: 23px;
+  }
+
+  .employer-post-job-page .post-job-section {
+    margin-bottom: 13px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .employer-post-job-page *,
+  .employer-post-job-page *::before,
+  .employer-post-job-page *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

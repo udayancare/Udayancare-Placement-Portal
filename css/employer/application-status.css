@@ -1,0 +1,715 @@
+
+/*
+ * =========================================================
+ * UCPP V2 — Employer Application Status v1.0
+ * Page-specific responsive CSS
+ * READ-ONLY INTERFACE
+ * =========================================================
+ */
+
+@import url("../candidate/profile.css");
+
+/* PAGE */
+
+.employer-application-status-page {
+  min-height: 100vh;
+  background: #f6f8fc;
+  color: #172033;
+}
+
+.employer-application-status-page .profile-content {
+  padding-top: 22px;
+  padding-bottom: 60px;
+}
+
+/* HERO */
+
+.status-page-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 30px;
+  background: linear-gradient(135deg, #ffffff, #f1f6ff);
+  border: 1px solid #e2e9f3;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(28, 47, 82, 0.05);
+}
+
+.status-page-hero > div {
+  min-width: 0;
+}
+
+.status-page-hero h1 {
+  margin: 7px 0 9px;
+  color: #15233a;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.status-page-hero p {
+  max-width: 680px;
+  margin: 0;
+  color: #66758b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.status-page-hero .btn-secondary {
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+/* STATISTICS */
+
+.status-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.status-stat-card {
+  min-width: 0;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e3e9f2;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(27, 44, 72, 0.04);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.status-stat-card:hover {
+  border-color: #cbd9eb;
+  transform: translateY(-2px);
+}
+
+.status-stat-card > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #69778b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-stat-card strong {
+  display: block;
+  color: #1f579d;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.status-stat-card small {
+  display: block;
+  margin-top: 8px;
+  color: #8792a3;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* STATUS CARD */
+
+.status-management-card {
+  margin-bottom: 18px;
+}
+
+.status-management-card .section-heading {
+  margin-bottom: 20px;
+}
+
+/* STATUS TABS */
+
+.status-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e8edf4;
+}
+
+.status-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 39px;
+  padding: 9px 13px;
+  border: 1px solid #dfe6f0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #627087;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.status-tab:hover {
+  background: #f1f6fc;
+  border-color: #b8cce5;
+}
+
+.status-tab.active,
+.status-tab[aria-pressed="true"] {
+  background: #245b9d;
+  border-color: #245b9d;
+  color: #ffffff;
+}
+
+.status-tab span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 23px;
+  height: 23px;
+  padding: 0 6px;
+  border-radius: 12px;
+  background: #eef2f8;
+  color: #52637b;
+  font-size: 11px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.status-tab.active span,
+.status-tab[aria-pressed="true"] span {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.status-tab:focus-visible {
+  outline: 3px solid rgba(57, 118, 189, 0.35);
+  outline-offset: 2px;
+}
+
+/* SEARCH AND FILTER */
+
+.status-toolbar {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 2fr)
+    minmax(160px, 1fr)
+    minmax(160px, 1fr);
+  gap: 15px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.status-search-wrap,
+.status-filter-wrap {
+  min-width: 0;
+}
+
+.status-search-wrap label,
+.status-filter-wrap label {
+  display: block;
+  margin-bottom: 7px;
+  color: #344157;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-search-wrap input,
+.status-filter-wrap select {
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #d9e0ea;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #253249;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.status-search-wrap input:focus,
+.status-filter-wrap select:focus {
+  border-color: #3976bd;
+  box-shadow: 0 0 0 3px rgba(57, 118, 189, 0.1);
+}
+
+.status-search-wrap input::placeholder {
+  color: #a2aaba;
+}
+
+.status-filter-wrap select {
+  cursor: pointer;
+}
+
+.status-filter-wrap select option {
+  background: #ffffff;
+  color: #253249;
+}
+
+/* RESULTS BAR */
+
+.status-results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 0;
+  margin-bottom: 10px;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.status-results-bar span {
+  color: #657187;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-results-bar .btn-secondary {
+  padding: 8px 14px;
+  font-size: 12px;
+}
+
+/* TABLE */
+
+.status-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.status-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.status-table thead {
+  background: #f7f9fc;
+}
+
+.status-table th {
+  padding: 14px 12px;
+  color: #637187;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+  border-bottom: 1px solid #e8edf4;
+}
+
+.status-table td {
+  padding: 17px 12px;
+  color: #56647a;
+  font-size: 12px;
+  line-height: 1.5;
+  vertical-align: middle;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.status-table tbody tr:hover {
+  background: #f9fbfe;
+}
+
+/* CANDIDATE */
+
+.status-candidate {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 160px;
+}
+
+.status-candidate-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #eaf1fc;
+  color: #245b9d;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.status-candidate-info {
+  min-width: 0;
+}
+
+.status-candidate-name {
+  display: block;
+  margin-bottom: 4px;
+  color: #1c3557;
+  font-size: 13px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.status-candidate-email {
+  display: block;
+  color: #7a8798;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.status-job-title {
+  display: block;
+  margin-bottom: 4px;
+  color: #1c3557;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.status-job-id,
+.status-application-id {
+  display: block;
+  color: #8793a4;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+/* STATUS BADGES */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 11px;
+  border-radius: 20px;
+  background: #edf1f5;
+  color: #58677b;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status-badge.applied {
+  background: #eaf2ff;
+  color: #245b9d;
+}
+
+.status-badge.viewed {
+  background: #f1f0ff;
+  color: #6253a7;
+}
+
+.status-badge.shortlisted {
+  background: #e8f7ee;
+  color: #167443;
+}
+
+.status-badge.interview {
+  background: #fff5df;
+  color: #936300;
+}
+
+.status-badge.rejected {
+  background: #fff0f0;
+  color: #b33c3c;
+}
+
+/* ACTIONS — DISABLED UNTIL APPROVAL */
+
+.status-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.status-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 7px 10px;
+  border: 1px solid #d8e2ef;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #245b9d;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.status-action:hover:not(:disabled) {
+  background: #f1f6fc;
+  border-color: #b8cce5;
+}
+
+.status-action:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status-action.success {
+  color: #167443;
+  border-color: #bfe5cf;
+}
+
+.status-action.danger {
+  color: #b33c3c;
+  border-color: #edcccc;
+}
+
+/* SKELETON */
+
+.status-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.status-skeleton-row {
+  padding: 19px;
+  border: 1px solid #e8edf4;
+  border-radius: 11px;
+  background: #ffffff;
+}
+
+.status-skeleton-line {
+  position: relative;
+  width: 60%;
+  height: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #edf0f4;
+}
+
+.status-skeleton-title {
+  width: 35%;
+  height: 18px;
+}
+
+.status-skeleton-short {
+  width: 22%;
+  margin-bottom: 0;
+}
+
+.status-skeleton-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  animation: statusShimmer 1.35s infinite;
+}
+
+@keyframes statusShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* HIDDEN ELEMENTS */
+
+.status-table-wrap[hidden],
+.status-skeleton[hidden],
+.status-pagination[hidden],
+.employer-application-status-page .empty-state[hidden],
+.employer-application-status-page .profile-alert[hidden] {
+  display: none !important;
+}
+
+/* EMPTY STATE */
+
+.employer-application-status-page .empty-state {
+  margin-top: 18px;
+}
+
+/* PAGINATION */
+
+.status-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #edf0f5;
+}
+
+.status-pagination span {
+  color: #465a76;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-pagination button {
+  min-width: 92px;
+}
+
+/* READ-ONLY NOTICE */
+
+.status-readonly-notice {
+  padding: 17px 20px;
+  margin-bottom: 18px;
+  background: #eef5ff;
+  border: 1px solid #d5e5fa;
+  border-radius: 12px;
+}
+
+.status-readonly-notice strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #245b9d;
+  font-size: 13px;
+}
+
+.status-readonly-notice p {
+  margin: 0;
+  color: #596e89;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* FOOTER */
+
+.status-page-footer {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 4px;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .status-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .status-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .status-search-wrap {
+    grid-column: 1 / -1;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .status-page-hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+
+  .status-page-hero h1 {
+    font-size: 25px;
+  }
+
+  .status-page-hero p {
+    font-size: 13px;
+  }
+
+  .status-page-hero .btn-secondary {
+    width: 100%;
+  }
+
+  .status-stats {
+    gap: 10px;
+  }
+
+  .status-stat-card {
+    padding: 16px 13px;
+    border-radius: 12px;
+  }
+
+  .status-stat-card strong {
+    font-size: 25px;
+  }
+
+  .status-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 13px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .status-tab {
+    flex-shrink: 0;
+  }
+
+  .status-toolbar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .status-search-wrap {
+    grid-column: auto;
+  }
+
+  .status-results-bar {
+    flex-wrap: wrap;
+  }
+
+  .status-pagination {
+    gap: 10px;
+  }
+
+  .status-pagination button {
+    min-width: 75px;
+    padding: 9px 11px;
+  }
+}
+
+@media (max-width: 430px) {
+  .status-page-hero {
+    padding: 19px 15px;
+  }
+
+  .status-page-hero h1 {
+    font-size: 23px;
+  }
+
+  .status-stat-card > span {
+    font-size: 11px;
+  }
+
+  .status-stat-card small {
+    font-size: 10px;
+  }
+
+  .status-readonly-notice {
+    padding: 15px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .status-stat-card,
+  .status-tab {
+    transition: none;
+  }
+
+  .status-skeleton-line::after {
+    animation: none;
+  }
+}

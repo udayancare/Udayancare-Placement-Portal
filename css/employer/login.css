@@ -1,0 +1,44 @@
+
+/*
+ * =========================================================
+ * UCPP V2 — Employer Login
+ * Reuses Candidate Login Design
+ * =========================================================
+ */
+
+@import url("../candidate/login.css");
+
+/*
+ * Employer-specific styles
+ * Scoped to Employer Login only
+ */
+
+.employer-login-page {
+  min-height: 72vh;
+}
+
+/* Employer welcome heading */
+
+.employer-login-page .login-welcome h1 {
+  max-width: 620px;
+}
+
+/* Employer feature cards */
+
+.employer-login-page .login-feature {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Employer safety message */
+
+.employer-login-page .login-safety-note {
+  align-items: flex-start;
+}
+
+/* Mobile optimization */
+
+@media (max-width: 600px) {
+  .employer-login-page .login-welcome h1 {
+    font-size: 2.35rem;
+  }
+}

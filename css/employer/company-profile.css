@@ -1,0 +1,202 @@
+
+/*
+ * =========================================================
+ * UCPP V2 — Employer Company Profile
+ * Read-only company profile styling
+ * =========================================================
+ */
+
+@import url("../candidate/profile.css");
+
+/* PAGE */
+
+.employer-profile-page {
+  min-height: 70vh;
+}
+
+/* HERO */
+
+.employer-profile-page .profile-hero-card {
+  gap: 24px;
+  align-items: center;
+}
+
+.employer-profile-page .profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.employer-profile-page .profile-hero-info {
+  min-width: 0;
+}
+
+.employer-profile-page .profile-hero-info h1 {
+  overflow-wrap: anywhere;
+}
+
+.employer-profile-page .profile-identity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.employer-profile-page .profile-identity span {
+  overflow-wrap: anywhere;
+}
+
+/* VERIFICATION BOX */
+
+.employer-verification-box {
+  min-width: 220px;
+  max-width: 290px;
+  padding: 20px;
+  border: 1px solid #dbe5f1;
+  border-radius: 16px;
+  background: #f8fbff;
+  color: #334155;
+}
+
+.employer-verification-box > span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.employer-verification-box strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.employer-verification-box p {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* TABS */
+
+.employer-profile-page .profile-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.employer-profile-page .profile-tab {
+  cursor: pointer;
+  white-space: normal;
+  text-align: center;
+}
+
+/* READ-ONLY FIELDS */
+
+.employer-profile-page .form-group input[readonly],
+.employer-profile-page .form-group textarea[readonly] {
+  width: 100%;
+  background: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #dbe3ed;
+  cursor: default;
+  opacity: 1;
+}
+
+.employer-profile-page .form-group input[readonly]:focus,
+.employer-profile-page .form-group textarea[readonly]:focus {
+  outline: none;
+  border-color: #94a3b8;
+  box-shadow: none;
+}
+
+.employer-profile-page .form-group textarea[readonly] {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.employer-profile-page .form-group label {
+  font-weight: 600;
+}
+
+/* SECTION VISIBILITY */
+
+.employer-profile-page .profile-section[hidden],
+.employer-profile-page .profile-main[hidden],
+.employer-profile-page .profile-skeleton[hidden],
+.employer-profile-page .profile-alert[hidden] {
+  display: none !important;
+}
+
+/* ACTIONS */
+
+.employer-profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.employer-profile-actions .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .employer-profile-page .profile-hero-card {
+    flex-wrap: wrap;
+  }
+
+  .employer-verification-box {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .employer-profile-page .profile-hero-card {
+    gap: 18px;
+  }
+
+  .employer-profile-page .profile-tabs {
+    gap: 6px;
+  }
+
+  .employer-profile-page .profile-tab {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .employer-verification-box {
+    padding: 16px;
+  }
+
+  .employer-profile-actions {
+    justify-content: stretch;
+  }
+
+  .employer-profile-actions .btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .employer-profile-page *,
+  .employer-profile-page *::before,
+  .employer-profile-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

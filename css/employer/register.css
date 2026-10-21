@@ -1,0 +1,603 @@
+
+/*
+ * =========================================================
+ * UCPP V2 — Employer Registration
+ * File: css/employer/register.css
+ * Version: 1.0
+ *
+ * Page-specific styling only.
+ * No changes to global/common CSS.
+ * =========================================================
+ */
+
+.employer-register-page {
+  min-height: 70vh;
+  background: #f5f7fb;
+  color: #172b4d;
+}
+
+.employer-register-page *,
+.employer-register-page *::before,
+.employer-register-page *::after {
+  box-sizing: border-box;
+}
+
+/* PAGE LAYOUT */
+
+.employer-register-page .register-section {
+  padding: 48px 0 72px;
+}
+
+.employer-register-page .container {
+  width: min(1200px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.employer-register-page .register-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: 36px;
+  align-items: start;
+}
+
+/* INTRO PANEL */
+
+.employer-register-page .register-intro {
+  position: sticky;
+  top: 28px;
+  padding: 38px 32px;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    #12396b 0%,
+    #17569a 58%,
+    #1874ad 100%
+  );
+  color: #ffffff;
+  box-shadow: 0 16px 40px rgba(17, 54, 99, 0.13);
+}
+
+.employer-register-page .register-back-link {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 34px;
+  color: #e0efff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.employer-register-page .register-back-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.employer-register-page .register-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 7px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.11);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.employer-register-page .register-intro h1 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.employer-register-page .register-intro__description {
+  margin: 0;
+  color: #e2edfb;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* BENEFITS */
+
+.employer-register-page .register-benefits {
+  display: grid;
+  gap: 23px;
+  margin-top: 36px;
+}
+
+.employer-register-page .register-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.employer-register-page .register-benefit__icon {
+  display: flex;
+  flex: 0 0 31px;
+  width: 31px;
+  height: 31px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.17);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.employer-register-page .register-benefit strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.employer-register-page .register-benefit p {
+  margin: 0;
+  color: #dceafb;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* FREE REGISTRATION NOTE */
+
+.employer-register-page .register-free-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 38px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.employer-register-page .register-free-note__icon {
+  display: flex;
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #17569a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.employer-register-page .register-free-note strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.employer-register-page .register-free-note p {
+  margin: 0;
+  color: #e2edfb;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* REGISTRATION CARD */
+
+.employer-register-page .register-card {
+  min-width: 0;
+  padding: 36px;
+  border: 1px solid #e5eaf2;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(27, 48, 82, 0.055);
+}
+
+.employer-register-page .register-card__header {
+  margin-bottom: 30px;
+}
+
+.employer-register-page .register-card__label {
+  display: inline-block;
+  margin-bottom: 11px;
+  color: #1765a5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.employer-register-page .register-card__header h2 {
+  margin: 0 0 9px;
+  color: #172b4d;
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.employer-register-page .register-card__header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* FORM SECTIONS */
+
+.employer-register-page .register-form-section {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9edf3;
+}
+
+.employer-register-page .register-form-section h3 {
+  margin: 0 0 20px;
+  color: #173f72;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.employer-register-page .register-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.employer-register-page .form-group {
+  min-width: 0;
+  margin-bottom: 18px;
+}
+
+.employer-register-page .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #253650;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.employer-register-page .form-group label > span:not(.optional-label) {
+  color: #dc3545;
+}
+
+.employer-register-page .optional-label {
+  color: #8793a7;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* INPUTS */
+
+.employer-register-page .form-control {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #d7e0eb;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #172b4d;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.employer-register-page .form-control::placeholder {
+  color: #94a3b8;
+}
+
+.employer-register-page .form-control:focus {
+  border-color: #2479c2;
+  box-shadow: 0 0 0 3px rgba(36, 121, 194, 0.11);
+}
+
+.employer-register-page select.form-control {
+  appearance: auto;
+  color: #172b4d;
+  cursor: pointer;
+}
+
+.employer-register-page select.form-control option {
+  color: #172b4d;
+  background: #ffffff;
+}
+
+.employer-register-page textarea.form-control {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.employer-register-page .form-control.is-invalid {
+  border-color: #d63e4e;
+  background-color: #fffafb;
+}
+
+.employer-register-page .form-error {
+  display: block;
+  margin-top: 6px;
+  color: #c62e40;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.employer-register-page .form-error[hidden] {
+  display: none !important;
+}
+
+/* MOBILE INPUT */
+
+.employer-register-page .mobile-input {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  border: 1px solid #d7e0eb;
+  border-radius: 9px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.employer-register-page .mobile-input > span {
+  flex: 0 0 auto;
+  padding: 0 12px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.employer-register-page .mobile-input .form-control {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  border-left: 1px solid #e2e8f0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.employer-register-page .mobile-input:focus-within {
+  border-color: #2479c2;
+  box-shadow: 0 0 0 3px rgba(36, 121, 194, 0.11);
+}
+
+.employer-register-page .mobile-input:has(.is-invalid) {
+  border-color: #d63e4e;
+}
+
+/* PASSWORD FIELDS */
+
+.employer-register-page .password-field {
+  position: relative;
+}
+
+.employer-register-page .password-field .form-control {
+  padding-right: 66px;
+}
+
+.employer-register-page .password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  padding: 5px 7px;
+  border: 0;
+  background: transparent;
+  color: #1765a5;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.employer-register-page .password-toggle:hover {
+  color: #103c6a;
+}
+
+.employer-register-page .password-hint {
+  display: block;
+  margin-top: 7px;
+  color: #718096;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* CONSENT */
+
+.employer-register-page .consent-box {
+  margin: 4px 0 23px;
+  padding: 16px;
+  border: 1px solid #e0e7f1;
+  border-radius: 11px;
+  background: #f8fafd;
+}
+
+.employer-register-page .consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+.employer-register-page .consent-check input {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  accent-color: #1765a5;
+}
+
+/* STATUS */
+
+.employer-register-page .register-status {
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.employer-register-page .register-status[hidden] {
+  display: none !important;
+}
+
+.employer-register-page .register-status--error {
+  border: 1px solid #f2c7ce;
+  background: #fff1f2;
+  color: #ad2539;
+}
+
+.employer-register-page .register-status--success {
+  border: 1px solid #b8e2cc;
+  background: #edf9f1;
+  color: #176b43;
+}
+
+.employer-register-page .register-status--info {
+  border: 1px solid #c7def6;
+  background: #edf6ff;
+  color: #175b97;
+}
+
+/* SUBMIT */
+
+.employer-register-page .register-submit {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 9px;
+  background: #1765a5;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.employer-register-page .register-submit:hover:not(:disabled) {
+  background: #114d82;
+  transform: translateY(-1px);
+}
+
+.employer-register-page .register-submit:disabled {
+  background: #9db5ca;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.employer-register-page .register-login-text {
+  margin: 20px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.employer-register-page .register-login-text a {
+  color: #1765a5;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.employer-register-page .register-login-text a:hover {
+  text-decoration: underline;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .employer-register-page .register-layout {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 22px;
+  }
+
+  .employer-register-page .register-intro {
+    padding: 30px 24px;
+  }
+
+  .employer-register-page .register-card {
+    padding: 28px 24px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .employer-register-page .register-section {
+    padding: 24px 0 48px;
+  }
+
+  .employer-register-page .container {
+    width: min(100% - 28px, 600px);
+  }
+
+  .employer-register-page .register-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .employer-register-page .register-intro {
+    position: static;
+    padding: 28px 22px;
+    border-radius: 15px;
+  }
+
+  .employer-register-page .register-back-link {
+    margin-bottom: 22px;
+  }
+
+  .employer-register-page .register-intro h1 {
+    font-size: 27px;
+  }
+
+  .employer-register-page .register-benefits {
+    gap: 17px;
+    margin-top: 25px;
+  }
+
+  .employer-register-page .register-free-note {
+    margin-top: 25px;
+  }
+
+  .employer-register-page .register-card {
+    padding: 26px 20px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employer-register-page .register-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .employer-register-page .register-card {
+    padding: 22px 16px;
+  }
+
+  .employer-register-page .register-card__header h2 {
+    font-size: 24px;
+  }
+
+  .employer-register-page .register-intro h1 {
+    font-size: 25px;
+  }
+
+  .employer-register-page .register-form-section h3 {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .employer-register-page .form-control,
+  .employer-register-page .register-submit {
+    transition: none;
+  }
+}

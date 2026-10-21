@@ -1,0 +1,279 @@
+
+/*
+ * UCPP V2 - Employer Dashboard
+ * Reuses Candidate Dashboard Design
+ * Employer-specific styling only
+ */
+
+@import url("../candidate/dashboard.css");
+
+/* Employer Dashboard Container */
+
+.employer-dashboard{
+  min-height:100vh;
+  background:#f5f7fb;
+  color:#172033;
+}
+
+.employer-dashboard .container{
+  width:min(1180px,calc(100% - 32px));
+  margin:auto;
+}
+
+/* Company Welcome */
+
+.employer-dashboard .dashboard-welcome h1{
+  max-width:780px;
+}
+
+.employer-dashboard .dashboard-welcome h1 span{
+  color:#1769aa;
+}
+
+/* Employer Hero */
+
+.employer-dashboard .dashboard-hero-content{
+  align-items:stretch;
+}
+
+.employer-dashboard .dashboard-welcome{
+  align-self:center;
+}
+
+/* Company Summary Card */
+
+.employer-dashboard .company-summary-card{
+  background:#fff;
+  border:1px solid #e5ebf3;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 12px 35px rgba(20,33,61,.07);
+}
+
+.employer-dashboard .company-summary-label{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  color:#667085;
+  margin-bottom:10px;
+}
+
+.employer-dashboard .company-summary-name{
+  margin:0 0 8px;
+  font-size:20px;
+  font-weight:800;
+  color:#14213d;
+  overflow-wrap:anywhere;
+}
+
+.employer-dashboard .company-summary-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:15px;
+}
+
+.employer-dashboard .company-summary-meta span{
+  font-size:11px;
+  color:#667085;
+  background:#f2f6fb;
+  padding:6px 9px;
+  border-radius:7px;
+}
+
+.employer-dashboard .company-summary-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* Employer Statistics */
+
+.employer-dashboard .stat-total-jobs .stat-icon{
+  background:#edf6ff;
+  color:#1769aa;
+}
+
+.employer-dashboard .stat-active-jobs .stat-icon{
+  background:#edf9f2;
+  color:#178653;
+}
+
+.employer-dashboard .stat-applications .stat-icon{
+  background:#f2f0ff;
+  color:#6554c0;
+}
+
+.employer-dashboard .stat-shortlisted .stat-icon{
+  background:#fff6e8;
+  color:#c67812;
+}
+
+/* Employer Company Avatar */
+
+.employer-dashboard .company-avatar-wrap{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin-bottom:19px;
+}
+
+.employer-dashboard .company-avatar{
+  width:58px;
+  height:58px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:linear-gradient(135deg,#1769aa,#54a5df);
+  color:#fff;
+  font-size:20px;
+  font-weight:800;
+  flex:0 0 58px;
+}
+
+.employer-dashboard .company-profile-name{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.employer-dashboard .company-profile-name strong{
+  font-size:15px;
+  color:#172033;
+  overflow-wrap:anywhere;
+}
+
+.employer-dashboard .company-profile-name span{
+  font-size:11px;
+  color:#7a8495;
+}
+
+/* Employer Profile Information */
+
+.employer-dashboard .company-info-list{
+  border-top:1px solid #edf0f4;
+  border-bottom:1px solid #edf0f4;
+  margin-bottom:16px;
+}
+
+.employer-dashboard .company-info-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+  padding:10px 0;
+  font-size:11px;
+}
+
+.employer-dashboard .company-info-row span{
+  color:#8a94a5;
+}
+
+.employer-dashboard .company-info-row strong{
+  color:#344054;
+  text-align:right;
+  max-width:60%;
+  overflow-wrap:anywhere;
+}
+
+/* Employer Job Status */
+
+.employer-dashboard .job-status{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:5px 9px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.employer-dashboard .job-status.active{
+  background:#eaf8ef;
+  color:#178653;
+}
+
+.employer-dashboard .job-status.closed{
+  background:#fff0f0;
+  color:#c43b3b;
+}
+
+.employer-dashboard .job-status.draft{
+  background:#eef3f8;
+  color:#526174;
+}
+
+/* Application Actions */
+
+.employer-dashboard .application-item{
+  min-width:0;
+}
+
+.employer-dashboard .application-title{
+  overflow-wrap:anywhere;
+}
+
+.employer-dashboard .application-company{
+  overflow-wrap:anywhere;
+}
+
+/* Loading and Visibility */
+
+.employer-dashboard [hidden]{
+  display:none!important;
+}
+
+/* Responsive */
+
+@media(max-width:760px){
+
+  .employer-dashboard .container{
+    width:min(100% - 22px,1180px);
+  }
+
+  .employer-dashboard .dashboard-hero-content{
+    grid-template-columns:1fr;
+  }
+
+  .employer-dashboard .company-summary-card{
+    padding:17px;
+  }
+
+  .employer-dashboard .company-summary-name{
+    font-size:18px;
+  }
+
+}
+
+@media(max-width:460px){
+
+  .employer-dashboard .company-summary-actions{
+    flex-direction:column;
+  }
+
+  .employer-dashboard .company-summary-actions a{
+    width:100%;
+  }
+
+  .employer-dashboard .company-info-row{
+    gap:10px;
+  }
+
+}
+
+/* Accessibility */
+
+@media(prefers-reduced-motion:reduce){
+
+  .employer-dashboard *,
+  .employer-dashboard *::before,
+  .employer-dashboard *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+
+}
