@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Job Details | Udayan Care Placement Portal
+  </title>
+
+  <meta
+    name="description"
+    content="View job details and employment opportunities available through Udayan Care Placement Portal."
+  >
+
+
+  <!-- Common CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/common/variables.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/common/reset.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/common/base.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/common/layout.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/common/components.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/common/utilities.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/common/shell.css"
+  >
+
+
+  <!-- Page CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/public/job-details.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <div id="siteHeader"></div>
+
+
+
+  <!-- MAIN -->
+
+  <main class="job-details-page">
+
+
+    <!-- BREADCRUMB -->
+
+    <section class="job-breadcrumb">
+
+      <div class="container">
+
+        <a href="jobs.html">
+          ← Back to Jobs
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- LOADING -->
+
+    <section
+      id="jobLoading"
+      class="section"
+    >
+
+      <div class="container">
+
+        <div class="job-layout">
+
+
+          <div class="job-main-card">
+
+            <div
+              class="skeleton job-skeleton-badge"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-heading"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-company"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-text"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-text"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-text-short"
+            ></div>
+
+          </div>
+
+
+          <aside class="job-sidebar-card">
+
+            <div
+              class="skeleton job-skeleton-side-title"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-side-row"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-side-row"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-side-row"
+            ></div>
+
+            <div
+              class="skeleton job-skeleton-button"
+            ></div>
+
+          </aside>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ERROR -->
+
+    <section
+      id="jobError"
+      class="section"
+      hidden
+    >
+
+      <div class="container">
+
+        <div class="state-box">
+
+          <h2>
+            Job Not Available
+          </h2>
+
+          <p id="jobErrorMessage">
+            This job could not be loaded.
+          </p>
+
+          <a
+            href="jobs.html"
+            class="btn btn-primary"
+          >
+            View Available Jobs
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- JOB CONTENT -->
+
+    <section
+      id="jobContent"
+      class="section"
+      hidden
+    >
+
+      <div class="container">
+
+        <div class="job-layout">
+
+
+          <!-- LEFT -->
+
+          <article class="job-main-card">
+
+
+            <div
+              id="jobBadges"
+              class="job-badges"
+            ></div>
+
+
+            <h1 id="jobTitle">
+              Job Opportunity
+            </h1>
+
+
+            <div
+              id="jobCompany"
+              class="job-company"
+            ></div>
+
+
+            <div class="job-mobile-summary">
+
+              <div class="job-mobile-summary__item">
+
+                <span>
+                  Location
+                </span>
+
+                <strong id="mobileLocation">
+                  -
+                </strong>
+
+              </div>
+
+
+              <div class="job-mobile-summary__item">
+
+                <span>
+                  Salary
+                </span>
+
+                <strong id="mobileSalary">
+                  -
+                </strong>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <section
+              id="descriptionSection"
+              class="job-section"
+            >
+
+              <h2>
+                Job Description
+              </h2>
+
+              <div
+                id="jobDescription"
+                class="job-text"
+              ></div>
+
+            </section>
+
+
+
+            <!-- RESPONSIBILITIES -->
+
+            <section
+              id="responsibilitiesSection"
+              class="job-section"
+            >
+
+              <h2>
+                Key Responsibilities
+              </h2>
+
+              <div
+                id="jobResponsibilities"
+                class="job-list"
+              ></div>
+
+            </section>
+
+
+
+            <!-- SKILLS -->
+
+            <section
+              id="skillsSection"
+              class="job-section"
+            >
+
+              <h2>
+                Required Skills
+              </h2>
+
+              <div
+                id="jobSkills"
+                class="skills-list"
+              ></div>
+
+            </section>
+
+
+
+            <!-- QUALIFICATION -->
+
+            <section class="job-section">
+
+              <h2>
+                Eligibility
+              </h2>
+
+
+              <div class="eligibility-grid">
+
+
+                <div class="eligibility-item">
+
+                  <span>
+                    Qualification
+                  </span>
+
+                  <strong id="jobQualification">
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="eligibility-item">
+
+                  <span>
+                    Experience
+                  </span>
+
+                  <strong id="jobExperience">
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="eligibility-item">
+
+                  <span>
+                    Vacancies
+                  </span>
+
+                  <strong id="jobVacancies">
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="eligibility-item">
+
+                  <span>
+                    Job Category
+                  </span>
+
+                  <strong id="jobCategory">
+                    -
+                  </strong>
+
+                </div>
+
+
+              </div>
+
+            </section>
+
+
+          </article>
+
+
+
+          <!-- RIGHT SIDEBAR -->
+
+          <aside class="job-sidebar">
+
+
+            <div class="job-sidebar-card">
+
+              <h2>
+                Job Overview
+              </h2>
+
+
+              <div class="job-overview">
+
+
+                <div class="job-overview__item">
+
+                  <span>
+                    Location
+                  </span>
+
+                  <strong id="jobLocation">
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="job-overview__item">
+
+                  <span>
+                    Salary
+                  </span>
+
+                  <strong id="jobSalary">
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="job-overview__item">
+
+                  <span>
+                    Job Type
+                  </span>
+
+                  <strong id="jobType">
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="job-overview__item">
+
+                  <span>
+                    Work Mode
+                  </span>
+
+                  <strong id="jobWorkMode">
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="job-overview__item">
+
+                  <span>
+                    Posted On
+                  </span>
+
+                  <strong id="jobPostedDate">
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="job-overview__item">
+
+                  <span>
+                    Apply Before
+                  </span>
+
+                  <strong id="jobDeadline">
+                    -
+                  </strong>
+
+                </div>
+
+
+              </div>
+
+
+              <div class="job-apply-area">
+
+                <a
+                  id="applyButton"
+                  href="candidate/login.html"
+                  class="btn btn-primary job-apply-button"
+                >
+                  Apply for this Job
+                </a>
+
+                <p>
+                  Candidate login is required to apply.
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- COMPANY -->
+
+            <div class="job-sidebar-card">
+
+              <span class="sidebar-label">
+                Employer
+              </span>
+
+              <h3 id="sidebarCompany">
+                -
+              </h3>
+
+              <p id="sidebarAddress">
+                -
+              </p>
+
+            </div>
+
+
+          </aside>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <div id="siteFooter"></div>
+
+
+
+  <!-- CORE -->
+
+  <script src="js/core/config.js"></script>
+
+  <script src="js/core/api.js"></script>
+
+
+  <!-- COMMON -->
+
+  <script src="js/common/header.js"></script>
+
+  <script src="js/common/footer.js"></script>
+
+
+  <!-- PAGE -->
+
+  <script src="js/public/job-details.js"></script>
+
+
+</body>
+
+</html>

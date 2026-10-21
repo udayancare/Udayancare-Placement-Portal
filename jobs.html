@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Find Jobs | Udayan Care Placement Portal</title>
+
+  <meta
+    name="description"
+    content="Explore active employment opportunities available through Udayan Care Placement Portal."
+  >
+
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="css/common/variables.css">
+  <link rel="stylesheet" href="css/common/reset.css">
+  <link rel="stylesheet" href="css/common/base.css">
+  <link rel="stylesheet" href="css/common/layout.css">
+  <link rel="stylesheet" href="css/common/components.css">
+  <link rel="stylesheet" href="css/common/utilities.css">
+  <link rel="stylesheet" href="css/common/shell.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="css/public/jobs.css">
+</head>
+
+
+<body>
+
+  <div id="siteHeader"></div>
+
+
+  <main class="jobs-page">
+
+    <!-- HERO -->
+
+    <section class="jobs-hero">
+
+      <div class="container">
+
+        <span class="jobs-hero__eyebrow">
+          Employment Opportunities
+        </span>
+
+        <h1>
+          Find Your Next Opportunity
+        </h1>
+
+        <p>
+          Search and explore current job opportunities
+          available through Udayan Care Placement Portal.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- JOBS -->
+
+    <section class="section">
+
+      <div class="container">
+
+
+        <!-- SEARCH -->
+
+        <div class="jobs-search-panel">
+
+          <form
+            id="jobsSearchForm"
+            class="jobs-search"
+          >
+
+            <div class="jobs-search__field">
+
+              <label
+                for="jobSearch"
+                class="sr-only"
+              >
+                Search jobs
+              </label>
+
+              <input
+                id="jobSearch"
+                class="form-control"
+                type="search"
+                placeholder="Search job title, company, skill or location"
+                autocomplete="off"
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary jobs-search__button"
+            >
+              Search Jobs
+            </button>
+
+          </form>
+
+
+          <!-- FILTERS -->
+
+          <div class="jobs-filters">
+
+            <div class="jobs-filter">
+
+              <label for="cityFilter">
+                Location
+              </label>
+
+              <select
+                id="cityFilter"
+                class="form-control"
+              >
+                <option value="">
+                  All Locations
+                </option>
+              </select>
+
+            </div>
+
+
+            <div class="jobs-filter">
+
+              <label for="categoryFilter">
+                Category
+              </label>
+
+              <select
+                id="categoryFilter"
+                class="form-control"
+              >
+                <option value="">
+                  All Categories
+                </option>
+              </select>
+
+            </div>
+
+
+            <div class="jobs-filter">
+
+              <label for="jobTypeFilter">
+                Job Type
+              </label>
+
+              <select
+                id="jobTypeFilter"
+                class="form-control"
+              >
+                <option value="">
+                  All Job Types
+                </option>
+              </select>
+
+            </div>
+
+
+            <div class="jobs-filter">
+
+              <label for="workModeFilter">
+                Work Mode
+              </label>
+
+              <select
+                id="workModeFilter"
+                class="form-control"
+              >
+                <option value="">
+                  All Work Modes
+                </option>
+              </select>
+
+            </div>
+
+
+            <div class="jobs-filter jobs-filter--clear">
+
+              <button
+                type="button"
+                id="clearFilters"
+                class="btn btn-secondary"
+              >
+                Clear Filters
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RESULT HEADING -->
+
+        <div class="jobs-results-header">
+
+          <div>
+
+            <h2>
+              Available Jobs
+            </h2>
+
+            <p
+              id="jobsResultCount"
+              aria-live="polite"
+            >
+              Loading opportunities...
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- SKELETON -->
+
+        <div
+          id="jobsSkeleton"
+          class="jobs-grid"
+          aria-hidden="true"
+        >
+
+          <article class="job-card job-card--skeleton">
+            <div class="skeleton job-skeleton-badge"></div>
+            <div class="skeleton job-skeleton-title"></div>
+            <div class="skeleton job-skeleton-company"></div>
+            <div class="skeleton job-skeleton-line"></div>
+            <div class="skeleton job-skeleton-line-short"></div>
+            <div class="skeleton job-skeleton-button"></div>
+          </article>
+
+          <article class="job-card job-card--skeleton">
+            <div class="skeleton job-skeleton-badge"></div>
+            <div class="skeleton job-skeleton-title"></div>
+            <div class="skeleton job-skeleton-company"></div>
+            <div class="skeleton job-skeleton-line"></div>
+            <div class="skeleton job-skeleton-line-short"></div>
+            <div class="skeleton job-skeleton-button"></div>
+          </article>
+
+          <article class="job-card job-card--skeleton">
+            <div class="skeleton job-skeleton-badge"></div>
+            <div class="skeleton job-skeleton-title"></div>
+            <div class="skeleton job-skeleton-company"></div>
+            <div class="skeleton job-skeleton-line"></div>
+            <div class="skeleton job-skeleton-line-short"></div>
+            <div class="skeleton job-skeleton-button"></div>
+          </article>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div
+          id="jobsGrid"
+          class="jobs-grid"
+          hidden
+        ></div>
+
+
+        <!-- EMPTY -->
+
+        <div
+          id="jobsEmpty"
+          class="state-box"
+          hidden
+        >
+
+          <h3>
+            No jobs found
+          </h3>
+
+          <p>
+            Try changing your search or filters.
+          </p>
+
+          <button
+            type="button"
+            id="emptyClearFilters"
+            class="btn btn-primary"
+          >
+            View All Jobs
+          </button>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+          id="jobsError"
+          class="state-box"
+          hidden
+        >
+
+          <h3>
+            Unable to load jobs
+          </h3>
+
+          <p id="jobsErrorMessage">
+            Please try again.
+          </p>
+
+          <button
+            type="button"
+            id="retryJobs"
+            class="btn btn-primary"
+          >
+            Retry
+          </button>
+
+        </div>
+
+
+        <!-- PAGINATION -->
+
+        <nav
+          id="jobsPagination"
+          class="jobs-pagination"
+          aria-label="Job results pages"
+          hidden
+        >
+
+          <button
+            type="button"
+            id="previousPage"
+            class="btn btn-secondary"
+          >
+            ← Previous
+          </button>
+
+
+          <div
+            id="pageNumbers"
+            class="jobs-pagination__numbers"
+          ></div>
+
+
+          <button
+            type="button"
+            id="nextPage"
+            class="btn btn-secondary"
+          >
+            Next →
+          </button>
+
+        </nav>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <div id="siteFooter"></div>
+
+
+  <!-- Core -->
+  <script src="js/core/config.js"></script>
+  <script src="js/core/api.js"></script>
+
+  <!-- Common -->
+  <script src="js/common/header.js"></script>
+  <script src="js/common/footer.js"></script>
+
+  <!-- Page -->
+  <script src="js/public/jobs.js"></script>
+
+</body>
+
+</html>
