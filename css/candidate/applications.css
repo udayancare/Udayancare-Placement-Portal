@@ -1,0 +1,103 @@
+
+/* UCPP V2 - Candidate My Applications */
+.my-applications{min-height:75vh;background:#f5f7fb;color:#17243b}
+.my-applications [hidden]{display:none!important}
+.my-applications *{box-sizing:border-box}
+.applications-hero{background:linear-gradient(120deg,#112e57,#174b87);color:#fff;padding:45px 0}
+.applications-hero-content{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.applications-eyebrow{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8d9ff;margin-bottom:10px}
+.applications-hero h1{font-size:clamp(27px,4vw,38px);font-weight:800;line-height:1.2;margin:0 0 12px}
+.applications-hero p:not(.applications-eyebrow){font-size:15px;line-height:1.7;color:#dce8f8;max-width:650px;margin:0}
+.applications-explore-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#174b87!important;padding:12px 19px;border-radius:9px;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap;transition:.2s}
+.applications-explore-btn:hover{background:#eaf2ff;transform:translateY(-2px)}
+.applications-content{padding:34px 0 65px}
+.applications-toolbar{background:#fff;border:1px solid #e5eaf2;border-radius:15px;padding:25px;box-shadow:0 4px 20px rgba(17,46,87,.035)}
+.applications-toolbar-top{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:25px}
+.applications-toolbar h2{font-size:22px;color:#172b4d;font-weight:800;margin:0 0 7px}
+.applications-toolbar-top p{font-size:14px;color:#65748a;margin:0}
+.applications-total{background:#edf4ff;border:1px solid #d8e7ff;border-radius:10px;padding:11px 18px;display:flex;align-items:center;gap:13px}
+.applications-total span{font-size:13px;color:#456084;font-weight:600}
+.applications-total strong{font-size:23px;color:#174b87;font-weight:800;font-variant-numeric:tabular-nums}
+.applications-filters{display:grid;grid-template-columns:minmax(0,1fr)220px auto;gap:15px;align-items:end}
+.applications-search-wrap,.applications-status-wrap{display:flex;flex-direction:column;gap:8px;min-width:0}
+.applications-filters label{font-size:13px;color:#3d506e;font-weight:700}
+.applications-filters input,.applications-filters select{width:100%;height:44px;border:1px solid #cfd8e6;border-radius:9px;padding:0 13px;background:#fff;color:#17243b!important;font-size:14px;outline:none;transition:.2s}
+.applications-filters input::placeholder{color:#8290a5}
+.applications-filters input:focus,.applications-filters select:focus{border-color:#2463b3;box-shadow:0 0 0 3px rgba(36,99,179,.1)}
+.applications-clear-btn{height:44px;padding:0 17px;background:#eef2f8;border:1px solid #dbe2ec;border-radius:9px;color:#304563;font-size:13px;font-weight:700;cursor:pointer;transition:.2s}
+.applications-clear-btn:hover{background:#e2eaf5}
+.applications-results-bar{display:flex;align-items:center;justify-content:space-between;padding:23px 3px 14px}
+.applications-results-bar p{font-size:14px;font-weight:600;color:#607189;margin:0}
+.applications-list{display:flex;flex-direction:column;gap:14px}
+.application-card{background:#fff;border:1px solid #e4eaf2;border-radius:13px;padding:23px 25px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;box-shadow:0 3px 14px rgba(20,44,80,.035);transition:border-color .2s,box-shadow .2s}
+.application-card:hover{border-color:#bfd2ed;box-shadow:0 7px 24px rgba(20,44,80,.075)}
+.application-card-main{flex:1;min-width:0}
+.application-card h3{font-size:18px;line-height:1.45;font-weight:800;color:#1c3457;margin:0 0 6px;overflow-wrap:anywhere}
+.application-card-company{font-size:14px;color:#4e6480;font-weight:600;margin:0 0 14px}
+.application-card-meta{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;color:#758398;font-size:13px}
+.application-card-meta span{display:inline-flex;align-items:center;gap:5px}
+.application-card-meta a{color:#1761ad;text-decoration:none;font-weight:700}
+.application-card-meta a:hover{text-decoration:underline}
+.application-card-side{display:flex;flex-direction:column;align-items:flex-end;gap:13px;flex-shrink:0}
+.application-status{display:inline-flex;align-items:center;justify-content:center;border-radius:100px;padding:7px 13px;font-size:12px;font-weight:800;line-height:1.2;white-space:nowrap;background:#eef2f7;color:#526277}
+.application-status.applied{background:#e8f1ff;color:#2159a2}
+.application-status.viewed{background:#f0ebff;color:#6744aa}
+.application-status.shortlisted{background:#e4f7ed;color:#147445}
+.application-status.interview{background:#e6f6fa;color:#086e84}
+.application-status.rejected{background:#ffebed;color:#b72d40}
+.application-card-id{font-size:12px;color:#8a97a9;font-weight:600}
+.applications-pagination{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:27px;flex-wrap:wrap}
+.applications-pagination button{padding:10px 17px;background:#fff;border:1px solid #d5deeb;border-radius:9px;color:#174b87;font-weight:700;font-size:13px;cursor:pointer;transition:.2s}
+.applications-pagination button:hover:not(:disabled){background:#eaf2ff;border-color:#8fb4e6}
+.applications-pagination button:disabled{opacity:.45;cursor:not-allowed}
+.applications-pagination span{font-size:13px;color:#50627b;font-weight:700;font-variant-numeric:tabular-nums}
+.applications-empty,.applications-error{text-align:center;background:#fff;border:1px solid #e5eaf2;border-radius:15px;padding:58px 25px;margin-top:10px}
+.applications-empty-icon,.applications-error-icon{width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;margin:0 auto 19px;background:#eaf2ff;color:#2463b3}
+.applications-empty h2,.applications-error h2{font-size:22px;color:#203856;margin:0 0 10px}
+.applications-empty p,.applications-error p{font-size:14px;color:#697a90;line-height:1.7;max-width:480px;margin:0 auto 23px}
+.applications-empty .applications-explore-btn{background:#174b87;color:#fff!important}
+.applications-empty .applications-explore-btn:hover{background:#103c72}
+.applications-error-icon{background:#fff0f0;color:#c33434}
+.applications-error button{background:#174b87;color:#fff;border:0;border-radius:9px;padding:11px 22px;font-weight:700;cursor:pointer}
+.applications-error button:hover{background:#103c72}
+.application-skeleton-card{background:#fff;border:1px solid #e7ecf3;border-radius:13px;padding:26px;display:flex;justify-content:space-between;gap:20px}
+.application-skeleton-lines{width:70%;display:flex;flex-direction:column;gap:13px}
+.app-skeleton{border-radius:6px;background:linear-gradient(90deg,#edf1f7 25%,#f8faff 50%,#edf1f7 75%);background-size:200% 100%;animation:applicationShimmer 1.4s infinite linear}
+.app-skeleton-title{height:19px;width:55%}
+.app-skeleton-company{height:14px;width:35%}
+.app-skeleton-date{height:12px;width:45%}
+.app-skeleton-status{height:29px;width:105px;border-radius:50px}
+@keyframes applicationShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@media(max-width:900px){
+.applications-filters{grid-template-columns:minmax(0,1fr)190px}
+.applications-clear-btn{grid-column:1/-1;justify-self:start}
+}
+@media(max-width:600px){
+.applications-hero{padding:32px 0}
+.applications-hero-content{align-items:flex-start;flex-direction:column;gap:20px}
+.applications-hero h1{font-size:28px}
+.applications-hero p:not(.applications-eyebrow){font-size:14px}
+.applications-content{padding:22px 0 45px}
+.applications-toolbar{padding:18px;border-radius:12px}
+.applications-toolbar h2{font-size:19px}
+.applications-toolbar-top{align-items:flex-start;flex-direction:column;gap:15px;margin-bottom:20px}
+.applications-total{width:100%;justify-content:space-between}
+.applications-filters{grid-template-columns:1fr;gap:15px}
+.applications-clear-btn{grid-column:auto;width:100%}
+.application-card{padding:19px;flex-direction:column;gap:15px}
+.application-card h3{font-size:16px}
+.application-card-side{width:100%;flex-direction:row;align-items:center;justify-content:space-between}
+.application-card-meta{gap:9px 14px}
+.applications-pagination{gap:10px}
+.applications-pagination button{padding:10px 12px}
+.application-skeleton-card{padding:20px}
+.app-skeleton-title{width:90%}
+.app-skeleton-company{width:65%}
+.app-skeleton-date{width:75%}
+.app-skeleton-status{width:65px}
+.applications-empty,.applications-error{padding:42px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+.app-skeleton{animation:none}
+.application-card,.applications-explore-btn{transition:none}
+}
