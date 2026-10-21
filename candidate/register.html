@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Candidate Registration | Udayan Care Placement Portal
+  </title>
+
+  <meta
+    name="description"
+    content="Register as a candidate on the Udayan Care Placement Portal and explore employment opportunities."
+  >
+
+
+  <!-- COMMON CSS -->
+
+  <link rel="stylesheet" href="../css/common/variables.css">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/base.css">
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/components.css">
+  <link rel="stylesheet" href="../css/common/utilities.css">
+  <link rel="stylesheet" href="../css/common/shell.css">
+
+
+  <!-- PAGE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="../css/candidate/register.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <div id="siteHeader"></div>
+
+
+
+  <main class="candidate-register-page">
+
+
+    <section class="register-section">
+
+      <div class="container">
+
+
+        <div class="register-layout">
+
+
+          <!-- LEFT SIDE -->
+
+          <aside class="register-intro">
+
+
+            <a
+              href="../index.html"
+              class="register-back-link"
+            >
+              ← Back to Home
+            </a>
+
+
+            <span class="register-eyebrow">
+              Candidate Portal
+            </span>
+
+
+            <h1>
+              Start Your Journey Towards
+              the Right Opportunity
+            </h1>
+
+
+            <p class="register-intro__description">
+
+              Create your profile on the Udayan Care
+              Placement Portal to explore employment
+              opportunities and manage your applications
+              from one place.
+
+            </p>
+
+
+
+            <div class="register-benefits">
+
+
+              <div class="register-benefit">
+
+                <span class="register-benefit__icon">
+                  ✓
+                </span>
+
+                <div>
+
+                  <strong>
+                    Create Your Digital Profile
+                  </strong>
+
+                  <p>
+                    Maintain your education, skills,
+                    experience and career preferences.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+
+              <div class="register-benefit">
+
+                <span class="register-benefit__icon">
+                  ✓
+                </span>
+
+                <div>
+
+                  <strong>
+                    Explore Opportunities
+                  </strong>
+
+                  <p>
+                    Find active job opportunities relevant
+                    to your qualifications and interests.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+
+              <div class="register-benefit">
+
+                <span class="register-benefit__icon">
+                  ✓
+                </span>
+
+                <div>
+
+                  <strong>
+                    Apply & Track
+                  </strong>
+
+                  <p>
+                    Apply for suitable opportunities and
+                    track your applications.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="register-free-note">
+
+              <span class="register-free-note__icon">
+                ₹0
+              </span>
+
+              <div>
+
+                <strong>
+                  No Registration Fee
+                </strong>
+
+                <p>
+                  Udayan Care does not charge candidates
+                  any registration or placement fee.
+                </p>
+
+              </div>
+
+            </div>
+
+
+          </aside>
+
+
+
+          <!-- FORM CARD -->
+
+          <section class="register-card">
+
+
+            <div class="register-card__header">
+
+              <span class="register-card__label">
+                New Candidate
+              </span>
+
+              <h2>
+                Create Your Account
+              </h2>
+
+              <p>
+                Enter your basic details to begin your
+                registration.
+              </p>
+
+            </div>
+
+
+
+            <form
+              id="candidateRegisterForm"
+              novalidate
+            >
+
+
+              <!-- FULL NAME -->
+
+              <div class="form-group">
+
+                <label for="fullName">
+                  Full Name
+                  <span>*</span>
+                </label>
+
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your full name"
+                  maxlength="100"
+                  autocomplete="name"
+                  required
+                >
+
+                <small
+                  id="fullNameError"
+                  class="form-error"
+                  hidden
+                ></small>
+
+              </div>
+
+
+
+              <!-- MOBILE + EMAIL -->
+
+              <div class="register-form-grid">
+
+
+                <div class="form-group">
+
+                  <label for="mobile">
+                    Mobile Number
+                    <span>*</span>
+                  </label>
+
+                  <div class="mobile-input">
+
+                    <span>
+                      +91
+                    </span>
+
+                    <input
+                      id="mobile"
+                      name="mobile"
+                      type="tel"
+                      class="form-control"
+                      placeholder="10-digit number"
+                      maxlength="10"
+                      inputmode="numeric"
+                      autocomplete="tel"
+                      required
+                    >
+
+                  </div>
+
+                  <small
+                    id="mobileError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                  <label for="email">
+                    Email Address
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    placeholder="name@example.com"
+                    maxlength="150"
+                    autocomplete="email"
+                    required
+                  >
+
+                  <small
+                    id="emailError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+
+              </div>
+
+
+
+              <!-- CITY + GENDER -->
+
+              <div class="register-form-grid">
+
+
+                <div class="form-group">
+
+                  <label for="currentCity">
+                    Current City
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    id="currentCity"
+                    name="currentCity"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter current city"
+                    maxlength="80"
+                    autocomplete="address-level2"
+                    required
+                  >
+
+                  <small
+                    id="currentCityError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                  <label for="gender">
+                    Gender
+                    <span>*</span>
+                  </label>
+
+                  <select
+                    id="gender"
+                    name="gender"
+                    class="form-control"
+                    required
+                  >
+
+                    <option value="">
+                      Select gender
+                    </option>
+
+                    <option value="Female">
+                      Female
+                    </option>
+
+                    <option value="Male">
+                      Male
+                    </option>
+
+                    <option value="Other">
+                      Other
+                    </option>
+
+                    <option value="Prefer not to say">
+                      Prefer not to say
+                    </option>
+
+                  </select>
+
+                  <small
+                    id="genderError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+
+              </div>
+
+
+
+              <!-- DOB -->
+
+              <div class="form-group">
+
+                <label for="dob">
+                  Date of Birth
+                  <span>*</span>
+                </label>
+
+                <input
+                  id="dob"
+                  name="dob"
+                  type="date"
+                  class="form-control"
+                  autocomplete="bday"
+                  required
+                >
+
+                <small
+                  id="dobError"
+                  class="form-error"
+                  hidden
+                ></small>
+
+              </div>
+
+
+
+              <!-- PASSWORD -->
+
+              <div class="register-form-grid">
+
+
+                <div class="form-group">
+
+                  <label for="password">
+                    Create Password
+                    <span>*</span>
+                  </label>
+
+                  <div class="password-field">
+
+                    <input
+                      id="password"
+                      name="password"
+                      type="password"
+                      class="form-control"
+                      placeholder="Minimum 8 characters"
+                      minlength="8"
+                      maxlength="100"
+                      autocomplete="new-password"
+                      required
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-target="password"
+                      aria-label="Show password"
+                    >
+                      Show
+                    </button>
+
+                  </div>
+
+                  <small class="password-hint">
+                    Use at least 8 characters with a letter
+                    and a number.
+                  </small>
+
+                  <small
+                    id="passwordError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                  <label for="confirmPassword">
+                    Confirm Password
+                    <span>*</span>
+                  </label>
+
+                  <div class="password-field">
+
+                    <input
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      type="password"
+                      class="form-control"
+                      placeholder="Re-enter password"
+                      maxlength="100"
+                      autocomplete="new-password"
+                      required
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-target="confirmPassword"
+                      aria-label="Show password"
+                    >
+                      Show
+                    </button>
+
+                  </div>
+
+                  <small
+                    id="confirmPasswordError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+
+              </div>
+
+
+
+              <!-- CONSENT -->
+
+              <div class="consent-box">
+
+                <label class="consent-check">
+
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                  >
+
+                  <span>
+                    I confirm that the information provided
+                    is correct and I agree to use the portal
+                    responsibly.
+                  </span>
+
+                </label>
+
+                <small
+                  id="consentError"
+                  class="form-error"
+                  hidden
+                ></small>
+
+              </div>
+
+
+
+              <!-- STATUS -->
+
+              <div
+                id="registerStatus"
+                class="register-status"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></div>
+
+
+
+              <!-- BUTTON -->
+
+              <button
+                id="registerButton"
+                type="submit"
+                class="btn btn-primary register-submit"
+              >
+                Create Candidate Account
+              </button>
+
+
+
+              <p class="register-login-text">
+
+                Already registered?
+
+                <a href="login.html">
+                  Candidate Login
+                </a>
+
+              </p>
+
+
+            </form>
+
+
+          </section>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <div id="siteFooter"></div>
+
+
+
+  <!-- CORE -->
+
+  <script src="../js/core/config.js"></script>
+
+  <script src="../js/core/api.js"></script>
+
+  <script src="../js/core/session.js"></script>
+
+
+  <!-- COMMON -->
+
+  <script src="../js/common/header.js"></script>
+
+  <script src="../js/common/footer.js"></script>
+
+
+  <!-- PAGE -->
+
+  <script src="../js/candidate/register.js"></script>
+
+
+</body>
+
+</html>

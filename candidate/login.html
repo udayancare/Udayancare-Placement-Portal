@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Candidate Login | Udayan Care Placement Portal
+  </title>
+
+  <meta
+    name="description"
+    content="Candidate login for the Udayan Care Placement Portal."
+  >
+
+
+  <!-- COMMON CSS -->
+
+  <link rel="stylesheet" href="../css/common/variables.css">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/base.css">
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/components.css">
+  <link rel="stylesheet" href="../css/common/utilities.css">
+  <link rel="stylesheet" href="../css/common/shell.css">
+
+
+  <!-- PAGE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="../css/candidate/login.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <div id="siteHeader"></div>
+
+
+
+  <main class="candidate-login-page">
+
+
+    <section class="login-section">
+
+      <div class="container">
+
+
+        <div class="login-layout">
+
+
+          <!-- LEFT -->
+
+          <section class="login-welcome">
+
+
+            <a
+              href="../index.html"
+              class="login-back"
+            >
+              ← Back to Home
+            </a>
+
+
+            <div class="login-welcome__content">
+
+
+              <span class="login-eyebrow">
+                Candidate Portal
+              </span>
+
+
+              <h1>
+                Welcome Back
+              </h1>
+
+
+              <p class="login-lead">
+
+                Login to access your profile,
+                explore opportunities and manage
+                your job applications.
+
+              </p>
+
+
+
+              <div class="login-feature-list">
+
+
+                <div class="login-feature">
+
+                  <span class="login-feature__icon">
+                    01
+                  </span>
+
+                  <div>
+
+                    <strong>
+                      Explore Opportunities
+                    </strong>
+
+                    <p>
+                      Browse active employment
+                      opportunities available on the portal.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+
+                <div class="login-feature">
+
+                  <span class="login-feature__icon">
+                    02
+                  </span>
+
+                  <div>
+
+                    <strong>
+                      Manage Your Profile
+                    </strong>
+
+                    <p>
+                      Keep your education, skills and
+                      experience information updated.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+
+                <div class="login-feature">
+
+                  <span class="login-feature__icon">
+                    03
+                  </span>
+
+                  <div>
+
+                    <strong>
+                      Track Applications
+                    </strong>
+
+                    <p>
+                      View your submitted applications
+                      and their latest status.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+
+              <div class="login-safety-note">
+
+                <span class="login-safety-note__icon">
+                  ✓
+                </span>
+
+                <p>
+                  Udayan Care does not charge candidates
+                  any registration or placement fee.
+                </p>
+
+              </div>
+
+
+            </div>
+
+
+          </section>
+
+
+
+          <!-- LOGIN CARD -->
+
+          <section class="login-card">
+
+
+            <div class="login-card__top">
+
+
+              <div class="login-card__icon">
+                UC
+              </div>
+
+
+              <span class="login-card__label">
+                Candidate Login
+              </span>
+
+
+              <h2>
+                Sign in to your account
+              </h2>
+
+
+              <p>
+                Enter your registered email address
+                and password.
+              </p>
+
+
+            </div>
+
+
+
+            <form
+              id="candidateLoginForm"
+              novalidate
+            >
+
+
+              <!-- EMAIL -->
+
+              <div class="login-form-group">
+
+                <label for="loginEmail">
+                  Email Address
+                  <span>*</span>
+                </label>
+
+
+                <div class="login-input-wrap">
+
+                  <span class="login-input-icon">
+                    @
+                  </span>
+
+                  <input
+                    id="loginEmail"
+                    name="email"
+                    type="email"
+                    class="login-control"
+                    placeholder="Enter registered email"
+                    autocomplete="email"
+                    maxlength="150"
+                    required
+                  >
+
+                </div>
+
+
+                <small
+                  id="loginEmailError"
+                  class="login-error"
+                  hidden
+                ></small>
+
+              </div>
+
+
+
+              <!-- PASSWORD -->
+
+              <div class="login-form-group">
+
+
+                <div class="login-label-row">
+
+                  <label for="loginPassword">
+                    Password
+                    <span>*</span>
+                  </label>
+
+
+                  <a
+                    href="forgot-password.html"
+                    class="forgot-link"
+                  >
+                    Forgot Password?
+                  </a>
+
+                </div>
+
+
+                <div class="login-input-wrap">
+
+                  <span class="login-input-icon">
+                    ●
+                  </span>
+
+                  <input
+                    id="loginPassword"
+                    name="password"
+                    type="password"
+                    class="login-control login-control--password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    maxlength="100"
+                    required
+                  >
+
+
+                  <button
+                    id="passwordToggle"
+                    type="button"
+                    class="login-password-toggle"
+                    aria-label="Show password"
+                  >
+                    Show
+                  </button>
+
+                </div>
+
+
+                <small
+                  id="loginPasswordError"
+                  class="login-error"
+                  hidden
+                ></small>
+
+
+              </div>
+
+
+
+              <!-- STATUS -->
+
+              <div
+                id="loginStatus"
+                class="login-status"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></div>
+
+
+
+              <!-- LOGIN -->
+
+              <button
+                id="candidateLoginButton"
+                type="submit"
+                class="login-submit"
+              >
+
+                <span id="loginButtonText">
+                  Login to Candidate Portal
+                </span>
+
+              </button>
+
+
+
+              <!-- DIVIDER -->
+
+              <div class="login-divider">
+
+                <span>
+                  New to UCPP?
+                </span>
+
+              </div>
+
+
+
+              <!-- REGISTER -->
+
+              <a
+                href="register.html"
+                class="login-register-button"
+              >
+                Create Candidate Account
+              </a>
+
+
+            </form>
+
+
+
+            <div class="login-card__footer">
+
+              <span class="login-lock">
+                🔒
+              </span>
+
+              <span>
+                Your account information is protected.
+              </span>
+
+            </div>
+
+
+          </section>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <div id="siteFooter"></div>
+
+
+
+  <!-- CORE -->
+
+  <script src="../js/core/config.js"></script>
+
+  <script src="../js/core/api.js"></script>
+
+  <script src="../js/core/session.js"></script>
+
+
+  <!-- COMMON -->
+
+  <script src="../js/common/header.js"></script>
+
+  <script src="../js/common/footer.js"></script>
+
+
+  <!-- PAGE -->
+
+  <script src="../js/candidate/login.js"></script>
+
+
+</body>
+
+</html>

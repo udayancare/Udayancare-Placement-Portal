@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Candidate Dashboard | Udayan Care Placement Portal</title>
+<meta name="description" content="Manage your profile, explore jobs and track applications on Udayan Care Placement Portal.">
+<link rel="stylesheet" href="../css/common/variables.css">
+<link rel="stylesheet" href="../css/common/reset.css">
+<link rel="stylesheet" href="../css/common/base.css">
+<link rel="stylesheet" href="../css/common/layout.css">
+<link rel="stylesheet" href="../css/common/components.css">
+<link rel="stylesheet" href="../css/common/utilities.css">
+<link rel="stylesheet" href="../css/common/shell.css">
+<link rel="stylesheet" href="../css/candidate/dashboard.css">
+</head>
+<body>
+
+<header id="siteHeader"></header>
+
+<main class="candidate-dashboard">
+
+<section class="dashboard-hero">
+<div class="container">
+<div class="dashboard-hero-content">
+
+<div class="dashboard-welcome">
+<p class="dashboard-eyebrow">Candidate Dashboard</p>
+<h1>Welcome back, <span id="candidateName">Candidate</span></h1>
+<p>Explore opportunities, track your applications and keep your profile updated to improve your chances of getting hired.</p>
+</div>
+
+<div class="profile-progress-card">
+<div class="profile-progress-top">
+<div>
+<span class="profile-progress-label">Profile Completion</span>
+<strong id="profilePercentage">0%</strong>
+</div>
+<div class="progress-circle" id="profileCircle">
+<span id="profileCircleText">0%</span>
+</div>
+</div>
+
+<div class="progress-track">
+<div class="progress-bar" id="profileProgressBar" style="width:0%"></div>
+</div>
+
+<div class="profile-progress-footer">
+<span id="profileProgressMessage">Complete your profile to improve visibility.</span>
+<a href="profile.html">Complete Profile →</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="dashboard-content">
+<div class="container">
+
+<div class="dashboard-stats">
+
+<a href="available-jobs.html" class="stat-card stat-jobs" aria-label="View available jobs">
+<div class="stat-icon"><span>⌕</span></div>
+<div class="stat-content">
+<span class="stat-label">Available Jobs</span>
+<strong id="availableJobsCount">0</strong>
+<span class="stat-help">Explore opportunities</span>
+</div>
+</a>
+
+<a href="applications.html" class="stat-card stat-applications" aria-label="View applications">
+<div class="stat-icon"><span>▣</span></div>
+<div class="stat-content">
+<span class="stat-label">Applications</span>
+<strong id="applicationsCount">0</strong>
+<span class="stat-help">Jobs applied</span>
+</div>
+</a>
+
+<a href="applications.html?status=shortlisted" class="stat-card stat-shortlisted" aria-label="View shortlisted applications">
+<div class="stat-icon"><span>✓</span></div>
+<div class="stat-content">
+<span class="stat-label">Shortlisted</span>
+<strong id="shortlistedCount">0</strong>
+<span class="stat-help">Applications shortlisted</span>
+</div>
+</a>
+
+<a href="applications.html?status=interview" class="stat-card stat-interviews" aria-label="View interview applications">
+<div class="stat-icon"><span>◎</span></div>
+<div class="stat-content">
+<span class="stat-label">Interviews</span>
+<strong id="interviewsCount">0</strong>
+<span class="stat-help">Interview stage</span>
+</div>
+</a>
+
+</div>
+
+<div class="dashboard-grid">
+<div class="dashboard-main-column">
+
+<section class="dashboard-card">
+<div class="dashboard-card-header">
+<div>
+<p class="section-kicker">Your Activity</p>
+<h2>Recent Applications</h2>
+</div>
+<a href="applications.html" class="section-link">View All</a>
+</div>
+
+<div id="applicationsSkeleton" class="application-list skeleton-list">
+<div class="application-skeleton">
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-small"></div>
+</div>
+<div class="application-skeleton">
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-small"></div>
+</div>
+<div class="application-skeleton">
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-small"></div>
+</div>
+</div>
+
+<div id="recentApplications" class="application-list" hidden></div>
+
+<div id="applicationsEmpty" class="dashboard-empty" hidden>
+<div class="empty-icon">▣</div>
+<h3>No applications yet</h3>
+<p>Start exploring available jobs and apply to opportunities that match your profile.</p>
+<a href="available-jobs.html" class="dashboard-button">Explore Jobs</a>
+</div>
+</section>
+
+<section class="dashboard-card latest-jobs-card">
+<div class="dashboard-card-header">
+<div>
+<p class="section-kicker">Opportunities</p>
+<h2>Latest Jobs</h2>
+</div>
+<a href="available-jobs.html" class="section-link">View All Jobs</a>
+</div>
+
+<div id="jobsSkeleton" class="dashboard-jobs-grid">
+<div class="job-skeleton">
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-button"></div>
+</div>
+<div class="job-skeleton">
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-button"></div>
+</div>
+</div>
+
+<div id="latestJobs" class="dashboard-jobs-grid" hidden></div>
+
+<div id="jobsEmpty" class="dashboard-empty" hidden>
+<div class="empty-icon">⌕</div>
+<h3>No active jobs available</h3>
+<p>New opportunities will appear here when employers post jobs.</p>
+</div>
+</section>
+
+</div>
+
+<aside class="dashboard-sidebar">
+
+<section class="dashboard-card candidate-summary">
+<div class="dashboard-card-header">
+<div>
+<p class="section-kicker">Profile</p>
+<h2>Your Profile</h2>
+</div>
+</div>
+
+<div class="candidate-avatar-wrap">
+<div class="candidate-avatar" id="candidateAvatar">
+<span id="candidateInitials">C</span>
+</div>
+
+<div class="candidate-summary-name">
+<strong id="candidateProfileName">Candidate</strong>
+<span id="candidateQualification">Qualification not added</span>
+</div>
+</div>
+
+<div class="candidate-info-list">
+<div class="candidate-info-row">
+<span>Candidate ID</span>
+<strong id="candidateId">—</strong>
+</div>
+<div class="candidate-info-row">
+<span>Current City</span>
+<strong id="candidateCity">—</strong>
+</div>
+<div class="candidate-info-row">
+<span>Employment</span>
+<strong id="candidateEmployment">—</strong>
+</div>
+<div class="candidate-info-row">
+<span>Preferred Location</span>
+<strong id="candidatePreferredLocation">—</strong>
+</div>
+</div>
+
+<a href="profile.html" class="dashboard-outline-button">View & Update Profile</a>
+</section>
+
+<section class="dashboard-card quick-actions">
+<div class="dashboard-card-header">
+<div>
+<p class="section-kicker">Shortcuts</p>
+<h2>Quick Actions</h2>
+</div>
+</div>
+
+<div class="quick-action-list">
+
+<a href="available-jobs.html">
+<span class="quick-action-icon">⌕</span>
+<span>
+<strong>Find Jobs</strong>
+<small>Explore latest opportunities</small>
+</span>
+<span class="quick-action-arrow">→</span>
+</a>
+
+<a href="applications.html">
+<span class="quick-action-icon">▣</span>
+<span>
+<strong>My Applications</strong>
+<small>Track application status</small>
+</span>
+<span class="quick-action-arrow">→</span>
+</a>
+
+<a href="profile.html">
+<span class="quick-action-icon">○</span>
+<span>
+<strong>Update Profile</strong>
+<small>Keep your details updated</small>
+</span>
+<span class="quick-action-arrow">→</span>
+</a>
+
+</div>
+</section>
+
+<section class="dashboard-card application-overview">
+<div class="dashboard-card-header">
+<div>
+<p class="section-kicker">Application Pipeline</p>
+<h2>Status Overview</h2>
+</div>
+</div>
+
+<div class="status-overview-list">
+
+<div class="status-overview-row">
+<div><span class="status-dot status-applied"></span><span>Applied</span></div>
+<strong id="statusApplied">0</strong>
+</div>
+
+<div class="status-overview-row">
+<div><span class="status-dot status-viewed"></span><span>Viewed</span></div>
+<strong id="statusViewed">0</strong>
+</div>
+
+<div class="status-overview-row">
+<div><span class="status-dot status-shortlisted"></span><span>Shortlisted</span></div>
+<strong id="statusShortlisted">0</strong>
+</div>
+
+<div class="status-overview-row">
+<div><span class="status-dot status-interview"></span><span>Interview</span></div>
+<strong id="statusInterview">0</strong>
+</div>
+
+<div class="status-overview-row">
+<div><span class="status-dot status-rejected"></span><span>Rejected</span></div>
+<strong id="statusRejected">0</strong>
+</div>
+
+</div>
+</section>
+
+</aside>
+</div>
+
+<div id="dashboardError" class="dashboard-error" hidden>
+<strong>Unable to load dashboard</strong>
+<p id="dashboardErrorMessage">Please check your connection and try again.</p>
+<button type="button" id="dashboardRetry">Try Again</button>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer id="siteFooter"></footer>
+
+<script src="../js/core/config.js"></script>
+<script src="../js/core/api.js"></script>
+<script src="../js/core/session.js"></script>
+<script src="../js/common/header.js"></script>
+<script src="../js/common/footer.js"></script>
+<script src="../js/candidate/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>My Profile | Udayan Care Placement Portal</title>
+<meta name="description" content="Manage your personal details, education, professional profile, experience, certifications and links on Udayan Care Placement Portal.">
+
+<link rel="stylesheet" href="../css/common/variables.css">
+<link rel="stylesheet" href="../css/common/reset.css">
+<link rel="stylesheet" href="../css/common/base.css">
+<link rel="stylesheet" href="../css/common/layout.css">
+<link rel="stylesheet" href="../css/common/components.css">
+<link rel="stylesheet" href="../css/common/utilities.css">
+<link rel="stylesheet" href="../css/common/shell.css">
+<link rel="stylesheet" href="../css/candidate/profile.css">
+</head>
+
+<body>
+
+<div id="siteHeader"></div>
+
+<main class="profile-page">
+
+<!-- PROFILE HERO -->
+<section class="profile-hero">
+<div class="profile-container">
+<div class="profile-hero-card">
+
+<div class="profile-avatar-wrap">
+<div class="profile-avatar" id="profileAvatar">
+<span id="profileInitials">--</span>
+</div>
+</div>
+
+<div class="profile-hero-info">
+<div class="profile-label">Candidate Profile</div>
+<h1 id="heroName">Loading profile...</h1>
+<p id="heroMeta">Please wait while we prepare your profile.</p>
+<div class="profile-identity">
+<span id="heroCandidateId">Candidate ID: --</span>
+<span id="heroEmail">Email: --</span>
+</div>
+</div>
+
+<div class="completion-box">
+<div class="completion-top">
+<span>Profile Completion</span>
+<strong id="completionPercent">0%</strong>
+</div>
+<div class="completion-track">
+<div class="completion-bar" id="completionBar"></div>
+</div>
+<p id="completionText">Complete your profile to improve visibility.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROFILE CONTENT -->
+<section class="profile-content">
+<div class="profile-container">
+
+<div id="profileAlert" class="profile-alert" hidden></div>
+
+<!-- LOADING SKELETON -->
+<div id="profileSkeleton" class="profile-skeleton">
+
+<div class="skeleton-card">
+<div class="skeleton-line skeleton-title"></div>
+<div class="skeleton-grid">
+<div class="skeleton-field"></div>
+<div class="skeleton-field"></div>
+<div class="skeleton-field"></div>
+<div class="skeleton-field"></div>
+<div class="skeleton-field"></div>
+<div class="skeleton-field"></div>
+</div>
+</div>
+
+<div class="skeleton-card">
+<div class="skeleton-line skeleton-title"></div>
+<div class="skeleton-line"></div>
+<div class="skeleton-line"></div>
+</div>
+
+<div class="skeleton-card">
+<div class="skeleton-line skeleton-title"></div>
+<div class="skeleton-line"></div>
+</div>
+
+</div>
+
+<div id="profileMain" class="profile-main" hidden>
+
+<!-- SIX PROFILE TABS -->
+<nav class="profile-tabs" aria-label="Profile sections">
+
+<button class="profile-tab active" type="button"
+data-section="basicSection" aria-controls="basicSection">
+Personal
+</button>
+
+<button class="profile-tab" type="button"
+data-section="educationSection" aria-controls="educationSection">
+Education
+</button>
+
+<button class="profile-tab" type="button"
+data-section="professionalSection" aria-controls="professionalSection">
+Professional
+</button>
+
+<button class="profile-tab" type="button"
+data-section="experienceSection" aria-controls="experienceSection">
+Experience
+</button>
+
+<button class="profile-tab" type="button"
+data-section="certificationSection" aria-controls="certificationSection">
+Certifications
+</button>
+
+<button class="profile-tab" type="button"
+data-section="socialSection" aria-controls="socialSection">
+Social Links
+</button>
+
+</nav>
+
+<!-- SECTION 1: PERSONAL -->
+<section class="profile-section active" id="basicSection">
+<div class="section-card">
+
+<div class="section-heading section-heading-action">
+<div>
+<span class="section-eyebrow">Candidate Details</span>
+<h2>Personal Information</h2>
+<p>Review your personal information and keep your contact details accurate.</p>
+</div>
+<button type="button" class="btn-secondary" id="editPersonalBtn">
+Edit
+</button>
+</div>
+
+<form id="basicProfileForm" novalidate>
+<div class="form-grid">
+
+<div class="form-group">
+<label for="fullName">Full Name <span>*</span></label>
+<input type="text" id="fullName" name="fullName"
+maxlength="120" autocomplete="name" required>
+<small class="field-error" data-error-for="fullName"></small>
+</div>
+
+<div class="form-group">
+<label for="shaliniId">Shalini ID</label>
+<input type="text" id="shaliniId" disabled>
+<small>Managed by Udayan Care.</small>
+</div>
+
+<div class="form-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" disabled>
+<small>Login email cannot be changed from profile.</small>
+</div>
+
+<div class="form-group">
+<label for="mobile">Mobile Number</label>
+<input type="tel" id="mobile" name="mobile"
+inputmode="numeric" maxlength="10" autocomplete="tel">
+<small class="field-error" data-error-for="mobile"></small>
+</div>
+
+<div class="form-group">
+<label for="gender">Gender</label>
+<select id="gender" name="gender">
+<option value="">Select gender</option>
+<option value="Female">Female</option>
+<option value="Male">Male</option>
+<option value="Other">Other</option>
+<option value="Prefer not to say">Prefer not to say</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="dob">Date of Birth</label>
+<input type="date" id="dob" name="dob">
+<small class="field-error" data-error-for="dob"></small>
+</div>
+
+<div class="form-group">
+<label for="currentCity">Current City</label>
+<input type="text" id="currentCity" name="currentCity"
+maxlength="100" autocomplete="address-level2">
+</div>
+
+</div>
+
+<div class="form-actions">
+<button type="submit" class="btn-primary profile-save-btn"
+id="saveBasicProfile">
+<span class="button-text">Save &amp; Next</span>
+<span class="button-loader" hidden>Saving...</span>
+</button>
+</div>
+
+</form>
+</div>
+</section>
+
+<!-- SECTION 2: EDUCATION -->
+<section class="profile-section" id="educationSection">
+<div class="section-card">
+
+<div class="section-heading section-heading-action">
+<div>
+<span class="section-eyebrow">Academic Background</span>
+<h2>Education</h2>
+<p>Add multiple academic qualifications, including school, diploma, graduation and postgraduate education.</p>
+</div>
+
+<button type="button" class="btn-secondary" id="addEducationBtn">
++ Add Education
+</button>
+</div>
+
+<div id="educationList" class="record-list"></div>
+
+<div id="educationEmpty" class="empty-state" hidden>
+<div class="empty-icon">🎓</div>
+<h3>No education records added</h3>
+<p>Add your academic qualifications to complete your profile.</p>
+<button type="button" class="btn-secondary" id="emptyAddEducationBtn">
+Add Education
+</button>
+</div>
+
+<div class="form-actions">
+<button type="button" class="btn-primary" id="educationNextBtn">
+Next: Professional
+</button>
+</div>
+
+</div>
+</section>
+
+<!-- SECTION 3: PROFESSIONAL -->
+<section class="profile-section" id="professionalSection">
+<div class="section-card">
+
+<div class="section-heading section-heading-action">
+<div>
+<span class="section-eyebrow">Career Preferences</span>
+<h2>Professional Details</h2>
+<p>Share your skills, work status and job preferences.</p>
+</div>
+<button type="button" class="btn-secondary" id="editProfessionalBtn">
+Edit
+</button>
+</div>
+
+<form id="professionalProfileForm" novalidate>
+<div class="form-grid">
+
+<div class="form-group">
+<label for="preferredLocation">Preferred Job Location</label>
+<input type="text" id="preferredLocation" name="preferredLocation"
+maxlength="150" placeholder="e.g. Delhi, Noida, Gurugram">
+</div>
+
+<div class="form-group">
+<label for="education">Education (Legacy Profile Field)</label>
+<input type="text" id="education" name="education"
+maxlength="150" placeholder="e.g. Graduation">
+<small>Existing summary field retained for compatibility.</small>
+</div>
+
+<div class="form-group">
+<label for="qualification">Highest Qualification (Legacy Profile Field)</label>
+<input type="text" id="qualification" name="qualification"
+maxlength="150" placeholder="e.g. B.Com, B.Tech, MBA">
+</div>
+
+<div class="form-group">
+<label for="passingYear">Passing Year (Legacy Profile Field)</label>
+<input type="number" id="passingYear" name="passingYear"
+min="1950" max="2100" inputmode="numeric">
+<small class="field-error" data-error-for="passingYear"></small>
+</div>
+
+<div class="form-group">
+<label for="employmentStatus">Employment Status</label>
+<select id="employmentStatus" name="employmentStatus">
+<option value="">Select status</option>
+<option value="Fresher">Fresher</option>
+<option value="Employed">Employed</option>
+<option value="Unemployed">Unemployed</option>
+<option value="Internship">Internship</option>
+<option value="Student">Student</option>
+<option value="Self Employed">Self Employed</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="experience">Total Experience</label>
+<input type="text" id="experience" name="experience"
+maxlength="100" placeholder="e.g. Fresher or 2 Years">
+</div>
+
+<div class="form-group">
+<label for="expectedSalary">Expected Salary</label>
+<input type="text" id="expectedSalary" name="expectedSalary"
+maxlength="100" placeholder="e.g. ₹25,000/month">
+</div>
+
+<div class="form-group form-group-full">
+<label for="skills">Skills</label>
+<textarea id="skills" name="skills" rows="3" maxlength="1000"
+placeholder="e.g. Advanced Excel, Power BI, Communication, Sales"></textarea>
+</div>
+
+<div class="form-group form-group-full">
+<label for="aboutCandidate">About You</label>
+<textarea id="aboutCandidate" name="aboutCandidate"
+rows="5" maxlength="2000"
+placeholder="Write a short professional introduction about yourself..."></textarea>
+<div class="character-count">
+<span id="aboutCount">0</span>/2000
+</div>
+</div>
+
+</div>
+
+<div class="form-actions">
+<button type="submit" class="btn-primary profile-save-btn"
+id="saveProfessionalProfile">
+<span class="button-text">Save &amp; Next</span>
+<span class="button-loader" hidden>Saving...</span>
+</button>
+</div>
+
+</form>
+</div>
+</section>
+
+<!-- SECTION 4: EXPERIENCE -->
+<section class="profile-section" id="experienceSection">
+<div class="section-card">
+
+<div class="section-heading section-heading-action">
+<div>
+<span class="section-eyebrow">Work History</span>
+<h2>Experience</h2>
+<p>Add your previous or current work experience.</p>
+</div>
+<button type="button" class="btn-secondary" id="addExperienceBtn">
++ Add Experience
+</button>
+</div>
+
+<div id="experienceList" class="record-list"></div>
+
+<div id="experienceEmpty" class="empty-state" hidden>
+<div class="empty-icon">💼</div>
+<h3>No experience added yet</h3>
+<p>Freshers can leave this section empty. If you have worked before, add your experience here.</p>
+<button type="button" class="btn-secondary" id="emptyAddExperienceBtn">
+Add Experience
+</button>
+</div>
+
+<div class="form-actions">
+<button type="button" class="btn-primary" id="experienceNextBtn">
+Next: Certifications
+</button>
+</div>
+
+</div>
+</section>
+
+<!-- SECTION 5: CERTIFICATIONS -->
+<section class="profile-section" id="certificationSection">
+<div class="section-card">
+
+<div class="section-heading section-heading-action">
+<div>
+<span class="section-eyebrow">Learning &amp; Credentials</span>
+<h2>Certifications</h2>
+<p>Add relevant certifications, courses and professional credentials.</p>
+</div>
+
+<button type="button" class="btn-secondary" id="addCertificationBtn">
++ Add Certification
+</button>
+</div>
+
+<div id="certificationList" class="record-list"></div>
+
+<div id="certificationEmpty" class="empty-state" hidden>
+<div class="empty-icon">🏅</div>
+<h3>No certifications added</h3>
+<p>Add certifications that strengthen your professional profile.</p>
+<button type="button" class="btn-secondary" id="emptyAddCertificationBtn">
+Add Certification
+</button>
+</div>
+
+<div class="form-actions">
+<button type="button" class="btn-primary" id="certificationNextBtn">
+Next: Social Links
+</button>
+</div>
+
+</div>
+</section>
+
+<!-- SECTION 6: SOCIAL LINKS -->
+<section class="profile-section" id="socialSection">
+<div class="section-card">
+
+<div class="section-heading section-heading-action">
+<div>
+<span class="section-eyebrow">Professional Presence</span>
+<h2>Social &amp; Professional Links</h2>
+<p>Add links that help employers learn more about your work and professional profile.</p>
+</div>
+<button type="button" class="btn-secondary" id="editSocialBtn">
+Edit
+</button>
+</div>
+
+<form id="socialLinksForm" novalidate>
+<div class="form-grid">
+
+<div class="form-group">
+<label for="linkedIn">LinkedIn</label>
+<input type="url" id="linkedIn" name="linkedIn"
+placeholder="https://www.linkedin.com/in/...">
+</div>
+
+<div class="form-group">
+<label for="naukri">Naukri Profile</label>
+<input type="url" id="naukri" name="naukri"
+placeholder="https://www.naukri.com/...">
+</div>
+
+<div class="form-group">
+<label for="indeed">Indeed Profile</label>
+<input type="url" id="indeed" name="indeed"
+placeholder="https://...">
+</div>
+
+<div class="form-group">
+<label for="portfolio">Portfolio / Website</label>
+<input type="url" id="portfolio" name="portfolio"
+placeholder="https://...">
+</div>
+
+<div class="form-group">
+<label for="github">GitHub</label>
+<input type="url" id="github" name="github"
+placeholder="https://github.com/...">
+</div>
+
+<div class="form-group">
+<label for="otherLink">Other Professional Link</label>
+<input type="url" id="otherLink" name="otherLink"
+placeholder="https://...">
+</div>
+
+</div>
+
+<div class="form-actions">
+<button type="submit" class="btn-primary profile-save-btn"
+id="saveSocialLinks">
+<span class="button-text">Save Profile</span>
+<span class="button-loader" hidden>Saving...</span>
+</button>
+</div>
+
+</form>
+</div>
+</section>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- EDUCATION MODAL -->
+<div class="profile-modal" id="educationModal" hidden>
+<div class="modal-backdrop" data-close-modal="education"></div>
+
+<div class="modal-dialog" role="dialog" aria-modal="true"
+aria-labelledby="educationModalTitle">
+
+<div class="modal-header">
+<div>
+<span class="section-eyebrow">Academic Qualification</span>
+<h2 id="educationModalTitle">Add Education</h2>
+</div>
+<button type="button" class="modal-close"
+data-close-modal="education" aria-label="Close">×</button>
+</div>
+
+<form id="educationForm" novalidate>
+<input type="hidden" id="educationId">
+
+<div class="modal-body">
+<div class="form-grid">
+
+<div class="form-group">
+<label for="educationLevel">Education Level <span>*</span></label>
+<select id="educationLevel" required>
+<option value="">Select level</option>
+<option value="10th">10th</option>
+<option value="12th">12th</option>
+<option value="Diploma">Diploma</option>
+<option value="Graduation">Graduation</option>
+<option value="Post Graduation">Post Graduation</option>
+<option value="Doctorate">Doctorate</option>
+<option value="ITI">ITI</option>
+<option value="Other">Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="educationQualification">Qualification <span>*</span></label>
+<input type="text" id="educationQualification"
+maxlength="150" required
+placeholder="e.g. B.Com, B.Tech, Class XII">
+</div>
+
+<div class="form-group">
+<label for="institutionName">Institution Name <span>*</span></label>
+<input type="text" id="institutionName" maxlength="200" required>
+</div>
+
+<div class="form-group">
+<label for="boardUniversity">Board / University</label>
+<input type="text" id="boardUniversity" maxlength="200">
+</div>
+
+<div class="form-group">
+<label for="specialization">Specialization</label>
+<input type="text" id="specialization" maxlength="150"
+placeholder="e.g. Computer Science">
+</div>
+
+<div class="form-group">
+<label for="educationStatus">Education Status</label>
+<select id="educationStatus">
+<option value="Completed">Completed</option>
+<option value="Pursuing">Pursuing</option>
+<option value="Discontinued">Discontinued</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="startYear">Start Year</label>
+<input type="number" id="startYear"
+min="1950" max="2100" inputmode="numeric">
+</div>
+
+<div class="form-group">
+<label for="endYear">End / Expected Year</label>
+<input type="number" id="endYear"
+min="1950" max="2100" inputmode="numeric">
+</div>
+
+<div class="form-group form-group-full">
+<label for="educationScore">Score / CGPA / Percentage</label>
+<input type="text" id="educationScore" maxlength="100"
+placeholder="e.g. 78% or 8.2 CGPA">
+</div>
+
+</div>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="btn-light"
+data-close-modal="education">Cancel</button>
+
+<button type="submit" class="btn-primary" id="saveEducationBtn">
+<span class="button-text">Save Education</span>
+<span class="button-loader" hidden>Saving...</span>
+</button>
+</div>
+
+</form>
+</div>
+</div>
+
+<!-- EXPERIENCE MODAL -->
+<div class="profile-modal" id="experienceModal" hidden>
+<div class="modal-backdrop" data-close-modal="experience"></div>
+
+<div class="modal-dialog" role="dialog" aria-modal="true"
+aria-labelledby="experienceModalTitle">
+
+<div class="modal-header">
+<div>
+<span class="section-eyebrow">Work Experience</span>
+<h2 id="experienceModalTitle">Add Experience</h2>
+</div>
+<button type="button" class="modal-close"
+data-close-modal="experience" aria-label="Close">×</button>
+</div>
+
+<form id="experienceForm" novalidate>
+<input type="hidden" id="experienceId">
+
+<div class="modal-body">
+<div class="form-grid">
+
+<div class="form-group">
+<label for="companyName">Company Name <span>*</span></label>
+<input type="text" id="companyName" maxlength="150" required>
+</div>
+
+<div class="form-group">
+<label for="jobTitle">Job Title <span>*</span></label>
+<input type="text" id="jobTitle" maxlength="150" required>
+</div>
+
+<div class="form-group">
+<label for="employmentType">Employment Type</label>
+<select id="employmentType">
+<option value="">Select type</option>
+<option value="Full Time">Full Time</option>
+<option value="Part Time">Part Time</option>
+<option value="Internship">Internship</option>
+<option value="Contract">Contract</option>
+<option value="Freelance">Freelance</option>
+<option value="Apprenticeship">Apprenticeship</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="experienceLocation">Location</label>
+<input type="text" id="experienceLocation" maxlength="150">
+</div>
+
+<div class="form-group">
+<label for="experienceStartDate">Start Date</label>
+<input type="date" id="experienceStartDate">
+</div>
+
+<div class="form-group">
+<label for="experienceEndDate">End Date</label>
+<input type="date" id="experienceEndDate">
+</div>
+
+<div class="form-group form-group-full checkbox-group">
+<label class="checkbox-label">
+<input type="checkbox" id="currentlyWorking">
+<span>I currently work here</span>
+</label>
+</div>
+
+<div class="form-group form-group-full">
+<label for="responsibilities">Responsibilities</label>
+<textarea id="responsibilities" rows="4" maxlength="2000"
+placeholder="Describe your key responsibilities and achievements..."></textarea>
+</div>
+
+</div>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="btn-light"
+data-close-modal="experience">Cancel</button>
+
+<button type="submit" class="btn-primary" id="saveExperienceBtn">
+<span class="button-text">Save Experience</span>
+<span class="button-loader" hidden>Saving...</span>
+</button>
+</div>
+
+</form>
+</div>
+</div>
+
+<!-- CERTIFICATION MODAL -->
+<div class="profile-modal" id="certificationModal" hidden>
+<div class="modal-backdrop" data-close-modal="certification"></div>
+
+<div class="modal-dialog" role="dialog" aria-modal="true"
+aria-labelledby="certificationModalTitle">
+
+<div class="modal-header">
+<div>
+<span class="section-eyebrow">Certification</span>
+<h2 id="certificationModalTitle">Add Certification</h2>
+</div>
+<button type="button" class="modal-close"
+data-close-modal="certification" aria-label="Close">×</button>
+</div>
+
+<form id="certificationForm" novalidate>
+<input type="hidden" id="certificationId">
+
+<div class="modal-body">
+<div class="form-grid">
+
+<div class="form-group">
+<label for="certificationName">Certification Name <span>*</span></label>
+<input type="text" id="certificationName" maxlength="200" required>
+</div>
+
+<div class="form-group">
+<label for="issuingOrganization">Issuing Organization</label>
+<input type="text" id="issuingOrganization" maxlength="200">
+</div>
+
+<div class="form-group">
+<label for="issueDate">Issue Date</label>
+<input type="date" id="issueDate">
+</div>
+
+<div class="form-group">
+<label for="expiryDate">Expiry Date</label>
+<input type="date" id="expiryDate">
+</div>
+
+<div class="form-group">
+<label for="credentialId">Credential ID</label>
+<input type="text" id="credentialId" maxlength="200">
+</div>
+
+<div class="form-group">
+<label for="credentialUrl">Credential URL</label>
+<input type="url" id="credentialUrl" maxlength="1000"
+placeholder="https://...">
+</div>
+
+<div class="form-group form-group-full">
+<label for="certificationDescription">Description</label>
+<textarea id="certificationDescription"
+rows="4" maxlength="2000"></textarea>
+</div>
+
+</div>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="btn-light"
+data-close-modal="certification">Cancel</button>
+
+<button type="submit" class="btn-primary" id="saveCertificationBtn">
+<span class="button-text">Save Certification</span>
+<span class="button-loader" hidden>Saving...</span>
+</button>
+</div>
+
+</form>
+</div>
+</div>
+
+<!-- CONFIRM DELETE MODAL -->
+<div class="confirm-modal" id="confirmModal" hidden>
+<div class="modal-backdrop"></div>
+
+<div class="confirm-dialog" role="dialog" aria-modal="true">
+<div class="confirm-icon">!</div>
+<h2 id="confirmTitle">Delete record?</h2>
+<p id="confirmMessage">This action cannot be undone.</p>
+
+<div class="confirm-actions">
+<button type="button" class="btn-light"
+id="cancelConfirmBtn">Cancel</button>
+
+<button type="button" class="btn-danger"
+id="confirmDeleteBtn">Delete</button>
+</div>
+
+</div>
+</div>
+
+<div id="siteFooter"></div>
+
+<!-- CORE SCRIPTS -->
+<script src="../js/core/config.js"></script>
+<script src="../js/core/api.js"></script>
+<script src="../js/core/session.js"></script>
+<script src="../js/common/header.js"></script>
+<script src="../js/common/footer.js"></script>
+<script src="../js/candidate/profile.js"></script>
+
+</body>
+</html>

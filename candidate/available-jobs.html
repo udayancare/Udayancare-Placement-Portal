@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Explore available job opportunities on Udayan Care Placement Portal.">
+<title>Available Jobs | Udayan Care Placement Portal</title>
+<link rel="stylesheet" href="../css/common/variables.css">
+<link rel="stylesheet" href="../css/common/reset.css">
+<link rel="stylesheet" href="../css/common/base.css">
+<link rel="stylesheet" href="../css/common/layout.css">
+<link rel="stylesheet" href="../css/common/components.css">
+<link rel="stylesheet" href="../css/common/utilities.css">
+<link rel="stylesheet" href="../css/common/shell.css">
+<link rel="stylesheet" href="../css/candidate/available-jobs.css">
+</head>
+<body>
+
+<header id="siteHeader"></header>
+
+<main class="jobs-page">
+
+<section class="jobs-hero">
+<div class="jobs-container">
+<div class="jobs-hero-content">
+<div>
+<p class="jobs-eyebrow">Career Opportunities</p>
+<h1>Find Your Next Opportunity</h1>
+<p>Explore available opportunities and apply for jobs that match your skills, qualification and career goals.</p>
+</div>
+
+<div class="jobs-hero-stat">
+<span>Available Jobs</span>
+<strong id="availableJobsCount">--</strong>
+<small>Active opportunities</small>
+</div>
+</div>
+</div>
+</section>
+
+<section class="jobs-content">
+<div class="jobs-container">
+
+<div id="jobsAlert" class="jobs-alert" hidden></div>
+
+<div class="jobs-toolbar">
+<div class="jobs-search">
+<span class="search-icon" aria-hidden="true">⌕</span>
+<input type="search" id="jobSearch" placeholder="Search job title, company or skill..." autocomplete="off" aria-label="Search jobs">
+<button type="button" id="clearSearch" class="clear-search" aria-label="Clear search" hidden>×</button>
+</div>
+
+<button type="button" id="filterToggle" class="filter-toggle">
+<span>Filters</span>
+<span id="activeFilterCount" class="filter-count" hidden>0</span>
+</button>
+</div>
+
+<div class="jobs-layout">
+
+<aside class="jobs-filters" id="jobsFilters">
+<div class="filter-header">
+<div>
+<span class="section-eyebrow">Refine Results</span>
+<h2>Filters</h2>
+</div>
+<button type="button" id="closeFilters" class="close-filters" aria-label="Close filters">×</button>
+</div>
+
+<div class="filter-group">
+<label for="locationFilter">Location</label>
+<select id="locationFilter">
+<option value="">All Locations</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="jobTypeFilter">Job Type</label>
+<select id="jobTypeFilter">
+<option value="">All Job Types</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="workModeFilter">Work Mode</label>
+<select id="workModeFilter">
+<option value="">All Work Modes</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="qualificationFilter">Qualification</label>
+<select id="qualificationFilter">
+<option value="">All Qualifications</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="experienceFilter">Experience</label>
+<select id="experienceFilter">
+<option value="">All Experience Levels</option>
+</select>
+</div>
+
+<button type="button" id="clearFilters" class="clear-filters">Clear All Filters</button>
+</aside>
+
+<div class="jobs-results">
+
+<div class="jobs-results-header">
+<div>
+<h2>Available Jobs</h2>
+<p id="resultsSummary">Loading opportunities...</p>
+</div>
+
+<div class="jobs-sort">
+<label for="sortJobs">Sort</label>
+<select id="sortJobs">
+<option value="latest">Latest First</option>
+<option value="oldest">Oldest First</option>
+<option value="salary-high">Salary: High to Low</option>
+<option value="salary-low">Salary: Low to High</option>
+</select>
+</div>
+</div>
+
+<div id="jobsSkeleton" class="jobs-grid jobs-skeleton" aria-label="Loading jobs">
+<article class="job-skeleton-card">
+<div class="skeleton skeleton-company"></div>
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-text short"></div>
+<div class="skeleton skeleton-tags"></div>
+<div class="skeleton skeleton-button"></div>
+</article>
+
+<article class="job-skeleton-card">
+<div class="skeleton skeleton-company"></div>
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-text short"></div>
+<div class="skeleton skeleton-tags"></div>
+<div class="skeleton skeleton-button"></div>
+</article>
+
+<article class="job-skeleton-card">
+<div class="skeleton skeleton-company"></div>
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-text short"></div>
+<div class="skeleton skeleton-tags"></div>
+<div class="skeleton skeleton-button"></div>
+</article>
+
+<article class="job-skeleton-card">
+<div class="skeleton skeleton-company"></div>
+<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-text short"></div>
+<div class="skeleton skeleton-tags"></div>
+<div class="skeleton skeleton-button"></div>
+</article>
+</div>
+
+<div id="jobsGrid" class="jobs-grid" hidden></div>
+
+<div id="jobsEmpty" class="jobs-empty" hidden>
+<div class="empty-icon">⌕</div>
+<h3>No jobs found</h3>
+<p>We couldn't find any opportunities matching your current search or filters.</p>
+<button type="button" id="resetJobsSearch" class="jobs-button">View All Jobs</button>
+</div>
+
+<div id="jobsError" class="jobs-error" hidden>
+<div class="error-icon">!</div>
+<h3>Unable to load jobs</h3>
+<p id="jobsErrorMessage">Something went wrong while loading available opportunities.</p>
+<button type="button" id="retryJobs" class="jobs-button">Try Again</button>
+</div>
+
+<nav id="jobsPagination" class="jobs-pagination" aria-label="Jobs pagination" hidden>
+<button type="button" id="previousPage" class="pagination-button">← Previous</button>
+<div id="paginationNumbers" class="pagination-numbers"></div>
+<button type="button" id="nextPage" class="pagination-button">Next →</button>
+</nav>
+
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<div id="filterBackdrop" class="filter-backdrop" hidden></div>
+
+<footer id="siteFooter"></footer>
+
+<script src="../js/core/config.js"></script>
+<script src="../js/core/api.js"></script>
+<script src="../js/core/session.js"></script>
+<script src="../js/common/header.js"></script>
+<script src="../js/common/footer.js"></script>
+<script src="../js/candidate/available-jobs.js"></script>
+
+</body>
+</html>

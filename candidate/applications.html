@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>My Applications | Udayan Care Placement Portal</title>
+<meta name="description" content="Track your job applications and recruitment status on Udayan Care Placement Portal.">
+<link rel="stylesheet" href="../css/common/variables.css">
+<link rel="stylesheet" href="../css/common/reset.css">
+<link rel="stylesheet" href="../css/common/base.css">
+<link rel="stylesheet" href="../css/common/layout.css">
+<link rel="stylesheet" href="../css/common/components.css">
+<link rel="stylesheet" href="../css/common/utilities.css">
+<link rel="stylesheet" href="../css/common/shell.css">
+<link rel="stylesheet" href="../css/candidate/applications.css">
+</head>
+<body>
+<header id="siteHeader"></header>
+
+<main class="my-applications">
+<section class="applications-hero">
+<div class="container">
+<div class="applications-hero-content">
+<div>
+<p class="applications-eyebrow">Candidate Portal</p>
+<h1>My Applications</h1>
+<p>Track every job you've applied for and stay updated on your application progress.</p>
+</div>
+<a href="available-jobs.html" class="applications-explore-btn">Explore Jobs →</a>
+</div>
+</div>
+</section>
+
+<section class="applications-content">
+<div class="container">
+
+<div class="applications-toolbar">
+<div class="applications-toolbar-top">
+<div>
+<h2>Application History</h2>
+<p>View and manage your job application journey.</p>
+</div>
+<div class="applications-total">
+<span>Total Applications</span>
+<strong id="totalApplications">—</strong>
+</div>
+</div>
+
+<div class="applications-filters">
+<div class="applications-search-wrap">
+<label for="applicationSearch">Search applications</label>
+<input type="search" id="applicationSearch" placeholder="Search job title, company or job ID..." autocomplete="off" maxlength="100">
+</div>
+<div class="applications-status-wrap">
+<label for="applicationStatus">Application Status</label>
+<select id="applicationStatus">
+<option value="">All Statuses</option>
+<option value="Applied">Applied</option>
+<option value="Viewed">Viewed</option>
+<option value="Shortlisted">Shortlisted</option>
+<option value="Interview">Interview</option>
+<option value="Rejected">Rejected</option>
+</select>
+</div>
+<button type="button" id="clearApplicationFilters" class="applications-clear-btn">Clear Filters</button>
+</div>
+</div>
+
+<div class="applications-results-bar">
+<p id="applicationsResultText" aria-live="polite">Loading your applications...</p>
+</div>
+
+<div id="applicationsSkeleton" class="applications-list" aria-label="Loading applications">
+<div class="application-skeleton-card">
+<div class="application-skeleton-lines">
+<div class="app-skeleton app-skeleton-title"></div>
+<div class="app-skeleton app-skeleton-company"></div>
+<div class="app-skeleton app-skeleton-date"></div>
+</div>
+<div class="app-skeleton app-skeleton-status"></div>
+</div>
+<div class="application-skeleton-card">
+<div class="application-skeleton-lines">
+<div class="app-skeleton app-skeleton-title"></div>
+<div class="app-skeleton app-skeleton-company"></div>
+<div class="app-skeleton app-skeleton-date"></div>
+</div>
+<div class="app-skeleton app-skeleton-status"></div>
+</div>
+<div class="application-skeleton-card">
+<div class="application-skeleton-lines">
+<div class="app-skeleton app-skeleton-title"></div>
+<div class="app-skeleton app-skeleton-company"></div>
+<div class="app-skeleton app-skeleton-date"></div>
+</div>
+<div class="app-skeleton app-skeleton-status"></div>
+</div>
+</div>
+
+<div id="applicationsList" class="applications-list" hidden></div>
+
+<div id="applicationsEmpty" class="applications-empty" hidden>
+<div class="applications-empty-icon">▣</div>
+<h2 id="applicationsEmptyTitle">No applications yet</h2>
+<p id="applicationsEmptyMessage">You haven't applied for any jobs yet. Explore available opportunities to get started.</p>
+<a id="applicationsEmptyAction" href="available-jobs.html" class="applications-explore-btn">Explore Available Jobs →</a>
+</div>
+
+<div id="applicationsError" class="applications-error" role="alert" hidden>
+<div class="applications-error-icon">!</div>
+<h2>Unable to load applications</h2>
+<p id="applicationsErrorMessage">Something went wrong while loading your applications.</p>
+<button type="button" id="applicationsRetry">Try Again</button>
+</div>
+
+<nav id="applicationsPagination" class="applications-pagination" aria-label="Applications pagination" hidden>
+<button type="button" id="applicationsPrevious" disabled>← Previous</button>
+<span id="applicationsPageInfo">Page 1 of 1</span>
+<button type="button" id="applicationsNext" disabled>Next →</button>
+</nav>
+
+</div>
+</section>
+</main>
+
+<footer id="siteFooter"></footer>
+
+<script src="../js/core/config.js"></script>
+<script src="../js/core/api.js"></script>
+<script src="../js/core/session.js"></script>
+<script src="../js/common/header.js"></script>
+<script src="../js/common/footer.js"></script>
+<script src="../js/candidate/applications.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="View job details and career opportunities on Udayan Care Placement Portal.">
+<title>Job Details | Udayan Care Placement Portal</title>
+<link rel="stylesheet" href="../css/common/variables.css">
+<link rel="stylesheet" href="../css/common/reset.css">
+<link rel="stylesheet" href="../css/common/base.css">
+<link rel="stylesheet" href="../css/common/layout.css">
+<link rel="stylesheet" href="../css/common/components.css">
+<link rel="stylesheet" href="../css/common/utilities.css">
+<link rel="stylesheet" href="../css/common/shell.css">
+<link rel="stylesheet" href="../css/candidate/job-details.css">
+</head>
+<body>
+
+<header id="siteHeader"></header>
+
+<main class="job-details-page">
+
+<section class="job-details-top">
+<div class="container">
+<a href="available-jobs.html" class="back-jobs">← Back to Available Jobs</a>
+</div>
+</section>
+
+<section id="jobDetailsSkeleton" class="job-details-section">
+<div class="container">
+<div class="job-details-layout">
+
+<div class="job-main">
+<div class="job-card job-header-skeleton">
+<div class="skeleton skeleton-company"></div>
+<div class="skeleton skeleton-heading"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-meta"></div>
+</div>
+
+<div class="job-card">
+<div class="skeleton skeleton-section-title"></div>
+<div class="skeleton skeleton-line"></div>
+<div class="skeleton skeleton-line"></div>
+<div class="skeleton skeleton-line short"></div>
+</div>
+
+<div class="job-card">
+<div class="skeleton skeleton-section-title"></div>
+<div class="skeleton skeleton-line"></div>
+<div class="skeleton skeleton-line"></div>
+</div>
+</div>
+
+<aside class="job-sidebar">
+<div class="job-card">
+<div class="skeleton skeleton-section-title"></div>
+<div class="skeleton skeleton-line"></div>
+<div class="skeleton skeleton-line"></div>
+<div class="skeleton skeleton-button"></div>
+</div>
+</aside>
+
+</div>
+</div>
+</section>
+
+<section id="jobDetailsContent" class="job-details-section" hidden>
+<div class="container">
+<div class="job-details-layout">
+
+<div class="job-main">
+
+<article class="job-card job-header-card">
+<div class="job-header-top">
+<div>
+<p id="jobCompany" class="job-company">Company</p>
+<h1 id="jobTitle">Job Opportunity</h1>
+</div>
+<span id="jobStatus" class="job-status">Active</span>
+</div>
+
+<div id="jobMeta" class="job-meta"></div>
+
+<div class="job-posted-row">
+<span id="jobPostedDate"></span>
+<span id="jobDeadline"></span>
+</div>
+</article>
+
+<article class="job-card">
+<div class="job-section-header">
+<h2>Job Description</h2>
+</div>
+<div id="jobDescription" class="job-text"></div>
+</article>
+
+<article id="responsibilitiesSection" class="job-card" hidden>
+<div class="job-section-header">
+<h2>Key Responsibilities</h2>
+</div>
+<div id="jobResponsibilities" class="job-text"></div>
+</article>
+
+<article id="skillsSection" class="job-card" hidden>
+<div class="job-section-header">
+<h2>Skills Required</h2>
+</div>
+<div id="jobSkills" class="skills-list"></div>
+</article>
+
+<article class="job-card">
+<div class="job-section-header">
+<h2>Job Information</h2>
+</div>
+
+<div class="job-information-grid">
+
+<div class="job-info-item">
+<span>Job Type</span>
+<strong id="jobType">—</strong>
+</div>
+
+<div class="job-info-item">
+<span>Work Mode</span>
+<strong id="jobWorkMode">—</strong>
+</div>
+
+<div class="job-info-item">
+<span>Experience</span>
+<strong id="jobExperience">—</strong>
+</div>
+
+<div class="job-info-item">
+<span>Qualification</span>
+<strong id="jobQualification">—</strong>
+</div>
+
+<div class="job-info-item">
+<span>Vacancies</span>
+<strong id="jobVacancies">—</strong>
+</div>
+
+<div class="job-info-item">
+<span>Job Category</span>
+<strong id="jobCategory">—</strong>
+</div>
+
+</div>
+</article>
+
+</div>
+
+<aside class="job-sidebar">
+
+<div class="job-card apply-card">
+<p class="apply-kicker">Interested in this opportunity?</p>
+<h2>Apply for this Job</h2>
+<p>Review the job requirements carefully before submitting your application.</p>
+
+<div class="apply-summary">
+<div>
+<span>Salary</span>
+<strong id="jobSalary">Not specified</strong>
+</div>
+<div>
+<span>Location</span>
+<strong id="jobLocation">—</strong>
+</div>
+<div>
+<span>Last Date</span>
+<strong id="jobLastDate">—</strong>
+</div>
+</div>
+
+<button type="button" id="applyJobButton" class="apply-job-button">
+Apply Now
+</button>
+
+<p id="applyHelp" class="apply-help">Your profile details will be used for this application.</p>
+</div>
+
+<div class="job-card company-card">
+<span class="company-label">Hiring Company</span>
+<h3 id="sidebarCompany">Company</h3>
+<p id="jobAddress">Location details not available.</p>
+</div>
+
+<div class="job-safety-note">
+<strong>Important</strong>
+<p>Udayan Care does not charge candidates for job opportunities. Do not make any payment to apply for a job.</p>
+</div>
+
+</aside>
+
+</div>
+</div>
+</section>
+
+<section id="jobNotFound" class="job-state-section" hidden>
+<div class="container">
+<div class="job-state-card">
+<div class="state-icon">!</div>
+<h1>Job Not Available</h1>
+<p id="jobNotFoundMessage">This job may have been closed, expired or is no longer available.</p>
+<a href="available-jobs.html" class="state-button">View Available Jobs</a>
+</div>
+</div>
+</section>
+
+<section id="jobLoadError" class="job-state-section" hidden>
+<div class="container">
+<div class="job-state-card">
+<div class="state-icon">!</div>
+<h1>Unable to Load Job</h1>
+<p id="jobLoadErrorMessage">Something went wrong while loading this opportunity.</p>
+<button type="button" id="retryJobButton" class="state-button">Try Again</button>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer id="siteFooter"></footer>
+
+<script src="../js/core/config.js"></script>
+<script src="../js/core/api.js"></script>
+<script src="../js/core/session.js"></script>
+<script src="../js/common/header.js"></script>
+<script src="../js/common/footer.js"></script>
+<script src="../js/candidate/job-details.js"></script>
+
+</body>
+</html>
