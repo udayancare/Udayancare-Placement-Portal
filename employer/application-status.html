@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Application Status | Udayan Care Placement Portal</title>
+
+  <meta
+    name="description"
+    content="Review and track candidate applications across recruitment stages on Udayan Care Placement Portal."
+  >
+
+  <!-- COMMON CSS -->
+  <link rel="stylesheet" href="../css/common/variables.css">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/base.css">
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/components.css">
+  <link rel="stylesheet" href="../css/common/utilities.css">
+  <link rel="stylesheet" href="../css/common/shell.css">
+
+  <!-- PAGE CSS -->
+  <link rel="stylesheet" href="../css/employer/application-status.css">
+
+</head>
+
+<body>
+
+  <div id="siteHeader"></div>
+
+  <main class="profile-page employer-application-status-page">
+
+    <!-- HERO -->
+
+    <section class="profile-hero">
+      <div class="profile-container">
+
+        <div class="status-page-hero">
+
+          <div>
+            <span class="section-eyebrow">
+              Employer Recruitment
+            </span>
+
+            <h1>Application Status Management</h1>
+
+            <p>
+              Track candidates across recruitment stages,
+              review their applications and monitor hiring progress.
+            </p>
+          </div>
+
+          <a href="applications.html" class="btn-secondary">
+            All Applications
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+
+    <section class="profile-content">
+      <div class="profile-container">
+
+        <!-- ALERT -->
+
+        <div
+          id="statusPageAlert"
+          class="profile-alert"
+          role="alert"
+          hidden
+        ></div>
+
+        <!-- STATISTICS -->
+
+        <div class="status-stats">
+
+          <div class="status-stat-card">
+            <span>Total Applications</span>
+            <strong id="statusTotalCount">—</strong>
+            <small>All recruitment stages</small>
+          </div>
+
+          <div class="status-stat-card">
+            <span>Applied</span>
+            <strong id="statusAppliedCount">—</strong>
+            <small>New applications</small>
+          </div>
+
+          <div class="status-stat-card">
+            <span>Viewed</span>
+            <strong id="statusViewedCount">—</strong>
+            <small>Reviewed applications</small>
+          </div>
+
+          <div class="status-stat-card">
+            <span>Shortlisted</span>
+            <strong id="statusShortlistedCount">—</strong>
+            <small>Selected for next stage</small>
+          </div>
+
+          <div class="status-stat-card">
+            <span>Interview</span>
+            <strong id="statusInterviewCount">—</strong>
+            <small>Interview stage</small>
+          </div>
+
+          <div class="status-stat-card">
+            <span>Rejected</span>
+            <strong id="statusRejectedCount">—</strong>
+            <small>Rejected applications</small>
+          </div>
+
+        </div>
+
+        <!-- APPLICATION STATUS CARD -->
+
+        <section class="section-card status-management-card">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-eyebrow">
+                Recruitment Pipeline
+              </span>
+
+              <h2>Candidate Application Status</h2>
+
+              <p>
+                View applications by their current recruitment stage.
+              </p>
+            </div>
+          </div>
+
+          <!-- STATUS TABS -->
+
+          <div
+            class="status-tabs"
+            id="applicationStatusTabs"
+            role="group"
+            aria-label="Filter by application status"
+          >
+
+            <button
+              type="button"
+              class="status-tab active"
+              data-status="all"
+              aria-pressed="true"
+            >
+              All
+              <span id="tabAllCount">0</span>
+            </button>
+
+            <button
+              type="button"
+              class="status-tab"
+              data-status="Applied"
+              aria-pressed="false"
+            >
+              Applied
+              <span id="tabAppliedCount">0</span>
+            </button>
+
+            <button
+              type="button"
+              class="status-tab"
+              data-status="Viewed"
+              aria-pressed="false"
+            >
+              Viewed
+              <span id="tabViewedCount">0</span>
+            </button>
+
+            <button
+              type="button"
+              class="status-tab"
+              data-status="Shortlisted"
+              aria-pressed="false"
+            >
+              Shortlisted
+              <span id="tabShortlistedCount">0</span>
+            </button>
+
+            <button
+              type="button"
+              class="status-tab"
+              data-status="Interview"
+              aria-pressed="false"
+            >
+              Interview
+              <span id="tabInterviewCount">0</span>
+            </button>
+
+            <button
+              type="button"
+              class="status-tab"
+              data-status="Rejected"
+              aria-pressed="false"
+            >
+              Rejected
+              <span id="tabRejectedCount">0</span>
+            </button>
+
+          </div>
+
+          <!-- FILTERS -->
+
+          <div class="status-toolbar">
+
+            <div class="status-search-wrap">
+              <label for="statusSearch">
+                Search Candidates
+              </label>
+
+              <input
+                type="search"
+                id="statusSearch"
+                placeholder="Candidate, application ID, job title..."
+                autocomplete="off"
+              >
+            </div>
+
+            <div class="status-filter-wrap">
+              <label for="statusJobFilter">
+                Job
+              </label>
+
+              <select id="statusJobFilter">
+                <option value="all">All Jobs</option>
+              </select>
+            </div>
+
+            <div class="status-filter-wrap">
+              <label for="statusSort">
+                Sort By
+              </label>
+
+              <select id="statusSort">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="candidate">Candidate A–Z</option>
+                <option value="job">Job Title A–Z</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- RESULT COUNT -->
+
+          <div class="status-results-bar">
+
+            <span id="statusResultsCount" aria-live="polite">
+              Loading applications...
+            </span>
+
+            <button
+              type="button"
+              id="statusRefreshButton"
+              class="btn-secondary"
+            >
+              Refresh
+            </button>
+
+          </div>
+
+          <!-- SKELETON -->
+
+          <div id="statusSkeleton" class="status-skeleton">
+
+            <div class="status-skeleton-row">
+              <div class="status-skeleton-line status-skeleton-title"></div>
+              <div class="status-skeleton-line"></div>
+              <div class="status-skeleton-line status-skeleton-short"></div>
+            </div>
+
+            <div class="status-skeleton-row">
+              <div class="status-skeleton-line status-skeleton-title"></div>
+              <div class="status-skeleton-line"></div>
+              <div class="status-skeleton-line status-skeleton-short"></div>
+            </div>
+
+            <div class="status-skeleton-row">
+              <div class="status-skeleton-line status-skeleton-title"></div>
+              <div class="status-skeleton-line"></div>
+              <div class="status-skeleton-line status-skeleton-short"></div>
+            </div>
+
+          </div>
+
+          <!-- APPLICATIONS TABLE -->
+
+          <div
+            id="statusTableWrap"
+            class="status-table-wrap"
+            hidden
+          >
+
+            <table class="status-table">
+
+              <thead>
+                <tr>
+                  <th scope="col">Candidate</th>
+                  <th scope="col">Applied Job</th>
+                  <th scope="col">Application ID</th>
+                  <th scope="col">Applied Date</th>
+                  <th scope="col">Current Status</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+
+              <tbody id="statusTableBody"></tbody>
+
+            </table>
+
+          </div>
+
+          <!-- EMPTY STATE -->
+
+          <div
+            id="statusEmpty"
+            class="empty-state"
+            hidden
+          >
+
+            <div class="empty-icon" aria-hidden="true">
+              📋
+            </div>
+
+            <h3 id="statusEmptyTitle">
+              No applications found
+            </h3>
+
+            <p id="statusEmptyDescription">
+              Applications matching your selected status
+              will appear here.
+            </p>
+
+            <a
+              href="applications.html"
+              id="statusEmptyAction"
+              class="btn-primary"
+            >
+              View All Applications
+            </a>
+
+          </div>
+
+          <!-- PAGINATION -->
+
+          <div
+            id="statusPagination"
+            class="status-pagination"
+            hidden
+          >
+
+            <button
+              type="button"
+              id="statusPreviousButton"
+              class="btn-secondary"
+              disabled
+            >
+              Previous
+            </button>
+
+            <span id="statusPageInfo" aria-live="polite">
+              Page 1 of 1
+            </span>
+
+            <button
+              type="button"
+              id="statusNextButton"
+              class="btn-secondary"
+              disabled
+            >
+              Next
+            </button>
+
+          </div>
+
+        </section>
+
+        <!-- READ-ONLY NOTICE -->
+
+        <div class="status-readonly-notice">
+          <strong>Recruitment Status Tracking</strong>
+          <p>
+            You can review application statuses here.
+            Status updates will be enabled after the
+            management functionality is approved.
+          </p>
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="status-page-footer">
+          <a href="dashboard.html" class="btn-light">
+            Back to Dashboard
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <!-- CORE JS -->
+
+  <script src="../js/core/config.js"></script>
+  <script src="../js/core/api.js"></script>
+  <script src="../js/core/session.js"></script>
+
+  <!-- COMMON JS -->
+
+  <script src="../js/common/header.js"></script>
+  <script src="../js/common/footer.js"></script>
+
+  <!-- PAGE JS -->
+
+  <script src="../js/employer/application-status.js"></script>
+
+</body>
+</html>

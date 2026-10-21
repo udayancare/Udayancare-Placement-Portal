@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Applications | Udayan Care Placement Portal</title>
+
+  <meta
+    name="description"
+    content="View and export candidate applications received for your job postings on Udayan Care Placement Portal."
+  >
+
+  <!-- COMMON CSS -->
+
+  <link rel="stylesheet" href="../css/common/variables.css">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/base.css">
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/components.css">
+  <link rel="stylesheet" href="../css/common/utilities.css">
+  <link rel="stylesheet" href="../css/common/shell.css">
+
+  <!-- PAGE CSS -->
+
+  <link rel="stylesheet" href="../css/employer/applications.css">
+
+  <!-- EXCEL EXPORT UI STYLES -->
+
+  <style>
+    .applications-export-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+
+      margin: 20px 0;
+      padding: 20px 22px;
+
+      background: linear-gradient(
+        135deg,
+        #f0f7ff,
+        #ffffff
+      );
+
+      border: 1px solid #d5e5f8;
+      border-radius: 14px;
+    }
+
+    .applications-export-info {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .applications-export-info h3 {
+      margin: 0 0 6px;
+      color: #17345b;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .applications-export-info p {
+      margin: 0;
+      color: #61718a;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .applications-export-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .applications-export-actions button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      min-height: 42px;
+      padding: 10px 15px;
+
+      border-radius: 9px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .applications-export-actions button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .applications-export-actions .export-all-button {
+      background: #1f579d;
+      color: #ffffff;
+      border: 1px solid #1f579d;
+    }
+
+    .applications-export-actions .export-all-button:hover:not(:disabled) {
+      background: #17477f;
+    }
+
+    .applications-export-actions .export-job-button {
+      background: #ffffff;
+      color: #1f579d;
+      border: 1px solid #a9c5e7;
+    }
+
+    .applications-export-actions .export-job-button:hover:not(:disabled) {
+      background: #eaf3ff;
+    }
+
+    .applications-export-note {
+      display: block;
+      margin-top: 9px;
+      color: #66768c;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 700px) {
+      .applications-export-panel {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 17px;
+      }
+
+      .applications-export-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .applications-export-actions button {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <div id="siteHeader"></div>
+
+  <main class="profile-page employer-applications-page">
+
+    <!-- PAGE HERO -->
+
+    <section class="profile-hero">
+
+      <div class="profile-container">
+
+        <div class="applications-hero">
+
+          <div>
+
+            <span class="section-eyebrow">
+              Employer Recruitment
+            </span>
+
+            <h1>Candidate Applications</h1>
+
+            <p>
+              Review applications received for your job postings,
+              explore candidate details and monitor recruitment progress.
+            </p>
+
+          </div>
+
+          <a href="manage-jobs.html" class="btn-secondary">
+            Manage Jobs
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- MAIN CONTENT -->
+
+    <section class="profile-content">
+
+      <div class="profile-container">
+
+        <!-- ALERT -->
+
+        <div
+          id="applicationsAlert"
+          class="profile-alert"
+          role="alert"
+          hidden
+        ></div>
+
+        <!-- STATISTICS -->
+
+        <div class="applications-stats">
+
+          <div class="application-stat-card">
+
+            <span class="application-stat-label">
+              Total Applications
+            </span>
+
+            <strong id="totalApplicationsCount">—</strong>
+
+            <small>Applications received</small>
+
+          </div>
+
+          <div class="application-stat-card">
+
+            <span class="application-stat-label">
+              Applied
+            </span>
+
+            <strong id="appliedApplicationsCount">—</strong>
+
+            <small>New applications</small>
+
+          </div>
+
+          <div class="application-stat-card">
+
+            <span class="application-stat-label">
+              Shortlisted
+            </span>
+
+            <strong id="shortlistedApplicationsCount">—</strong>
+
+            <small>Shortlisted candidates</small>
+
+          </div>
+
+          <div class="application-stat-card">
+
+            <span class="application-stat-label">
+              Interview
+            </span>
+
+            <strong id="interviewApplicationsCount">—</strong>
+
+            <small>Interview stage</small>
+
+          </div>
+
+        </div>
+
+        <!-- APPLICATIONS CARD -->
+
+        <section class="section-card applications-card">
+
+          <div class="section-heading">
+
+            <div>
+
+              <span class="section-eyebrow">
+                Recruitment Pipeline
+              </span>
+
+              <h2>Received Applications</h2>
+
+              <p>
+                Search, filter and review candidates who applied
+                to your job opportunities.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- FILTERS -->
+
+          <div class="applications-toolbar">
+
+            <div class="applications-search-wrap">
+
+              <label for="applicationSearch">
+                Search Applications
+              </label>
+
+              <input
+                type="search"
+                id="applicationSearch"
+                placeholder="Candidate name, job title, application ID..."
+                autocomplete="off"
+              >
+
+            </div>
+
+            <div class="applications-filter-wrap">
+
+              <label for="applicationJobFilter">
+                Job
+              </label>
+
+              <select id="applicationJobFilter">
+
+                <option value="all">
+                  All Jobs
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="applications-filter-wrap">
+
+              <label for="applicationStatusFilter">
+                Status
+              </label>
+
+              <select id="applicationStatusFilter">
+
+                <option value="all">All Statuses</option>
+                <option value="Applied">Applied</option>
+                <option value="Viewed">Viewed</option>
+                <option value="Shortlisted">Shortlisted</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Interview">Interview</option>
+
+              </select>
+
+            </div>
+
+            <div class="applications-filter-wrap">
+
+              <label for="applicationSort">
+                Sort By
+              </label>
+
+              <select id="applicationSort">
+
+                <option value="newest">
+                  Newest First
+                </option>
+
+                <option value="oldest">
+                  Oldest First
+                </option>
+
+                <option value="candidate">
+                  Candidate Name A–Z
+                </option>
+
+                <option value="job">
+                  Job Title A–Z
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <!-- EXCEL EXPORT PANEL -->
+
+          <div
+            class="applications-export-panel"
+            aria-label="Export candidate applications"
+          >
+
+            <div class="applications-export-info">
+
+              <h3>Export Applications to Excel</h3>
+
+              <p>
+                Download application records for recruitment review,
+                screening and follow-up.
+              </p>
+
+              <small class="applications-export-note">
+                Export All includes applications across your jobs.
+                Export Job includes applications for the job selected above.
+              </small>
+
+            </div>
+
+            <div class="applications-export-actions">
+
+              <button
+                type="button"
+                id="exportAllApplicationsButton"
+                class="export-all-button"
+                disabled
+                title="Download applications for all your jobs"
+              >
+                <span aria-hidden="true">↓</span>
+                Export All
+              </button>
+
+              <button
+                type="button"
+                id="exportJobApplicationsButton"
+                class="export-job-button"
+                disabled
+                title="Select a specific job from the Job filter to export"
+              >
+                <span aria-hidden="true">↓</span>
+                Export Job
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- RESULTS BAR -->
+
+          <div class="applications-results-bar">
+
+            <span
+              id="applicationsResultCount"
+              aria-live="polite"
+            >
+              Loading applications...
+            </span>
+
+            <button
+              type="button"
+              id="refreshApplicationsButton"
+              class="btn-secondary"
+            >
+              Refresh
+            </button>
+
+          </div>
+
+          <!-- LOADING SKELETON -->
+
+          <div
+            id="applicationsSkeleton"
+            class="applications-skeleton"
+          >
+
+            <div class="application-skeleton-row">
+
+              <div class="application-skeleton-line application-skeleton-title"></div>
+              <div class="application-skeleton-line"></div>
+              <div class="application-skeleton-line application-skeleton-short"></div>
+
+            </div>
+
+            <div class="application-skeleton-row">
+
+              <div class="application-skeleton-line application-skeleton-title"></div>
+              <div class="application-skeleton-line"></div>
+              <div class="application-skeleton-line application-skeleton-short"></div>
+
+            </div>
+
+            <div class="application-skeleton-row">
+
+              <div class="application-skeleton-line application-skeleton-title"></div>
+              <div class="application-skeleton-line"></div>
+              <div class="application-skeleton-line application-skeleton-short"></div>
+
+            </div>
+
+          </div>
+
+          <!-- APPLICATIONS TABLE -->
+
+          <div
+            id="applicationsTableWrap"
+            class="applications-table-wrap"
+            hidden
+          >
+
+            <table class="applications-table">
+
+              <thead>
+
+                <tr>
+
+                  <th scope="col">
+                    Candidate
+                  </th>
+
+                  <th scope="col">
+                    Applied Job
+                  </th>
+
+                  <th scope="col">
+                    Qualification
+                  </th>
+
+                  <th scope="col">
+                    Location
+                  </th>
+
+                  <th scope="col">
+                    Applied Date
+                  </th>
+
+                  <th scope="col">
+                    Status
+                  </th>
+
+                  <th scope="col">
+                    Actions
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody id="applicationsTableBody"></tbody>
+
+            </table>
+
+          </div>
+
+          <!-- EMPTY STATE -->
+
+          <div
+            id="applicationsEmpty"
+            class="empty-state"
+            hidden
+          >
+
+            <div class="empty-icon" aria-hidden="true">
+              📩
+            </div>
+
+            <h3 id="applicationsEmptyTitle">
+              No applications found
+            </h3>
+
+            <p id="applicationsEmptyDescription">
+              Candidate applications will appear here
+              once they apply to your jobs.
+            </p>
+
+            <a
+              href="manage-jobs.html"
+              id="applicationsEmptyAction"
+              class="btn-primary"
+            >
+              View Your Jobs
+            </a>
+
+          </div>
+
+          <!-- PAGINATION -->
+
+          <div
+            id="applicationsPagination"
+            class="applications-pagination"
+            hidden
+          >
+
+            <button
+              type="button"
+              id="applicationsPreviousButton"
+              class="btn-secondary"
+              disabled
+            >
+              Previous
+            </button>
+
+            <span
+              id="applicationsPageInfo"
+              aria-live="polite"
+            >
+              Page 1 of 1
+            </span>
+
+            <button
+              type="button"
+              id="applicationsNextButton"
+              class="btn-secondary"
+              disabled
+            >
+              Next
+            </button>
+
+          </div>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <div class="applications-footer">
+
+          <a href="dashboard.html" class="btn-light">
+            Back to Dashboard
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- GLOBAL FOOTER -->
+
+  <div id="siteFooter"></div>
+
+  <!-- CORE JAVASCRIPT -->
+
+  <script src="../js/core/config.js"></script>
+  <script src="../js/core/api.js"></script>
+  <script src="../js/core/session.js"></script>
+
+  <!-- COMMON COMPONENTS -->
+
+  <script src="../js/common/header.js"></script>
+  <script src="../js/common/footer.js"></script>
+
+  <!-- PAGE JAVASCRIPT -->
+
+  <script src="../js/employer/applications.js"></script>
+
+</body>
+</html>

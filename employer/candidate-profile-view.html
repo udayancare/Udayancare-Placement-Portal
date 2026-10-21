@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Candidate Profile | Udayan Care Placement Portal</title>
+
+  <meta
+    name="description"
+    content="View candidate digital resume, education, skills, work experience, certifications and application details on Udayan Care Placement Portal."
+  >
+
+  <!-- COMMON CSS -->
+  <link rel="stylesheet" href="../css/common/variables.css">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/base.css">
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/components.css">
+  <link rel="stylesheet" href="../css/common/utilities.css">
+  <link rel="stylesheet" href="../css/common/shell.css">
+
+  <!-- PAGE CSS -->
+  <link rel="stylesheet" href="../css/employer/candidate-profile-view.css">
+
+</head>
+
+<body>
+
+  <!-- SHARED HEADER -->
+  <div id="siteHeader"></div>
+
+  <main
+    id="mainContent"
+    class="profile-page employer-candidate-view-page"
+  >
+
+    <!-- PAGE HERO -->
+    <section class="profile-hero">
+      <div class="profile-container">
+
+        <div class="candidate-view-hero">
+
+          <div>
+            <span class="section-eyebrow">
+              Employer Recruitment
+            </span>
+
+            <h1>Candidate Digital Resume</h1>
+
+            <p>
+              Review candidate qualifications, skills,
+              experience, certifications and application details.
+            </p>
+          </div>
+
+          <a
+            href="applications.html"
+            id="candidateBackLink"
+            class="btn-secondary"
+          >
+            Back to Applications
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section
+      class="profile-content"
+      aria-label="Candidate profile information"
+    >
+      <div class="profile-container">
+
+        <!-- ALERT -->
+        <div
+          id="candidateViewAlert"
+          class="profile-alert"
+          role="alert"
+          aria-live="assertive"
+          hidden
+        ></div>
+
+        <!-- LOADING SKELETON -->
+        <div
+          id="candidateViewSkeleton"
+          class="candidate-view-skeleton"
+          role="status"
+          aria-label="Loading candidate profile"
+        >
+
+          <div class="candidate-skeleton-header">
+
+            <div class="candidate-skeleton-avatar"></div>
+
+            <div class="candidate-skeleton-info">
+              <div class="candidate-skeleton-line wide"></div>
+              <div class="candidate-skeleton-line"></div>
+              <div class="candidate-skeleton-line short"></div>
+            </div>
+
+          </div>
+
+          <div class="candidate-skeleton-card">
+            <div class="candidate-skeleton-line wide"></div>
+            <div class="candidate-skeleton-line"></div>
+            <div class="candidate-skeleton-line"></div>
+          </div>
+
+          <div class="candidate-skeleton-card">
+            <div class="candidate-skeleton-line wide"></div>
+            <div class="candidate-skeleton-line"></div>
+            <div class="candidate-skeleton-line"></div>
+          </div>
+
+          <span class="sr-only">
+            Loading candidate profile...
+          </span>
+
+        </div>
+
+        <!-- PROFILE CONTENT -->
+        <div id="candidateViewContent" hidden>
+
+          <!-- CANDIDATE SUMMARY -->
+          <section
+            class="section-card candidate-summary-card"
+            aria-label="Candidate summary"
+          >
+
+            <div class="candidate-summary-layout">
+
+              <!-- PHOTO -->
+              <div class="candidate-photo-wrap">
+
+                <img
+                  id="candidateProfilePhoto"
+                  class="candidate-profile-photo"
+                  alt="Candidate profile photo"
+                  loading="lazy"
+                  decoding="async"
+                  hidden
+                >
+
+                <div
+                  id="candidateAvatarFallback"
+                  class="candidate-avatar-fallback"
+                  aria-hidden="true"
+                >
+                  C
+                </div>
+
+              </div>
+
+              <!-- SUMMARY DETAILS -->
+              <div class="candidate-summary-details">
+
+                <span class="section-eyebrow">
+                  Candidate Profile
+                </span>
+
+                <h2 id="candidateFullName">—</h2>
+
+                <p id="candidateHeadline">
+                  Candidate Digital Resume
+                </p>
+
+                <div class="candidate-summary-meta">
+                  <span id="candidateCurrentCity">—</span>
+                  <span id="candidateEducationSummary">—</span>
+                  <span id="candidateExperienceSummary">—</span>
+                </div>
+
+                <div class="candidate-profile-ids">
+
+                  <span>
+                    Candidate ID:
+                    <strong id="candidateId">—</strong>
+                  </span>
+
+                  <span>
+                    Application ID:
+                    <strong id="candidateApplicationId">—</strong>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <!-- APPLICATION STATUS -->
+              <div class="candidate-summary-status">
+
+                <span class="candidate-status-label">
+                  Application Status
+                </span>
+
+                <span
+                  id="candidateApplicationStatus"
+                  class="status-badge"
+                >
+                  —
+                </span>
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <!-- TWO-COLUMN LAYOUT -->
+          <div class="candidate-view-grid">
+
+            <!-- LEFT COLUMN -->
+            <div class="candidate-view-main">
+
+              <!-- ABOUT -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Professional Overview
+                    </span>
+                    <h2>About Candidate</h2>
+                  </div>
+                </div>
+
+                <p
+                  id="candidateAbout"
+                  class="candidate-about-text"
+                >—</p>
+
+              </section>
+
+              <!-- EDUCATION -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Academic Background
+                    </span>
+                    <h2>Education &amp; Qualification</h2>
+                  </div>
+                </div>
+
+                <div class="candidate-detail-grid">
+
+                  <div class="candidate-detail-item">
+                    <span>Education</span>
+                    <strong id="candidateEducation">—</strong>
+                  </div>
+
+                  <div class="candidate-detail-item">
+                    <span>Qualification</span>
+                    <strong id="candidateQualification">—</strong>
+                  </div>
+
+                  <div class="candidate-detail-item">
+                    <span>Passing Year</span>
+                    <strong id="candidatePassingYear">—</strong>
+                  </div>
+
+                </div>
+
+              </section>
+
+              <!-- SKILLS -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Core Competencies
+                    </span>
+                    <h2>Skills</h2>
+                  </div>
+                </div>
+
+                <div
+                  id="candidateSkills"
+                  class="candidate-skills-list"
+                >
+                  <span class="candidate-empty-value">
+                    Not provided
+                  </span>
+                </div>
+
+              </section>
+
+              <!-- PROFESSIONAL EXPERIENCE -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Work Background
+                    </span>
+                    <h2>Professional Experience</h2>
+                  </div>
+                </div>
+
+                <div class="candidate-detail-grid">
+
+                  <div class="candidate-detail-item">
+                    <span>Experience</span>
+                    <strong id="candidateExperience">—</strong>
+                  </div>
+
+                  <div class="candidate-detail-item">
+                    <span>Employment Status</span>
+                    <strong id="candidateEmploymentStatus">—</strong>
+                  </div>
+
+                </div>
+
+              </section>
+
+              <!-- DETAILED WORK EXPERIENCE -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Career History
+                    </span>
+                    <h2>Work Experience Details</h2>
+                  </div>
+                </div>
+
+                <div
+                  id="candidateExperienceList"
+                  class="candidate-experience-list"
+                >
+                  <p class="candidate-empty-value">
+                    No work experience details available.
+                  </p>
+                </div>
+
+              </section>
+
+              <!-- CERTIFICATIONS -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Professional Development
+                    </span>
+                    <h2>Certifications &amp; Training</h2>
+                  </div>
+                </div>
+
+                <div
+                  id="candidateCertificationsList"
+                  class="candidate-certifications-list"
+                >
+                  <p class="candidate-empty-value">
+                    No certifications available.
+                  </p>
+                </div>
+
+              </section>
+
+              <!-- JOB PREFERENCES -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Career Preferences
+                    </span>
+                    <h2>Job Preferences</h2>
+                  </div>
+                </div>
+
+                <div class="candidate-detail-grid">
+
+                  <div class="candidate-detail-item">
+                    <span>Preferred Location</span>
+                    <strong id="candidatePreferredLocation">—</strong>
+                  </div>
+
+                  <div class="candidate-detail-item">
+                    <span>Expected Salary</span>
+                    <strong id="candidateExpectedSalary">—</strong>
+                  </div>
+
+                </div>
+
+              </section>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <aside
+              class="candidate-view-sidebar"
+              aria-label="Candidate contact and application details"
+            >
+
+              <!-- CONTACT DETAILS -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Candidate Information
+                    </span>
+                    <h2>Contact Details</h2>
+                  </div>
+                </div>
+
+                <div class="candidate-contact-list">
+
+                  <div class="candidate-contact-item">
+                    <span>Email</span>
+                    <strong id="candidateEmail">—</strong>
+                  </div>
+
+                  <div class="candidate-contact-item">
+                    <span>Mobile</span>
+                    <strong id="candidateMobile">—</strong>
+                  </div>
+
+                  <div class="candidate-contact-item">
+                    <span>Current City</span>
+                    <strong id="candidateContactCity">—</strong>
+                  </div>
+
+                </div>
+
+              </section>
+
+              <!-- APPLICATION DETAILS -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Recruitment Information
+                    </span>
+                    <h2>Application Details</h2>
+                  </div>
+                </div>
+
+                <div class="candidate-contact-list">
+
+                  <div class="candidate-contact-item">
+                    <span>Applied Job</span>
+                    <strong id="candidateAppliedJob">—</strong>
+                  </div>
+
+                  <div class="candidate-contact-item">
+                    <span>Application Date</span>
+                    <strong id="candidateAppliedDate">—</strong>
+                  </div>
+
+                  <div class="candidate-contact-item">
+                    <span>Current Status</span>
+                    <strong id="candidateSidebarStatus">—</strong>
+                  </div>
+
+                </div>
+
+              </section>
+
+              <!-- PROFESSIONAL LINKS -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Online Presence
+                    </span>
+                    <h2>Professional Links</h2>
+                  </div>
+                </div>
+
+                <div
+                  id="candidateSocialLinks"
+                  class="candidate-social-links"
+                >
+                  <p class="candidate-empty-value">
+                    No professional links available.
+                  </p>
+                </div>
+
+              </section>
+
+              <!-- EMPLOYER NOTES -->
+              <section class="section-card">
+
+                <div class="section-heading">
+                  <div>
+                    <span class="section-eyebrow">
+                      Recruitment Remarks
+                    </span>
+                    <h2>Employer Notes</h2>
+                  </div>
+                </div>
+
+                <p
+                  id="candidateEmployerNotes"
+                  class="candidate-notes-text"
+                >
+                  No notes available.
+                </p>
+
+              </section>
+
+              <!-- RECRUITMENT ACTIONS -->
+
+              
+<!-- RECRUITMENT ACTIONS -->
+<section class="section-card candidate-actions-card">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-eyebrow">Recruitment Decision</span>
+      <h2>Application Actions</h2>
+    </div>
+  </div>
+
+  <p class="candidate-actions-description">
+    Review the candidate profile before making a recruitment decision.
+  </p>
+
+  <div class="candidate-action-buttons">
+
+    <button
+      type="button"
+      id="candidateShortlistButton"
+      class="candidate-action-btn shortlist"
+      disabled
+    >
+      Shortlist Candidate
+    </button>
+
+    <button
+      type="button"
+      id="candidateInterviewButton"
+      class="candidate-action-btn interview"
+      disabled
+    >
+      Move to Interview
+    </button>
+
+    <button
+      type="button"
+      id="candidateRejectButton"
+      class="candidate-action-btn reject"
+      disabled
+    >
+      Reject Candidate
+    </button>
+
+  </div>
+
+  <p
+    id="candidateActionMessage"
+    class="candidate-actions-notice"
+    role="status"
+    aria-live="polite"
+  >
+    Recruitment actions are currently unavailable.
+  </p>
+
+</section>
+</aside>
+
+          </div>
+
+          <!-- BOTTOM NAVIGATION -->
+          <nav
+            class="candidate-view-footer"
+            aria-label="Employer navigation"
+          >
+
+            <a
+              href="application-status.html"
+              id="candidateStatusBackLink"
+              class="btn-secondary"
+            >
+              Back to Application Status
+            </a>
+
+            <a
+              href="dashboard.html"
+              class="btn-light"
+            >
+              Employer Dashboard
+            </a>
+
+          </nav>
+
+        </div>
+
+        <!-- EMPTY / ERROR STATE -->
+        <div
+          id="candidateViewEmpty"
+          class="empty-state"
+          role="status"
+          hidden
+        >
+
+          <h3 id="candidateViewEmptyTitle">
+            Candidate profile unavailable
+          </h3>
+
+          <p id="candidateViewEmptyDescription">
+            Unable to display the requested candidate profile.
+          </p>
+
+          <a
+            href="applications.html"
+            class="btn-primary"
+          >
+            Back to Applications
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER -->
+  <div id="siteFooter"></div>
+
+  <!-- CORE JS -->
+  <script src="../js/core/config.js"></script>
+  <script src="../js/core/api.js"></script>
+  <script src="../js/core/session.js"></script>
+
+  <!-- COMMON JS -->
+  <script src="../js/common/header.js"></script>
+  <script src="../js/common/footer.js"></script>
+
+  <!-- PAGE JS -->
+  <script src="../js/employer/candidate-profile-view.js"></script>
+
+</body>
+</html>

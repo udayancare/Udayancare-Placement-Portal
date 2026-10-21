@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Employer Dashboard | Udayan Care Placement Portal</title>
+<meta name="description" content="Manage job postings, review candidate applications and track recruitment activity on Udayan Care Placement Portal.">
+
+<link rel="stylesheet" href="../css/common/variables.css">
+<link rel="stylesheet" href="../css/common/reset.css">
+<link rel="stylesheet" href="../css/common/base.css">
+<link rel="stylesheet" href="../css/common/layout.css">
+<link rel="stylesheet" href="../css/common/components.css">
+<link rel="stylesheet" href="../css/common/utilities.css">
+<link rel="stylesheet" href="../css/common/shell.css">
+<link rel="stylesheet" href="../css/employer/dashboard.css">
+</head>
+
+<body>
+
+<header id="siteHeader"></header>
+
+<main class="candidate-dashboard employer-dashboard">
+
+  <!-- Employer Welcome -->
+
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="dashboard-hero-content">
+
+        <div class="dashboard-welcome">
+          <p class="dashboard-eyebrow">Employer Dashboard</p>
+          <h1>Welcome back, <span id="employerCompanyName">Employer</span></h1>
+          <p>
+            Manage your job postings, review applications and connect
+            with suitable candidates through Udayan Care Placement Portal.
+          </p>
+        </div>
+
+        <div class="company-summary-card">
+          <span class="company-summary-label">Your Employer Account</span>
+
+          <h2 class="company-summary-name" id="heroCompanyName">
+            Company
+          </h2>
+
+          <div class="company-summary-meta">
+            <span id="heroEmployerId">Employer ID: —</span>
+            <span id="heroVerificationStatus">Verification: —</span>
+          </div>
+
+          <div class="company-summary-actions">
+            <a href="post-job.html" class="dashboard-button">
+              + Post New Job
+            </a>
+            <a href="company-profile.html" class="dashboard-outline-button">
+              Company Profile
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Content -->
+
+  <section class="dashboard-content">
+    <div class="container">
+
+      <!-- Statistics -->
+
+      <div class="dashboard-stats">
+
+        <a href="manage-jobs.html" class="stat-card stat-total-jobs">
+          <div class="stat-icon">▣</div>
+          <div class="stat-content">
+            <span class="stat-label">Total Jobs</span>
+            <strong id="totalJobsCount">—</strong>
+            <span class="stat-help">All job postings</span>
+          </div>
+        </a>
+
+        <a href="manage-jobs.html?status=active" class="stat-card stat-active-jobs">
+          <div class="stat-icon">✓</div>
+          <div class="stat-content">
+            <span class="stat-label">Active Jobs</span>
+            <strong id="activeJobsCount">—</strong>
+            <span class="stat-help">Currently open positions</span>
+          </div>
+        </a>
+
+        <a href="applications.html" class="stat-card stat-applications">
+          <div class="stat-icon">◫</div>
+          <div class="stat-content">
+            <span class="stat-label">Applications Received</span>
+            <strong id="applicationsReceivedCount">—</strong>
+            <span class="stat-help">Candidate applications</span>
+          </div>
+        </a>
+
+        <a href="shortlisted.html" class="stat-card stat-shortlisted">
+          <div class="stat-icon">★</div>
+          <div class="stat-content">
+            <span class="stat-label">Shortlisted</span>
+            <strong id="shortlistedCandidatesCount">—</strong>
+            <span class="stat-help">Shortlisted applications</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="dashboard-grid">
+
+        <div class="dashboard-main-column">
+
+          <!-- Recent Applications -->
+
+          <section class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div>
+                <p class="section-kicker">Recruitment Activity</p>
+                <h2>Recent Applications</h2>
+              </div>
+              <a href="applications.html" class="section-link">View All</a>
+            </div>
+
+            <div id="applicationsSkeleton" class="application-list skeleton-list">
+
+              <div class="application-skeleton">
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-small"></div>
+              </div>
+
+              <div class="application-skeleton">
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-small"></div>
+              </div>
+
+              <div class="application-skeleton">
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-small"></div>
+              </div>
+
+            </div>
+
+            <div id="recentApplications" class="application-list" hidden></div>
+
+            <div id="applicationsEmpty" class="dashboard-empty" hidden>
+              <div class="empty-icon">◫</div>
+              <h3>No applications received yet</h3>
+              <p>
+                Applications from interested candidates will appear here
+                once they apply to your posted jobs.
+              </p>
+              <a href="manage-jobs.html" class="dashboard-button">
+                Manage Jobs
+              </a>
+            </div>
+
+          </section>
+
+          <!-- Recent Jobs -->
+
+          <section class="dashboard-card latest-jobs-card">
+
+            <div class="dashboard-card-header">
+              <div>
+                <p class="section-kicker">Your Recruitment</p>
+                <h2>Recent Job Postings</h2>
+              </div>
+              <a href="manage-jobs.html" class="section-link">
+                View All Jobs
+              </a>
+            </div>
+
+            <div id="jobsSkeleton" class="dashboard-jobs-grid">
+
+              <div class="job-skeleton">
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-button"></div>
+              </div>
+
+              <div class="job-skeleton">
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-button"></div>
+              </div>
+
+            </div>
+
+            <div id="recentJobs" class="dashboard-jobs-grid" hidden></div>
+
+            <div id="jobsEmpty" class="dashboard-empty" hidden>
+              <div class="empty-icon">▣</div>
+              <h3>No jobs posted yet</h3>
+              <p>
+                Create your first job posting to start receiving
+                applications from candidates.
+              </p>
+              <a href="post-job.html" class="dashboard-button">
+                Post Your First Job
+              </a>
+            </div>
+
+          </section>
+
+        </div>
+
+        <!-- Sidebar -->
+
+        <aside class="dashboard-sidebar">
+
+          <!-- Company Profile -->
+
+          <section class="dashboard-card employer-profile-summary">
+
+            <div class="dashboard-card-header">
+              <div>
+                <p class="section-kicker">Company</p>
+                <h2>Company Profile</h2>
+              </div>
+            </div>
+
+            <div class="company-avatar-wrap">
+
+              <div class="company-avatar">
+                <span id="companyInitials">CO</span>
+              </div>
+
+              <div class="company-profile-name">
+                <strong id="profileCompanyName">Company</strong>
+                <span id="companyIndustry">Industry not specified</span>
+              </div>
+
+            </div>
+
+            <div class="company-info-list">
+
+              <div class="company-info-row">
+                <span>Employer ID</span>
+                <strong id="profileEmployerId">—</strong>
+              </div>
+
+              <div class="company-info-row">
+                <span>Contact Person</span>
+                <strong id="companyContactPerson">—</strong>
+              </div>
+
+              <div class="company-info-row">
+                <span>City</span>
+                <strong id="companyCity">—</strong>
+              </div>
+
+              <div class="company-info-row">
+                <span>Verification</span>
+                <strong id="companyVerificationStatus">—</strong>
+              </div>
+
+            </div>
+
+            <a href="company-profile.html" class="dashboard-outline-button">
+              View & Update Company Profile
+            </a>
+
+          </section>
+
+          <!-- Quick Actions -->
+
+          <section class="dashboard-card quick-actions">
+
+            <div class="dashboard-card-header">
+              <div>
+                <p class="section-kicker">Shortcuts</p>
+                <h2>Quick Actions</h2>
+              </div>
+            </div>
+
+            <div class="quick-action-list">
+
+              <a href="post-job.html">
+                <span class="quick-action-icon">+</span>
+                <span>
+                  <strong>Post New Job</strong>
+                  <small>Create a new job opportunity</small>
+                </span>
+                <span class="quick-action-arrow">→</span>
+              </a>
+
+              <a href="manage-jobs.html">
+                <span class="quick-action-icon">▣</span>
+                <span>
+                  <strong>Manage Jobs</strong>
+                  <small>View and manage your postings</small>
+                </span>
+                <span class="quick-action-arrow">→</span>
+              </a>
+
+              <a href="applications.html">
+                <span class="quick-action-icon">◫</span>
+                <span>
+                  <strong>View Applications</strong>
+                  <small>Review interested candidates</small>
+                </span>
+                <span class="quick-action-arrow">→</span>
+              </a>
+
+              <a href="shortlisted.html">
+                <span class="quick-action-icon">★</span>
+                <span>
+                  <strong>Shortlisted Candidates</strong>
+                  <small>Track shortlisted applications</small>
+                </span>
+                <span class="quick-action-arrow">→</span>
+              </a>
+
+              <a href="company-profile.html">
+                <span class="quick-action-icon">○</span>
+                <span>
+                  <strong>Update Company Profile</strong>
+                  <small>Keep your company details current</small>
+                </span>
+                <span class="quick-action-arrow">→</span>
+              </a>
+
+            </div>
+
+          </section>
+
+          <!-- Application Pipeline -->
+
+          <section class="dashboard-card application-overview">
+
+            <div class="dashboard-card-header">
+              <div>
+                <p class="section-kicker">Recruitment Pipeline</p>
+                <h2>Application Status</h2>
+              </div>
+            </div>
+
+            <div class="status-overview-list">
+
+              <div class="status-overview-row">
+                <div>
+                  <span class="status-dot status-applied"></span>
+                  <span>Applied</span>
+                </div>
+                <strong id="statusApplied">—</strong>
+              </div>
+
+              <div class="status-overview-row">
+                <div>
+                  <span class="status-dot status-viewed"></span>
+                  <span>Viewed</span>
+                </div>
+                <strong id="statusViewed">—</strong>
+              </div>
+
+              <div class="status-overview-row">
+                <div>
+                  <span class="status-dot status-shortlisted"></span>
+                  <span>Shortlisted</span>
+                </div>
+                <strong id="statusShortlisted">—</strong>
+              </div>
+
+              <div class="status-overview-row">
+                <div>
+                  <span class="status-dot status-interview"></span>
+                  <span>Interview</span>
+                </div>
+                <strong id="statusInterview">—</strong>
+              </div>
+
+              <div class="status-overview-row">
+                <div>
+                  <span class="status-dot status-rejected"></span>
+                  <span>Rejected</span>
+                </div>
+                <strong id="statusRejected">—</strong>
+              </div>
+
+            </div>
+
+          </section>
+
+        </aside>
+
+      </div>
+
+      <!-- Dashboard Error -->
+
+      <div id="dashboardError" class="dashboard-error" hidden>
+        <strong>Unable to load dashboard</strong>
+        <p id="dashboardErrorMessage">
+          Please check your connection and try again.
+        </p>
+        <button type="button" id="dashboardRetry">
+          Try Again
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer id="siteFooter"></footer>
+
+<script src="../js/core/config.js"></script>
+<script src="../js/core/api.js"></script>
+<script src="../js/core/session.js"></script>
+<script src="../js/common/header.js"></script>
+<script src="../js/common/footer.js"></script>
+<script src="../js/employer/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Post a Job | Udayan Care Placement Portal</title>
+<meta name="description" content="Create a job opportunity for candidates through the Udayan Care Placement Portal.">
+
+<link rel="stylesheet" href="../css/common/variables.css">
+<link rel="stylesheet" href="../css/common/reset.css">
+<link rel="stylesheet" href="../css/common/base.css">
+<link rel="stylesheet" href="../css/common/layout.css">
+<link rel="stylesheet" href="../css/common/components.css">
+<link rel="stylesheet" href="../css/common/utilities.css">
+<link rel="stylesheet" href="../css/common/shell.css">
+
+<link rel="stylesheet" href="../css/employer/post-job.css">
+</head>
+
+<body>
+
+<div id="siteHeader"></div>
+
+<main class="profile-page employer-post-job-page">
+
+  <section class="profile-hero">
+    <div class="profile-container">
+      <div class="post-job-hero">
+
+        <div>
+          <span class="section-eyebrow">Employer Recruitment</span>
+          <h1>Post a New Job</h1>
+          <p>
+            Create a job opportunity and connect with suitable candidates
+            through Udayan Care Placement Portal.
+          </p>
+        </div>
+
+        <a href="manage-jobs.html" class="btn-secondary">
+          Manage Jobs
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="profile-content">
+    <div class="profile-container">
+
+      <div class="profile-alert info" role="status">
+        Job posting is currently in preparation mode.
+        You can review the form, but publishing is not enabled yet.
+      </div>
+
+      <div
+        id="postJobAlert"
+        class="profile-alert"
+        role="alert"
+        hidden
+      ></div>
+
+      <form id="postJobForm" novalidate>
+
+        <!-- BASIC JOB INFORMATION -->
+
+        <section class="section-card post-job-section">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-eyebrow">Section 01</span>
+              <h2>Basic Job Information</h2>
+              <p>Enter the main details of the vacancy.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="companyName">
+                Company Name <span>*</span>
+              </label>
+              <input
+                type="text"
+                id="companyName"
+                name="Company_Name"
+                maxlength="200"
+                autocomplete="organization"
+                readonly
+                required
+                placeholder="Loading company name..."
+              >
+              <small>Company name will come from your employer profile.</small>
+              <small class="field-error" data-error-for="Company_Name"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="jobTitle">
+                Job Title <span>*</span>
+              </label>
+              <input
+                type="text"
+                id="jobTitle"
+                name="Job_Title"
+                maxlength="200"
+                placeholder="e.g. Customer Support Executive"
+                required
+              >
+              <small class="field-error" data-error-for="Job_Title"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="jobCategory">
+                Job Category <span>*</span>
+              </label>
+              <select
+                id="jobCategory"
+                name="Job_Category"
+                required
+              >
+                <option value="">Select job category</option>
+                <option value="Sales">Sales</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="Finance & Accounts">Finance & Accounts</option>
+                <option value="IT & Software">IT & Software</option>
+                <option value="Data Analytics">Data Analytics</option>
+                <option value="Customer Support">Customer Support</option>
+                <option value="Operations">Operations</option>
+                <option value="Administration">Administration</option>
+                <option value="Education">Education</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Retail">Retail</option>
+                <option value="Hospitality">Hospitality</option>
+                <option value="Logistics">Logistics</option>
+                <option value="Other">Other</option>
+              </select>
+              <small class="field-error" data-error-for="Job_Category"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="jobType">
+                Job Type <span>*</span>
+              </label>
+              <select id="jobType" name="Job_Type" required>
+                <option value="">Select job type</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Apprenticeship">Apprenticeship</option>
+                <option value="Contract">Contract</option>
+                <option value="Temporary">Temporary</option>
+              </select>
+              <small class="field-error" data-error-for="Job_Type"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="workMode">
+                Work Mode <span>*</span>
+              </label>
+              <select id="workMode" name="Work_Mode" required>
+                <option value="">Select work mode</option>
+                <option value="Work From Office">Work From Office</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Remote">Remote</option>
+              </select>
+              <small class="field-error" data-error-for="Work_Mode"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="vacancies">
+                Number of Vacancies <span>*</span>
+              </label>
+              <input
+                type="number"
+                id="vacancies"
+                name="Vacancies"
+                min="1"
+                max="100000"
+                step="1"
+                placeholder="e.g. 5"
+                required
+              >
+              <small class="field-error" data-error-for="Vacancies"></small>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- JOB LOCATION -->
+
+        <section class="section-card post-job-section">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-eyebrow">Section 02</span>
+              <h2>Job Location</h2>
+              <p>Specify where the selected candidate will work.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="jobState">
+                State <span>*</span>
+              </label>
+              <input
+                type="text"
+                id="jobState"
+                name="State"
+                maxlength="100"
+                placeholder="e.g. Uttar Pradesh"
+                required
+              >
+              <small class="field-error" data-error-for="State"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="jobDistrict">District</label>
+              <input
+                type="text"
+                id="jobDistrict"
+                name="District"
+                maxlength="100"
+                placeholder="e.g. Gautam Buddha Nagar"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="jobCity">
+                City <span>*</span>
+              </label>
+              <input
+                type="text"
+                id="jobCity"
+                name="City"
+                maxlength="100"
+                placeholder="e.g. Noida"
+                required
+              >
+              <small class="field-error" data-error-for="City"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="jobAddress">Office / Work Address</label>
+              <input
+                type="text"
+                id="jobAddress"
+                name="Address"
+                maxlength="500"
+                placeholder="e.g. Sector 62, Noida"
+              >
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- CANDIDATE REQUIREMENTS -->
+
+        <section class="section-card post-job-section">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-eyebrow">Section 03</span>
+              <h2>Candidate Requirements</h2>
+              <p>Describe the qualifications and skills required.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="experience">Experience</label>
+              <input
+                type="text"
+                id="experience"
+                name="Experience"
+                maxlength="150"
+                placeholder="e.g. Fresher / 0–2 Years"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="qualification">
+                Qualification <span>*</span>
+              </label>
+              <input
+                type="text"
+                id="qualification"
+                name="Qualification"
+                maxlength="200"
+                placeholder="e.g. 12th Pass / Graduate"
+                required
+              >
+              <small class="field-error" data-error-for="Qualification"></small>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="skills">Preferred Skills</label>
+              <textarea
+                id="skills"
+                name="Skills"
+                rows="3"
+                maxlength="2000"
+                placeholder="e.g. Communication, MS Excel, Customer Handling"
+              ></textarea>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="requiredSkills">Required Skills</label>
+              <textarea
+                id="requiredSkills"
+                name="Required_Skills"
+                rows="3"
+                maxlength="2000"
+                placeholder="Mention mandatory skills for the role."
+              ></textarea>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- SALARY AND DEADLINE -->
+
+        <section class="section-card post-job-section">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-eyebrow">Section 04</span>
+              <h2>Salary & Application Details</h2>
+              <p>Provide compensation and application deadline.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="salaryMin">Minimum Salary (₹)</label>
+              <input
+                type="number"
+                id="salaryMin"
+                name="Salary_Min"
+                min="0"
+                max="100000000"
+                step="0.01"
+                placeholder="e.g. 15000"
+              >
+              <small>Enter salary amount in INR.</small>
+              <small class="field-error" data-error-for="Salary_Min"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="salaryMax">Maximum Salary (₹)</label>
+              <input
+                type="number"
+                id="salaryMax"
+                name="Salary_Max"
+                min="0"
+                max="100000000"
+                step="0.01"
+                placeholder="e.g. 25000"
+              >
+              <small>Use the same salary period as the minimum amount.</small>
+              <small class="field-error" data-error-for="Salary_Max"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="applicationLastDate">
+                Application Last Date <span>*</span>
+              </label>
+              <input
+                type="date"
+                id="applicationLastDate"
+                name="Application_Last_Date"
+                required
+              >
+              <small class="field-error" data-error-for="Application_Last_Date"></small>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- JOB DESCRIPTION -->
+
+        <section class="section-card post-job-section">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-eyebrow">Section 05</span>
+              <h2>Job Description & Responsibilities</h2>
+              <p>Help candidates understand the role before applying.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+
+            <div class="form-group form-group-full">
+              <label for="jobDescription">
+                Job Description <span>*</span>
+              </label>
+              <textarea
+                id="jobDescription"
+                name="Job_Description"
+                rows="7"
+                maxlength="10000"
+                placeholder="Describe the role, job purpose, working environment and key expectations."
+                required
+              ></textarea>
+              <small class="field-error" data-error-for="Job_Description"></small>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="jobResponsibilities">
+                Key Responsibilities
+              </label>
+              <textarea
+                id="jobResponsibilities"
+                name="Job_Responsibilities"
+                rows="6"
+                maxlength="10000"
+                placeholder="List the main duties and responsibilities."
+              ></textarea>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- FORM ACTIONS -->
+
+        <div class="post-job-actions">
+
+          <a href="dashboard.html" class="btn-light">
+            Back to Dashboard
+          </a>
+
+          <button
+            type="submit"
+            id="publishJobButton"
+            class="btn-primary"
+            disabled
+            title="Job publishing is not enabled yet"
+          >
+            Publish Job
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="../js/core/config.js"></script>
+<script src="../js/core/api.js"></script>
+<script src="../js/core/session.js"></script>
+<script src="../js/common/header.js"></script>
+<script src="../js/common/footer.js"></script>
+<script src="../js/employer/post-job.js"></script>
+
+</body>
+</html>

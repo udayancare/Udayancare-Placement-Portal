@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Company Profile | Udayan Care Placement Portal</title>
+<meta name="description" content="View your company information, contact details and verification status on Udayan Care Placement Portal.">
+
+<link rel="stylesheet" href="../css/common/variables.css">
+<link rel="stylesheet" href="../css/common/reset.css">
+<link rel="stylesheet" href="../css/common/base.css">
+<link rel="stylesheet" href="../css/common/layout.css">
+<link rel="stylesheet" href="../css/common/components.css">
+<link rel="stylesheet" href="../css/common/utilities.css">
+<link rel="stylesheet" href="../css/common/shell.css">
+
+<link rel="stylesheet" href="../css/employer/company-profile.css">
+</head>
+
+<body>
+
+<div id="siteHeader"></div>
+
+<main class="profile-page employer-profile-page">
+
+  <section class="profile-hero">
+    <div class="profile-container">
+      <div class="profile-hero-card">
+
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar" id="companyAvatar">
+            <span id="companyInitials">--</span>
+          </div>
+        </div>
+
+        <div class="profile-hero-info">
+          <div class="profile-label">Employer Company Profile</div>
+
+          <h1 id="heroCompanyName">Loading company profile...</h1>
+
+          <p id="heroIndustry">
+            Please wait while we prepare your company details.
+          </p>
+
+          <div class="profile-identity">
+            <span id="heroEmployerId">Employer ID: --</span>
+            <span id="heroEmail">Email: --</span>
+          </div>
+        </div>
+
+        <div class="employer-verification-box">
+          <span>Verification Status</span>
+          <strong id="heroVerificationStatus">Checking...</strong>
+          <p id="verificationDescription">
+            Your company verification details will appear here.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="profile-content">
+    <div class="profile-container">
+
+      <div
+        id="companyProfileAlert"
+        class="profile-alert"
+        role="alert"
+        hidden
+      ></div>
+
+      <div id="companyProfileSkeleton" class="profile-skeleton">
+
+        <div class="skeleton-card">
+          <div class="skeleton-line skeleton-title"></div>
+
+          <div class="skeleton-grid">
+            <div class="skeleton-field"></div>
+            <div class="skeleton-field"></div>
+            <div class="skeleton-field"></div>
+            <div class="skeleton-field"></div>
+          </div>
+        </div>
+
+        <div class="skeleton-card">
+          <div class="skeleton-line skeleton-title"></div>
+
+          <div class="skeleton-grid">
+            <div class="skeleton-field"></div>
+            <div class="skeleton-field"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="companyProfileMain" class="profile-main" hidden>
+
+        <nav class="profile-tabs" aria-label="Company profile sections">
+          <button
+            class="profile-tab active"
+            type="button"
+            data-section="companyInformationSection"
+            aria-controls="companyInformationSection"
+            aria-selected="true"
+          >
+            Company Information
+          </button>
+
+          <button
+            class="profile-tab"
+            type="button"
+            data-section="companyContactSection"
+            aria-controls="companyContactSection"
+            aria-selected="false"
+          >
+            Contact Details
+          </button>
+
+          <button
+            class="profile-tab"
+            type="button"
+            data-section="companyAddressSection"
+            aria-controls="companyAddressSection"
+            aria-selected="false"
+          >
+            Address
+          </button>
+
+          <button
+            class="profile-tab"
+            type="button"
+            data-section="companyVerificationSection"
+            aria-controls="companyVerificationSection"
+            aria-selected="false"
+          >
+            Verification
+          </button>
+        </nav>
+
+        <!-- COMPANY INFORMATION -->
+
+        <section
+          class="profile-section active"
+          id="companyInformationSection"
+        >
+          <div class="section-card">
+
+            <div class="section-heading">
+              <div>
+                <span class="section-eyebrow">
+                  Organization Overview
+                </span>
+
+                <h2>Company Information</h2>
+
+                <p>
+                  Basic information about your registered organization.
+                </p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input id="companyName" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="companyType">Company Type</label>
+                <input id="companyType" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="companyIndustry">Industry</label>
+                <input id="companyIndustry" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="companyWebsite">Website</label>
+                <input id="companyWebsite" type="text" readonly>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label for="companyDescription">Company Description</label>
+                <textarea
+                  id="companyDescription"
+                  rows="5"
+                  readonly
+                ></textarea>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- CONTACT DETAILS -->
+
+        <section
+          class="profile-section"
+          id="companyContactSection"
+          hidden
+        >
+          <div class="section-card">
+
+            <div class="section-heading">
+              <div>
+                <span class="section-eyebrow">
+                  Employer Representative
+                </span>
+
+                <h2>Contact Information</h2>
+
+                <p>
+                  Contact details associated with your employer account.
+                </p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="contactPerson">Contact Person</label>
+                <input id="contactPerson" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="contactDesignation">Designation</label>
+                <input id="contactDesignation" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMobile">Mobile Number</label>
+                <input id="contactMobile" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail">Official Email</label>
+                <input id="contactEmail" type="text" readonly>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- COMPANY ADDRESS -->
+
+        <section
+          class="profile-section"
+          id="companyAddressSection"
+          hidden
+        >
+          <div class="section-card">
+
+            <div class="section-heading">
+              <div>
+                <span class="section-eyebrow">
+                  Registered Location
+                </span>
+
+                <h2>Company Address</h2>
+
+                <p>
+                  Location details provided during employer registration.
+                </p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="companyState">State</label>
+                <input id="companyState" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="companyDistrict">District</label>
+                <input id="companyDistrict" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="companyCity">City</label>
+                <input id="companyCity" type="text" readonly>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label for="companyAddress">Complete Address</label>
+                <textarea
+                  id="companyAddress"
+                  rows="4"
+                  readonly
+                ></textarea>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- VERIFICATION DETAILS -->
+
+        <section
+          class="profile-section"
+          id="companyVerificationSection"
+          hidden
+        >
+          <div class="section-card">
+
+            <div class="section-heading">
+              <div>
+                <span class="section-eyebrow">
+                  Account & Verification
+                </span>
+
+                <h2>Verification Details</h2>
+
+                <p>
+                  Your employer account identification and verification status.
+                </p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="employerId">Employer ID</label>
+                <input id="employerId" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="verificationStatus">Verification Status</label>
+                <input id="verificationStatus" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="gstNumber">GST Number</label>
+                <input id="gstNumber" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="registrationDate">Registration Date</label>
+                <input id="registrationDate" type="text" readonly>
+              </div>
+
+              <div class="form-group">
+                <label for="lastLogin">Last Login</label>
+                <input id="lastLogin" type="text" readonly>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <div class="employer-profile-actions">
+          <a
+            href="dashboard.html"
+            class="btn-secondary"
+          >
+            Back to Dashboard
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="../js/core/config.js"></script>
+<script src="../js/core/api.js"></script>
+<script src="../js/core/session.js"></script>
+<script src="../js/common/header.js"></script>
+<script src="../js/common/footer.js"></script>
+<script src="../js/employer/company-profile.js"></script>
+
+</body>
+</html>

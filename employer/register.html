@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Employer Registration | Udayan Care Placement Portal
+  </title>
+
+  <meta
+    name="description"
+    content="Register your organization on the Udayan Care Placement Portal to connect with candidates, post jobs and manage recruitment."
+  >
+
+  <!-- COMMON CSS -->
+
+  <link rel="stylesheet" href="../css/common/variables.css">
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/base.css">
+  <link rel="stylesheet" href="../css/common/layout.css">
+  <link rel="stylesheet" href="../css/common/components.css">
+  <link rel="stylesheet" href="../css/common/utilities.css">
+  <link rel="stylesheet" href="../css/common/shell.css">
+
+  <!-- PAGE CSS -->
+
+  <link rel="stylesheet" href="../css/employer/register.css">
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <div id="siteHeader"></div>
+
+  <main class="employer-register-page">
+
+    <section class="register-section">
+
+      <div class="container">
+
+        <div class="register-layout">
+
+          <!-- LEFT: INTRODUCTION -->
+
+          <aside class="register-intro">
+
+            <a
+              href="../index.html"
+              class="register-back-link"
+            >
+              ← Back to Home
+            </a>
+
+            <span class="register-eyebrow">
+              Employer Portal
+            </span>
+
+            <h1>
+              Find the Right Talent for Your Organization
+            </h1>
+
+            <p class="register-intro__description">
+              Join the Udayan Care Placement Portal to
+              connect with potential candidates, share
+              employment opportunities and manage your
+              recruitment process from one platform.
+            </p>
+
+            <div class="register-benefits">
+
+              <div class="register-benefit">
+
+                <span class="register-benefit__icon">
+                  ✓
+                </span>
+
+                <div>
+                  <strong>
+                    Post Job Opportunities
+                  </strong>
+
+                  <p>
+                    Publish openings with job requirements,
+                    location, qualifications and salary details.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="register-benefit">
+
+                <span class="register-benefit__icon">
+                  ✓
+                </span>
+
+                <div>
+                  <strong>
+                    Connect with Candidates
+                  </strong>
+
+                  <p>
+                    Receive applications from candidates
+                    interested in your opportunities.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="register-benefit">
+
+                <span class="register-benefit__icon">
+                  ✓
+                </span>
+
+                <div>
+                  <strong>
+                    Manage Recruitment
+                  </strong>
+
+                  <p>
+                    Review applications, shortlist candidates
+                    and track recruitment activity.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="register-free-note">
+
+              <span class="register-free-note__icon">
+                ₹0
+              </span>
+
+              <div>
+
+                <strong>
+                  Free Employer Registration
+                </strong>
+
+                <p>
+                  Registration and job posting on the
+                  Udayan Care Placement Portal are free.
+                  Employers are requested not to charge
+                  candidates any recruitment or placement fee.
+                </p>
+
+              </div>
+
+            </div>
+
+          </aside>
+
+          <!-- RIGHT: REGISTRATION FORM -->
+
+          <section class="register-card">
+
+            <div class="register-card__header">
+
+              <span class="register-card__label">
+                New Employer
+              </span>
+
+              <h2>
+                Register Your Organization
+              </h2>
+
+              <p>
+                Enter your organization and contact details
+                to create an employer account.
+              </p>
+
+            </div>
+
+            <form
+              id="employerRegisterForm"
+              novalidate
+            >
+
+              <!-- COMPANY INFORMATION -->
+
+              <div class="register-form-section">
+
+                <h3>
+                  Company Information
+                </h3>
+
+                <div class="form-group">
+
+                  <label for="companyName">
+                    Company / Organization Name
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    id="companyName"
+                    name="companyName"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter registered company name"
+                    maxlength="150"
+                    autocomplete="organization"
+                    required
+                  >
+
+                  <small
+                    id="companyNameError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+                <div class="register-form-grid">
+
+                  <div class="form-group">
+
+                    <label for="companyType">
+                      Company Type
+                    </label>
+
+                    <select
+                      id="companyType"
+                      name="companyType"
+                      class="form-control"
+                    >
+
+                      <option value="">
+                        Select company type
+                      </option>
+
+                      <option value="Private Limited">
+                        Private Limited
+                      </option>
+
+                      <option value="Public Limited">
+                        Public Limited
+                      </option>
+
+                      <option value="LLP">
+                        LLP
+                      </option>
+
+                      <option value="Partnership">
+                        Partnership
+                      </option>
+
+                      <option value="Proprietorship">
+                        Proprietorship
+                      </option>
+
+                      <option value="NGO / Non-Profit">
+                        NGO / Non-Profit
+                      </option>
+
+                      <option value="Government">
+                        Government
+                      </option>
+
+                      <option value="Other">
+                        Other
+                      </option>
+
+                    </select>
+
+                    <small
+                      id="companyTypeError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="industry">
+                      Industry / Sector
+                      <span>*</span>
+                    </label>
+
+                    <select
+                      id="industry"
+                      name="industry"
+                      class="form-control"
+                      required
+                    >
+
+                      <option value="">
+                        Select industry
+                      </option>
+
+                      <option value="Information Technology">
+                        Information Technology
+                      </option>
+
+                      <option value="BPO / KPO">
+                        BPO / KPO
+                      </option>
+
+                      <option value="Banking / Finance">
+                        Banking / Finance
+                      </option>
+
+                      <option value="Insurance">
+                        Insurance
+                      </option>
+
+                      <option value="Retail / E-Commerce">
+                        Retail / E-Commerce
+                      </option>
+
+                      <option value="Manufacturing">
+                        Manufacturing
+                      </option>
+
+                      <option value="Automobile / EV">
+                        Automobile / EV
+                      </option>
+
+                      <option value="Healthcare">
+                        Healthcare
+                      </option>
+
+                      <option value="Education / Training">
+                        Education / Training
+                      </option>
+
+                      <option value="Hospitality">
+                        Hospitality
+                      </option>
+
+                      <option value="Logistics / Supply Chain">
+                        Logistics / Supply Chain
+                      </option>
+
+                      <option value="Sales / Marketing">
+                        Sales / Marketing
+                      </option>
+
+                      <option value="Consulting">
+                        Consulting
+                      </option>
+
+                      <option value="NGO / Social Sector">
+                        NGO / Social Sector
+                      </option>
+
+                      <option value="Other">
+                        Other
+                      </option>
+
+                    </select>
+
+                    <small
+                      id="industryError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="website">
+                    Company Website
+                    <span class="optional-label">
+                      (Optional)
+                    </span>
+                  </label>
+
+                  <input
+                    id="website"
+                    name="website"
+                    type="url"
+                    class="form-control"
+                    placeholder="https://www.example.com"
+                    maxlength="250"
+                    autocomplete="url"
+                  >
+
+                  <small
+                    id="websiteError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="companyDescription">
+                    About Your Organization
+                    <span class="optional-label">
+                      (Optional)
+                    </span>
+                  </label>
+
+                  <textarea
+                    id="companyDescription"
+                    name="companyDescription"
+                    class="form-control"
+                    rows="3"
+                    maxlength="1000"
+                    placeholder="Briefly describe your organization"
+                  ></textarea>
+
+                  <small
+                    id="companyDescriptionError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+              </div>
+
+              <!-- CONTACT INFORMATION -->
+
+              <div class="register-form-section">
+
+                <h3>
+                  Contact Information
+                </h3>
+
+                <div class="register-form-grid">
+
+                  <div class="form-group">
+
+                    <label for="contactPerson">
+                      Contact Person / HR Name
+                      <span>*</span>
+                    </label>
+
+                    <input
+                      id="contactPerson"
+                      name="contactPerson"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter full name"
+                      maxlength="100"
+                      autocomplete="name"
+                      required
+                    >
+
+                    <small
+                      id="contactPersonError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="designation">
+                      Designation
+                      <span>*</span>
+                    </label>
+
+                    <input
+                      id="designation"
+                      name="designation"
+                      type="text"
+                      class="form-control"
+                      placeholder="e.g. HR Manager"
+                      maxlength="100"
+                      autocomplete="organization-title"
+                      required
+                    >
+
+                    <small
+                      id="designationError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                </div>
+
+                <div class="register-form-grid">
+
+                  <div class="form-group">
+
+                    <label for="mobile">
+                      Mobile Number
+                      <span>*</span>
+                    </label>
+
+                    <div class="mobile-input">
+
+                      <span>
+                        +91
+                      </span>
+
+                      <input
+                        id="mobile"
+                        name="mobile"
+                        type="tel"
+                        class="form-control"
+                        placeholder="10-digit number"
+                        maxlength="10"
+                        inputmode="numeric"
+                        autocomplete="tel"
+                        required
+                      >
+
+                    </div>
+
+                    <small
+                      id="mobileError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="email">
+                      Official Email Address
+                      <span>*</span>
+                    </label>
+
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      class="form-control"
+                      placeholder="hr@company.com"
+                      maxlength="150"
+                      autocomplete="email"
+                      required
+                    >
+
+                    <small
+                      id="emailError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- COMPANY LOCATION -->
+
+              <div class="register-form-section">
+
+                <h3>
+                  Company Location
+                </h3>
+
+                <div class="register-form-grid">
+
+                  <div class="form-group">
+
+                    <label for="state">
+                      State
+                      <span>*</span>
+                    </label>
+
+                    <input
+                      id="state"
+                      name="state"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter state"
+                      maxlength="100"
+                      autocomplete="address-level1"
+                      required
+                    >
+
+                    <small
+                      id="stateError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="district">
+                      District
+                    </label>
+
+                    <input
+                      id="district"
+                      name="district"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter district"
+                      maxlength="100"
+                    >
+
+                    <small
+                      id="districtError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="city">
+                    City
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter city"
+                    maxlength="100"
+                    autocomplete="address-level2"
+                    required
+                  >
+
+                  <small
+                    id="cityError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="companyAddress">
+                    Company Address
+                  </label>
+
+                  <textarea
+                    id="companyAddress"
+                    name="companyAddress"
+                    class="form-control"
+                    rows="3"
+                    maxlength="500"
+                    placeholder="Office address"
+                    autocomplete="street-address"
+                  ></textarea>
+
+                  <small
+                    id="companyAddressError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="gstNumber">
+                    GST Number
+                    <span class="optional-label">
+                      (Optional)
+                    </span>
+                  </label>
+
+                  <input
+                    id="gstNumber"
+                    name="gstNumber"
+                    type="text"
+                    class="form-control"
+                    placeholder="15-character GSTIN"
+                    maxlength="15"
+                    autocapitalize="characters"
+                  >
+
+                  <small
+                    id="gstNumberError"
+                    class="form-error"
+                    hidden
+                  ></small>
+
+                </div>
+
+              </div>
+
+              <!-- ACCOUNT SECURITY -->
+
+              <div class="register-form-section">
+
+                <h3>
+                  Account Security
+                </h3>
+
+                <div class="register-form-grid">
+
+                  <div class="form-group">
+
+                    <label for="password">
+                      Create Password
+                      <span>*</span>
+                    </label>
+
+                    <div class="password-field">
+
+                      <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="form-control"
+                        placeholder="Minimum 8 characters"
+                        minlength="8"
+                        maxlength="100"
+                        autocomplete="new-password"
+                        required
+                      >
+
+                      <button
+                        type="button"
+                        class="password-toggle"
+                        data-target="password"
+                        aria-label="Show password"
+                      >
+                        Show
+                      </button>
+
+                    </div>
+
+                    <small class="password-hint">
+                      Use at least 8 characters with a
+                      letter and a number.
+                    </small>
+
+                    <small
+                      id="passwordError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="confirmPassword">
+                      Confirm Password
+                      <span>*</span>
+                    </label>
+
+                    <div class="password-field">
+
+                      <input
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        type="password"
+                        class="form-control"
+                        placeholder="Re-enter password"
+                        maxlength="100"
+                        autocomplete="new-password"
+                        required
+                      >
+
+                      <button
+                        type="button"
+                        class="password-toggle"
+                        data-target="confirmPassword"
+                        aria-label="Show password"
+                      >
+                        Show
+                      </button>
+
+                    </div>
+
+                    <small
+                      id="confirmPasswordError"
+                      class="form-error"
+                      hidden
+                    ></small>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- CONSENT -->
+
+              <div class="consent-box">
+
+                <label class="consent-check">
+
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                  >
+
+                  <span>
+                    I confirm that I am authorized to
+                    represent this organization, that the
+                    information provided is accurate, and
+                    that our organization will not charge
+                    candidates any recruitment or
+                    placement fee through this portal.
+                  </span>
+
+                </label>
+
+                <small
+                  id="consentError"
+                  class="form-error"
+                  hidden
+                ></small>
+
+              </div>
+
+              <!-- STATUS -->
+
+              <div
+                id="registerStatus"
+                class="register-status"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></div>
+
+              <!-- SUBMIT -->
+
+              <button
+                id="registerButton"
+                type="submit"
+                class="btn btn-primary register-submit"
+                disabled
+                title="Registration will be enabled after secure backend integration"
+              >
+                Create Employer Account
+              </button>
+
+              <p class="register-login-text">
+                Already registered?
+                <a href="login.html">
+                  Employer Login
+                </a>
+              </p>
+
+            </form>
+
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <div id="siteFooter"></div>
+
+  <!-- CORE -->
+
+  <script src="../js/core/config.js"></script>
+  <script src="../js/core/api.js"></script>
+  <script src="../js/core/session.js"></script>
+
+  <!-- COMMON -->
+
+  <script src="../js/common/header.js"></script>
+  <script src="../js/common/footer.js"></script>
+  
+
+  <!-- PAGE -->
+
+  <script src="../js/employer/register.js"></script>
+  
+
+  <!--
+    Registration JS will be connected in the next step.
+    Submit remains disabled until backend integration.
+  -->
+
+</body>
+
+</html>
