@@ -1,0 +1,1655 @@
+/*
+ * =========================================================
+ * UCPP V2
+ * Premium Global Header + Footer
+ * =========================================================
+ */
+
+
+/* =========================================================
+   HEADER MOUNT
+   ========================================================= */
+
+/* =========================================
+   UCPP V2 — GLOBAL STICKY HEADER FIX
+   Desktop | Tablet | Mobile
+   ========================================= */
+
+#siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.ucpp-header {
+  position: relative;
+  top: auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.ucpp-header {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  border-bottom:
+    1px solid rgba(226, 232, 240, 0.9);
+
+  box-shadow:
+    0 4px 24px rgba(15, 23, 42, 0.06);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+}
+
+
+.ucpp-header__container {
+  display: flex;
+
+  align-items: center;
+
+  min-height: 78px;
+
+  gap: 26px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.ucpp-brand {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  color: #0f172a;
+
+  text-decoration: none;
+}
+
+
+.ucpp-brand:hover {
+  text-decoration: none;
+}
+
+
+.ucpp-brand__logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  flex: 0 0 46px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb 0%,
+      #3b82f6 55%,
+      #60a5fa 100%
+    );
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.24);
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+
+.ucpp-brand__content {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1.1;
+}
+
+
+.ucpp-brand__title {
+  color: #0f172a;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+.ucpp-brand__subtitle {
+  margin-top: 5px;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAV
+   ========================================================= */
+
+.ucpp-nav {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  flex: 1;
+
+  gap: 18px;
+
+  min-width: 0;
+}
+
+
+.ucpp-nav__links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 4px;
+}
+
+
+.ucpp-nav__link {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 44px;
+
+  padding: 0 13px;
+
+  color: #475569;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.ucpp-nav__link:hover {
+  color: #2563eb;
+
+  background: #eff6ff;
+
+  text-decoration: none;
+
+  transform:
+    translateY(-1px);
+}
+
+
+.ucpp-nav__link.is-active {
+  color: #2563eb;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #f8fbff
+    );
+}
+
+
+.ucpp-nav__link.is-active::after {
+  content: '';
+
+  position: absolute;
+
+  right: 13px;
+  bottom: 4px;
+  left: 13px;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #60a5fa
+    );
+
+  border-radius: 999px;
+}
+
+
+.ucpp-nav__icon {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 16px;
+
+  color: currentColor;
+
+  font-size: 16px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   LOGIN ACTIONS
+   ========================================================= */
+
+.ucpp-header__actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  flex-shrink: 0;
+}
+
+
+.ucpp-login-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 43px;
+
+  padding: 0 16px;
+
+  border-radius: 12px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+.ucpp-login-button:hover {
+  text-decoration: none;
+
+  transform:
+    translateY(-2px);
+}
+
+
+.ucpp-login-button--candidate {
+  color: #2563eb;
+
+  background: #ffffff;
+
+  border:
+    1.5px solid #2563eb;
+}
+
+
+.ucpp-login-button--candidate:hover {
+  color: #1d4ed8;
+
+  background: #eff6ff;
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.12);
+}
+
+
+.ucpp-login-button--employer {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #3b82f6
+    );
+
+  border:
+    1.5px solid #2563eb;
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.18);
+}
+
+
+.ucpp-login-button--employer:hover {
+  color: #ffffff;
+
+  box-shadow:
+    0 10px 24px rgba(37, 99, 235, 0.28);
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.ucpp-logout-button {
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  color: #b91c1c;
+
+  background: #fff;
+
+  border:
+    1px solid #fecaca;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.ucpp-logout-button:hover {
+  background: #fef2f2;
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.ucpp-menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  margin-left: auto;
+
+  padding: 0;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+
+
+.ucpp-menu-button span {
+  display: block;
+
+  width: 20px;
+  height: 2px;
+
+  background: #0f172a;
+
+  border-radius: 999px;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.ucpp-menu-button.is-open span:nth-child(1) {
+  transform:
+    translateY(7px)
+    rotate(45deg);
+}
+
+
+.ucpp-menu-button.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+
+.ucpp-menu-button.is-open span:nth-child(3) {
+  transform:
+    translateY(-7px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#siteFooter {
+  margin-top: auto;
+}
+
+
+.site-footer {
+  position: relative;
+
+  overflow: hidden;
+
+  color: #cbd5e1;
+
+  background:
+    linear-gradient(
+      135deg,
+      #071426 0%,
+      #0b1f3a 48%,
+      #0d2a50 100%
+    );
+}
+
+
+.site-footer::before {
+  content: '';
+
+  position: absolute;
+
+  top: -160px;
+  right: -120px;
+
+  width: 360px;
+  height: 360px;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  border-radius: 50%;
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+.site-footer__main {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 1.5fr)
+    repeat(3, minmax(145px, 0.7fr));
+
+  gap: 50px;
+
+  padding-top: 58px;
+
+  padding-bottom: 48px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.site-footer__brand {
+  max-width: 390px;
+}
+
+
+.site-footer__brand-header {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+
+.site-footer__brand-header:hover {
+  text-decoration: none;
+}
+
+
+.site-footer__logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0ea5e9,
+      #2563eb
+    );
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px rgba(37, 99, 235, 0.28);
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+
+.site-footer__brand-header > span:last-child {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.site-footer__brand-header strong {
+  color: #ffffff;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+
+.site-footer__brand-header small {
+  margin-top: 3px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+.site-footer__description {
+  max-width: 350px;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+.site-footer__badge {
+  display: inline-flex;
+
+  margin-top: 20px;
+
+  padding: 8px 12px;
+
+  color: #bfdbfe;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  border:
+    1px solid rgba(96, 165, 250, 0.18);
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+   ========================================================= */
+
+.site-footer__column h3 {
+  position: relative;
+
+  margin: 0 0 22px;
+
+  padding-bottom: 12px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.site-footer__column h3::after {
+  content: '';
+
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 30px;
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #38bdf8,
+      #2563eb
+    );
+
+  border-radius: 999px;
+}
+
+
+.site-footer__links {
+  display: grid;
+
+  gap: 12px;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.site-footer__links li {
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.site-footer__links a {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.site-footer__links a::before {
+  content: '›';
+
+  color: #60a5fa;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+.site-footer__links a:hover {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.site-footer__bottom {
+  position: relative;
+
+  border-top:
+    1px solid rgba(148, 163, 184, 0.16);
+
+  background:
+    rgba(2, 8, 23, 0.16);
+}
+
+
+.site-footer__bottom-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  min-height: 66px;
+}
+
+
+.site-footer__bottom p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+.site-footer__initiative {
+  color: #94a3b8 !important;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .ucpp-header__container {
+    min-height: 72px;
+  }
+
+
+  .ucpp-menu-button {
+    display: flex;
+  }
+
+
+  .ucpp-nav {
+    position: absolute;
+
+    top: calc(100% + 1px);
+
+    right: 20px;
+    left: 20px;
+
+    display: none;
+
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    padding: 14px;
+
+    background:
+      rgba(255, 255, 255, 0.99);
+
+    border:
+      1px solid #e2e8f0;
+
+    border-radius:
+      0 0 18px 18px;
+
+    box-shadow:
+      0 20px 40px
+      rgba(15, 23, 42, 0.14);
+  }
+
+
+  .ucpp-nav.is-open {
+    display: flex;
+  }
+
+
+  .ucpp-nav__links {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+
+  .ucpp-nav__link {
+    justify-content: flex-start;
+
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 0 14px;
+  }
+
+
+  .ucpp-nav__link.is-active::after {
+    top: 11px;
+    right: auto;
+    bottom: 11px;
+    left: 2px;
+
+    width: 3px;
+    height: auto;
+  }
+
+
+  .ucpp-header__actions {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding-top: 12px;
+
+    border-top:
+      1px solid #e2e8f0;
+  }
+
+
+  .ucpp-login-button {
+    min-height: 45px;
+  }
+
+
+  .ucpp-logout-button {
+    width: 100%;
+  }
+
+
+  .site-footer__main {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 40px;
+  }
+
+
+  .site-footer__brand {
+    grid-column:
+      1 / -1;
+
+    max-width: 600px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .ucpp-header__container {
+    min-height: 66px;
+  }
+
+
+  .ucpp-brand__logo {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+
+    border-radius: 11px;
+  }
+
+
+  .ucpp-brand__title {
+    font-size: 14px;
+  }
+
+
+  .ucpp-brand__subtitle {
+    font-size: 10px;
+  }
+
+
+  .ucpp-nav {
+    right: 10px;
+    left: 10px;
+  }
+
+
+  .ucpp-header__actions {
+    grid-template-columns: 1fr;
+  }
+
+
+  .site-footer__main {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap:
+      36px 24px;
+
+    padding-top: 44px;
+
+    padding-bottom: 38px;
+  }
+
+
+  .site-footer__brand {
+    grid-column:
+      1 / -1;
+  }
+
+
+  .site-footer__bottom-inner {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 82px;
+
+    padding-top: 16px;
+
+    padding-bottom: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .ucpp-brand {
+    gap: 9px;
+  }
+
+
+  .site-footer__main {
+    grid-template-columns: 1fr;
+  }
+
+
+  .site-footer__brand {
+    grid-column: auto;
+  }
+
+
+  .site-footer__badge {
+    border-radius: 12px;
+
+    line-height: 1.5;
+  }
+
+}
+
+
+/* =========================================================
+   UCPP V2 - FOOTER SOCIAL MEDIA
+   Version 1.1.0
+   ========================================================= */
+
+.site-footer__social {
+  margin-top: 26px;
+}
+
+.site-footer__social-title {
+  margin: 0 0 15px;
+  padding: 0;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.site-footer__social-links {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+
+  padding: 0;
+  margin: 0;
+
+  color: #dbeafe;
+
+  background: rgba(59, 130, 246, 0.12);
+
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.site-footer__social-link svg {
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  fill: none;
+  stroke: currentColor;
+}
+
+.site-footer__social-link:hover {
+  color: #ffffff;
+
+  background: #2563eb;
+  border-color: #60a5fa;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.3);
+
+  text-decoration: none;
+}
+
+.site-footer__social-link:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 4px;
+}
+
+/* Social brand hover colors */
+
+.site-footer__social-link.social-facebook:hover {
+  background: #1877f2;
+}
+
+.site-footer__social-link.social-linkedin:hover {
+  background: #0a66c2;
+}
+
+.site-footer__social-link.social-instagram:hover {
+  background: #c13584;
+}
+
+.site-footer__social-link.social-youtube:hover {
+  background: #ff0033;
+}
+
+.site-footer__social-link.social-whatsapp:hover {
+  background: #128c7e;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .site-footer__social {
+    margin-top: 24px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .site-footer__social-links {
+    gap: 10px;
+  }
+
+  .site-footer__social-link {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .site-footer__social-title {
+    font-size: 13px;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__social-link {
+    transition: none;
+  }
+
+  .site-footer__social-link:hover {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   UCPP V2 — HEADER LOGO SIZE FIX
+   Desktop + Tablet + Mobile
+   ========================================================= */
+
+.ucpp-header .ucpp-brand__logo {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: 155px !important;
+  height: 65px !important;
+  flex: 0 0 155px !important;
+
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  overflow: hidden;
+}
+
+.ucpp-header .ucpp-brand__logo img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+  object-fit: contain;
+}
+
+.ucpp-header .ucpp-brand {
+  gap: 10px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .ucpp-header .ucpp-brand__logo {
+    width: 145px !important;
+    height: 60px !important;
+    flex: 0 0 145px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .ucpp-header .ucpp-brand__logo {
+    width: 110px !important;
+    height: 50px !important;
+    flex: 0 0 110px !important;
+  }
+
+  .ucpp-header .ucpp-brand {
+    gap: 7px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 430px) {
+  .ucpp-header .ucpp-brand__logo {
+    width: 90px !important;
+    height: 44px !important;
+    flex: 0 0 90px !important;
+  }
+}
+
+
+/* =========================================================
+   UCPP V2 — HEADER & FOOTER REFINEMENT
+   Desktop | Tablet | Mobile
+   Keep existing styles above this block
+   ========================================================= */
+
+/* ---------- HEADER ---------- */
+
+.ucpp-header {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.ucpp-header__container {
+  min-height: 76px;
+  gap: 20px;
+}
+
+.ucpp-header .ucpp-brand {
+  gap: 10px;
+}
+
+.ucpp-header .ucpp-brand__logo {
+  width: 145px !important;
+  height: 60px !important;
+  flex: 0 0 145px !important;
+}
+
+.ucpp-brand__title {
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.ucpp-brand__subtitle {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.ucpp-nav {
+  gap: 12px;
+}
+
+.ucpp-nav__links {
+  gap: 2px;
+}
+
+.ucpp-nav__link {
+  min-height: 42px;
+  padding: 0 11px;
+  font-size: 13px;
+}
+
+.ucpp-header__actions {
+  gap: 8px;
+}
+
+.ucpp-login-button {
+  min-height: 42px;
+  padding: 0 14px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+.ucpp-logout-button {
+  min-height: 42px;
+  border-radius: 10px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  background: linear-gradient(
+    135deg,
+    #071426 0%,
+    #0b1f3a 55%,
+    #0d2a50 100%
+  );
+}
+
+.site-footer__main {
+  grid-template-columns:
+    minmax(250px, 1.35fr)
+    repeat(3, minmax(145px, 0.75fr));
+
+  gap: 34px;
+  padding-top: 38px;
+  padding-bottom: 30px;
+  align-items: start;
+}
+
+.site-footer__brand {
+  max-width: 350px;
+}
+
+.site-footer__brand-header {
+  gap: 11px;
+  margin-bottom: 13px;
+}
+
+.site-footer__logo {
+  width: 44px;
+  height: 44px;
+  flex-basis: 44px;
+  border-radius: 12px;
+}
+
+.site-footer__brand-header strong {
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.site-footer__brand-header small {
+  font-size: 12px;
+}
+
+.site-footer__description {
+  max-width: 330px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.site-footer__badge {
+  margin-top: 13px;
+  padding: 7px 11px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.site-footer__column h3 {
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.site-footer__links {
+  gap: 9px;
+}
+
+.site-footer__links a {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.site-footer__links a::before {
+  font-size: 15px;
+}
+
+.site-footer__social {
+  margin-top: 17px;
+}
+
+.site-footer__social-title {
+  margin-bottom: 11px;
+  font-size: 13px;
+}
+
+.site-footer__social-links {
+  gap: 9px;
+}
+
+.site-footer__social-link {
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+  min-height: 39px;
+}
+
+.site-footer__social-link svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* Footer copyright */
+
+.site-footer__bottom-inner {
+  min-height: 52px;
+  gap: 16px;
+}
+
+.site-footer__bottom p {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 1024px) {
+
+  .ucpp-header__container {
+    min-height: 70px;
+  }
+
+  .ucpp-header .ucpp-brand__logo {
+    width: 135px !important;
+    height: 56px !important;
+    flex: 0 0 135px !important;
+  }
+
+  .ucpp-nav {
+    gap: 0;
+  }
+
+  .site-footer__main {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+    padding-top: 34px;
+    padding-bottom: 28px;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+    max-width: 550px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 650px) {
+
+  .ucpp-header__container {
+    min-height: 64px;
+    gap: 10px;
+  }
+
+  .ucpp-header .ucpp-brand__logo {
+    width: 105px !important;
+    height: 47px !important;
+    flex: 0 0 105px !important;
+  }
+
+  .ucpp-brand__title {
+    font-size: 13px;
+  }
+
+  .ucpp-brand__subtitle {
+    font-size: 10px;
+  }
+
+  .ucpp-menu-button {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .ucpp-nav__link {
+    font-size: 13px;
+  }
+
+  .site-footer__main {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 25px 18px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer__column h3 {
+    font-size: 13px;
+  }
+
+  .site-footer__links {
+    gap: 10px;
+  }
+
+  .site-footer__links a {
+    font-size: 12px;
+  }
+
+  .site-footer__bottom-inner {
+    min-height: auto;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    gap: 6px;
+  }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 430px) {
+
+  .ucpp-header .ucpp-brand__logo {
+    width: 88px !important;
+    height: 42px !important;
+    flex: 0 0 88px !important;
+  }
+
+  .ucpp-header .ucpp-brand {
+    gap: 7px;
+  }
+
+  .site-footer__main {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .site-footer__brand {
+    grid-column: auto;
+  }
+
+  .site-footer__links {
+    gap: 8px;
+  }
+
+  .site-footer__social {
+    margin-top: 16px;
+  }
+}
+
+
+/* =========================================
+   UCPP V2 — HEADER LOGO SIZE REFINEMENT
+   ========================================= */
+
+/* Desktop */
+.ucpp-header .ucpp-brand__logo {
+  width: 135px !important;
+  height: 56px !important;
+  flex: 0 0 135px !important;
+}
+
+.ucpp-header .ucpp-brand__logo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .ucpp-header .ucpp-brand__logo {
+    width: 125px !important;
+    height: 52px !important;
+    flex: 0 0 125px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .ucpp-header .ucpp-brand__logo {
+    width: 105px !important;
+    height: 44px !important;
+    flex: 0 0 105px !important;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 430px) {
+  .ucpp-header .ucpp-brand__logo {
+    width: 90px !important;
+    height: 40px !important;
+    flex: 0 0 90px !important;
+  }
+}
