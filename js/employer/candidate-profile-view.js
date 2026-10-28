@@ -207,164 +207,197 @@
 
   /* ================= RECRUITMENT ACTIONS ================= */
 
-  function refreshActionButtons() {
-    const currentStatus = getStatus(state.application);
-    const rejected = currentStatus === 'Rejected';
+  
+function refreshActionButtons() {
+  const currentStatus = getStatus(state.application);
+  const rejected = currentStatus === 'Rejected';
 
-    Object.entries(ACTIONS).forEach(([id, targetStatus]) => {
-      const button = $(id);
-      if (!button) return;
+  Object.entries(ACTIONS).forEach(([id, targetStatus]) => {
+    const button = $(id);
+    if (!button) return;
 
-      const sameStatus = currentStatus === targetStatus;
+    const sameStatus = currentStatus === targetStatus;
+    const blockedReopen = rejected && targetStatus !== 'Shortlisted';
 
-      button.disabled =
-        !state.profileLoaded ||
-        state.updating ||
-        rejected ||
-        sameStatus;
+    button.disabled =
+      !state.profileLoaded ||
+      state.updating ||
+      blockedReopen ||
+      sameStatus;
 
-      button.setAttribute(
-        'aria-busy',
-        state.updating ? 'true' : 'false'
-      );
+    button.setAttribute(
+      'aria-busy',
+      state.updating ? 'true' : 'false'
+    );
 
-      button.title = rejected
-        ? 'Rejected applications cannot be reopened'
+    button.title = blockedReopen
+      ? 'Rejected applications can only be reopened as Shortlisted'
+      : rejected && targetStatus === 'Shortlisted'
+        ? 'Reopen and shortlist this candidate'
         : sameStatus
           ? 'Candidate already has this status'
           : '';
-    });
+  });
 
-    if (!state.profileLoaded || state.updating) return;
+  if (!state.profileLoaded || state.updating) return;
 
-    if (rejected) {
-      setActionMessage(
-        'This application has been rejected. Further status changes are disabled.',
-        'info'
-      );
-    } else {
-      setActionMessage(
-        'Select a recruitment action to update the application status.',
-        'info'
-      );
-    }
-  }
-
-  async function updateRecruitmentStatus(newStatus) {
-    if (
-      state.updating ||
-      !state.profileLoaded ||
-      !state.application
-    ) {
-      return;
-    }
-
-    const applicationId = getApplicationId(state.application);
-    const currentStatus = getStatus(state.application);
-
-    if (!applicationId) {
-      setActionMessage('Application ID is missing.', 'error');
-      return;
-    }
-
-    if (
-      currentStatus === 'Rejected' ||
-      currentStatus === newStatus
-    ) {
-      refreshActionButtons();
-      return;
-    }
-
-    if (newStatus === 'Rejected') {
-      const confirmed = window.confirm(
-        'Are you sure you want to reject this candidate?\n\n' +
-        'Rejected applications cannot be reopened automatically.'
-      );
-
-      if (!confirmed) return;
-    }
-
-    state.updating = true;
-    refreshActionButtons();
-
+  if (rejected) {
     setActionMessage(
-      'Updating application status...',
+      'This application was rejected. You can reopen it by selecting Shortlist.',
       'info'
     );
+  } else {
+    setActionMessage(
+      'Select a recruitment action to update the application status.',
+      'info'
+    );
+  }
+}
 
-    try {
-      const result = await API.post(
-        'updateEmployerApplicationStatus',
-        {
-          sessionToken: state.sessionToken,
-          applicationId: applicationId,
-          status: newStatus
-        }
-      );
-
-      if (result?.success !== true) {
-        if (isInvalidSession(result)) {
-          window.location.replace('login.html');
-          return;
-        }
-
-        throw new Error(
-          result?.message ||
-          'Unable to update application status.'
-        );
-      }
-
-      const returnedId = String(
-        result.data?.applicationId || ''
-      ).trim();
-
-      const returnedStatus = String(
-        result.data?.status || ''
-      ).trim();
-
-      if (
-        returnedId !== applicationId ||
-        returnedStatus !== newStatus
-      ) {
-        throw new Error(
-          'Status update response could not be verified. Refresh the page to check the latest status.'
-        );
-      }
-
-      // Update UI only after verified backend success.
-      state.application.Application_Status = returnedStatus;
-      state.application.applicationStatus = returnedStatus;
-
-      setStatus(returnedStatus);
-
-      setActionMessage(
-        'Application status updated to ' + returnedStatus + '.',
-        'success'
-      );
-
-    } catch (error) {
-      setActionMessage(
-        error?.message ||
-        'Unable to update application status.',
-        'error'
-      );
-
-    } finally {
-      state.updating = false;
-
-      // Preserve the success/error message.
-      const messageElement = $('candidateActionMessage');
-      const message = messageElement?.textContent || '';
-      const messageType = messageElement?.dataset.state || 'info';
-
-      refreshActionButtons();
-
-      if (messageType === 'success' || messageType === 'error') {
-        setActionMessage(message, messageType);
-      }
-    }
+  
+async function updateRecruitmentStatus(newStatus) {
+  if (
+    state.updating ||
+    !state.profileLoaded ||
+    !state.application
+  ) {
+    return;
   }
 
+  const applicationId = getApplicationId(state.application);
+  const currentStatus = getStatus(state.application);
+
+  if (!applicationId) {
+    setActionMessage('Application ID is missing.', 'error');
+    return;
+  }
+
+  if (currentStatus === newStatus) {
+    refreshActionButtons();
+    return;
+  }
+
+  if (
+    currentStatus === 'Rejected' &&
+    newStatus !== 'Shortlisted'
+  ) {
+    setActionMessage(
+      'Rejected applications can only be reopened as Shortlisted.',
+      'error'
+    );
+    return;
+  }
+
+  if (
+    !['Shortlisted', 'Interview', 'Rejected'].includes(newStatus)
+  ) {
+    setActionMessage('Invalid recruitment action.', 'error');
+    return;
+  }
+
+  if (
+    currentStatus === 'Rejected' &&
+    newStatus === 'Shortlisted'
+  ) {
+    const confirmed = window.confirm(
+      'This candidate was previously rejected.\n\n' +
+      'Do you want to reopen and shortlist this candidate?'
+    );
+
+    if (!confirmed) return;
+  }
+
+  if (newStatus === 'Rejected') {
+    const confirmed = window.confirm(
+      'Are you sure you want to reject this candidate?\n\n' +
+      'You can reopen this application later by shortlisting the candidate.'
+    );
+
+    if (!confirmed) return;
+  }
+
+  state.updating = true;
+  refreshActionButtons();
+
+  setActionMessage(
+    'Updating application status...',
+    'info'
+  );
+
+  try {
+    const result = await API.post(
+      'updateEmployerApplicationStatus',
+      {
+        sessionToken: state.sessionToken,
+        applicationId: applicationId,
+        status: newStatus
+      }
+    );
+
+    if (result?.success !== true) {
+      if (isInvalidSession(result)) {
+        window.location.replace('login.html');
+        return;
+      }
+
+      throw new Error(
+        result?.message ||
+        'Unable to update application status.'
+      );
+    }
+
+    const returnedId = String(
+      result.data?.applicationId || ''
+    ).trim();
+
+    const returnedStatus = String(
+      result.data?.status || ''
+    ).trim();
+
+    if (
+      returnedId !== applicationId ||
+      returnedStatus !== newStatus
+    ) {
+      throw new Error(
+        'Status update response could not be verified. Refresh the page to check the latest status.'
+      );
+    }
+
+    // Update UI only after verified backend success.
+    state.application.Application_Status = returnedStatus;
+    state.application.applicationStatus = returnedStatus;
+
+    setStatus(returnedStatus);
+
+    setActionMessage(
+      'Application status updated to ' + returnedStatus + '.',
+      'success'
+    );
+
+  } catch (error) {
+    setActionMessage(
+      error?.message ||
+      'Unable to update application status.',
+      'error'
+    );
+
+  } finally {
+    state.updating = false;
+
+    // Preserve the success/error message.
+    const messageElement = $('candidateActionMessage');
+    const message = messageElement?.textContent || '';
+    const messageType = messageElement?.dataset.state || 'info';
+
+    refreshActionButtons();
+
+    if (messageType === 'success' || messageType === 'error') {
+      setActionMessage(message, messageType);
+    }
+  }
+}
+
+  
   function initializeRecruitmentActions() {
     Object.entries(ACTIONS).forEach(([id, status]) => {
       const button = $(id);
